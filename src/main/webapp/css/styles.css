@@ -1,0 +1,1065 @@
+:root {
+    /* --primary-color: #2563eb;
+    --secondary-color: #1e40af; */
+    --accent-color: #f59e0b;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+}
+
+/* Common font family for all pages */
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Common form styling */
+.form-control,
+.form-select {
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    padding: 12px 15px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.25);
+}
+
+.form-label {
+    font-weight: 600;
+    color: var(--text-dark);
+    margin-bottom: 0.5rem;
+}
+
+/* Common button styles */
+.btn-custom {
+    background: var(--accent-color);
+    border: none;
+    padding: 12px 30px;
+    font-weight: 600;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-custom:hover {
+    background: #d97706;
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Common animations */
+@keyframes float {
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Utility animation */
+.floating-animation {
+    animation: float 6s ease-in-out infinite;
+}
+
+
+/* Common responsive breakpoints */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 1rem;
+    }
+}
+
+/* App theme background and typography */
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* Hero section */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding-top: 80px;
+}
+
+.hero-title {
+    font-size: 3.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* Features / sections */
+.features-section {
+    padding: 80px 0;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 3rem;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.feature-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    text-align: center;
+    color: white;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+.feature-icon {
+    font-size: 3rem;
+    color: #ffc107;
+    margin-bottom: 1rem;
+}
+
+/* Stats */
+.stats-section {
+    padding: 60px 0;
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.stat-item {
+    text-align: center;
+    color: white;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    display: block;
+    color: #ffc107;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Navbar */
+.navbar {
+    background: #667eea !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    padding: 1rem 0;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid #764ba2;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: #ffc107 !important;
+}
+
+.nav-link {
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin: 0 0.5rem;
+    border-radius: 5px;
+    padding: 0.5rem 1rem !important;
+    color: white !important;
+}
+
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+    color: #ffc107 !important;
+}
+
+.btn-outline-warning {
+    border-color: #ffc107;
+    color: #ffc107;
+}
+
+.btn-outline-warning:hover {
+    background-color: #ffc107;
+    border-color: #ffc107;
+    color: #333;
+}
+
+/* Navbar toggler */
+.navbar-toggler {
+    border: none;
+    padding: 0.25rem 0.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.9%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background: rgba(102, 126, 234, 0.1);
+        border-radius: 10px;
+        margin-top: 1rem;
+        padding: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .nav-link {
+        margin: 0.5rem 0;
+        text-align: center;
+    }
+    .btn-outline-warning {
+        margin: 0.5rem 0;
+        text-align: center;
+    }
+}
+
+/* Footer */
+.footer {
+    background: rgba(0, 0, 0, 0.3);
+    color: white;
+    padding: 40px 0 20px;
+    backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.footer h5,
+.footer h6 {
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.footer p {
+    opacity: 0.9;
+    line-height: 1.6;
+}
+.footer a {
+    transition: all 0.3s ease;
+    opacity: 0.8;
+    color: white !important;
+}
+.footer a:hover {
+    opacity: 1;
+    transform: translateY(-2px);
+    color: #ffc107 !important;
+    text-shadow: 0 2px 4px rgba(255, 193, 7, 0.3);
+}
+.footer hr {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+.footer .text-center p {
+    margin-bottom: 0;
+    font-size: 0.9rem;
+}
+
+/* About section paragraphs to white */
+#about p,
+#about .lead {
+    color: white;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.5rem;
+    }
+    .hero-subtitle {
+        font-size: 1.1rem;
+    }
+    .section-title {
+        font-size: 2rem;
+    }
+}
+
+/* Employer dashboard styles */
+.job-posting-page {
+    min-height: 100vh;
+    padding: 40px 0;
+}
+.job-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+.welcome-title {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    margin-bottom: 1rem;
+}
+.welcome-subtitle {
+    font-size: 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 3rem;
+}
+.job-form-card,
+.search-filter-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    will-change: transform;
+}
+.job-form-card:hover,
+.search-filter-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+.job-section-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid #667eea;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.job-section-title i {
+    color: #667eea;
+    font-size: 1.5rem;
+}
+.job-form-card .form-label,
+.search-filter-card .form-label {
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+}
+.job-form-card .form-control,
+.job-form-card .form-select,
+.search-filter-card .form-control,
+.search-filter-card .form-select {
+    border: 2px solid #e1e5e9;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.9);
+}
+.job-form-card .form-control:focus,
+.job-form-card .form-select:focus,
+.search-filter-card .form-control:focus,
+.search-filter-card .form-select:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+    background: #fff;
+}
+textarea.form-control {
+    min-height: 120px;
+    resize: vertical;
+}
+.btn-login {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    border-radius: 12px;
+    padding: 12px 24px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: white;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+.btn-login:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+    color: white;
+}
+.btn-login::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.2),
+            transparent
+    );
+    transition: left 0.5s;
+}
+.btn-login:hover::before {
+    left: 100%;
+}
+.btn-secondary {
+    background: linear-gradient(135deg, #6c757d 0%, #495057 100%);
+    border: none;
+    border-radius: 12px;
+    padding: 12px 24px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+.btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(108, 117, 125, 0.4);
+}
+
+/* Login/Register shared styles */
+.centered-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+.login-container {
+    margin-top: 80px;
+}
+.login-card {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 900px;
+    margin: 0 auto;
+}
+.login-left {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 3rem;
+    display: flex;
+    align-items: center;
+    min-height: 500px;
+}
+.welcome-text {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+.welcome-subtitle {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+}
+.feature-list {
+    list-style: none;
+    padding: 0;
+}
+.feature-list li {
+    margin-bottom: 1rem;
+    font-size: 1rem;
+}
+.feature-list i {
+    color: #ffc107;
+    margin-right: 0.5rem;
+}
+.login-right {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.login-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+.login-subtitle {
+    color: #666;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+.forgot-password {
+    color: #667eea;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+.forgot-password:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+.signup-link {
+    text-align: center;
+    margin-top: 2rem;
+    color: #666;
+}
+.signup-link a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 600;
+}
+.signup-link a:hover {
+    color: #764ba2;
+    text-decoration: underline;
+}
+
+/* Responsive tweaks for these pages */
+@media (max-width: 768px) {
+    .welcome-title {
+        font-size: 2.2rem;
+    }
+    .job-form-card,
+    .search-filter-card {
+        padding: 1.5rem;
+    }
+    .job-section-title {
+        font-size: 1.5rem;
+    }
+    .login-container {
+        margin-top: 40px;
+    }
+    .login-left,
+    .login-right {
+        padding: 2rem;
+    }
+    .welcome-text {
+        font-size: 2rem;
+    }
+    .login-title {
+        font-size: 2rem;
+    }
+}
+
+/* Ensure hover transform works when floating animation is applied */
+.job-form-card.floating-animation:hover,
+.search-filter-card.floating-animation:hover {
+    animation: none;
+}
+
+/* Employer dashboard: make headings and labels white inside cards */
+.job-form-card .job-section-title,
+.search-filter-card .job-section-title {
+    color: #ffffff;
+    border-bottom-color: rgba(255, 255, 255, 0.3);
+}
+
+.job-form-card .form-label,
+.search-filter-card .form-label,
+.job-form-card label,
+.search-filter-card label {
+    color: #ffffff;
+}
+
+/* Translucent inputs inside employer dashboard cards */
+.job-form-card .form-control,
+.job-form-card .form-select,
+.search-filter-card .form-control,
+.search-filter-card .form-select {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    backdrop-filter: blur(6px);
+}
+
+.job-form-card .form-control::placeholder,
+.search-filter-card .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.job-form-card .form-select option,
+.search-filter-card .form-select option {
+    color: #111827;
+}
+
+.job-form-card .form-control:focus,
+.job-form-card .form-select:focus,
+.search-filter-card .form-control:focus,
+.search-filter-card .form-select:focus {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+    color: #ffffff;
+}
+
+/* Login/Register: match glass style and hover like dashboard */
+.login-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+.login-card:hover {
+    transform: translateY(-10px);
+    background: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Make headings and labels white inside login/register */
+.login-card .login-title,
+.login-card .welcome-text,
+.login-card .login-subtitle,
+.login-card .form-label,
+.login-card label {
+    color: #ffffff;
+}
+.login-card .login-subtitle {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+/* Translucent inputs inside login/register */
+.login-card .form-control,
+.login-card .form-select {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    backdrop-filter: blur(6px);
+}
+.login-card .form-control::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+.login-card .form-select option {
+    color: #111827;
+}
+.login-card .form-control:focus,
+.login-card .form-select:focus {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+    color: #ffffff;
+}
+
+/* Improve visibility of signup helper text in login/register */
+.login-card .signup-link {
+    color: rgba(255, 255, 255, 0.9);
+}
+.login-card .signup-link a {
+    color: #ffc107;
+}
+.login-card .signup-link a:hover {
+    color: #ffe08a;
+    text-decoration: underline;
+}
+
+/* Admin Panel Styles */
+.admin-panel-page {
+    min-height: 100vh;
+    padding-top: 20px;
+}
+
+.admin-filter-card,
+.admin-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.admin-filter-card:hover,
+.admin-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+}
+
+.admin-input {
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    backdrop-filter: blur(6px);
+}
+
+.admin-input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.admin-input:focus {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.6);
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+    color: #ffffff;
+}
+
+.admin-table {
+    width: 100%;
+    background: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    border: 1px solid #e5e7eb;
+    margin: 20px 0;
+}
+
+.admin-table thead th {
+    background: #f8fafc;
+    color: #374151 !important;
+    font-weight: 600;
+    padding: 16px 20px;
+    font-size: 0.875rem;
+    text-align: left;
+    border-bottom: 1px solid #e5e7eb;
+    letter-spacing: 0.025em;
+}
+
+.admin-table tbody tr {
+    border-bottom: 1px solid #f3f4f6;
+    transition: background-color 0.2s ease;
+}
+
+.admin-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.admin-table tbody tr:hover {
+    background-color: #f9fafb;
+}
+
+.admin-table tbody td {
+    color: #374151 !important;
+    font-weight: 400;
+    padding: 16px 20px;
+    font-size: 0.875rem;
+    border: none;
+    vertical-align: middle;
+}
+
+.admin-table tbody td.text-warning {
+    color: #dc2626 !important;
+    font-weight: 500;
+}
+
+/* Simple modern button styling in table */
+.admin-table .btn {
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-weight: 500;
+    font-size: 0.75rem;
+    text-transform: none;
+    letter-spacing: 0.025em;
+    transition: all 0.2s ease;
+    border: 1px solid;
+    margin: 2px;
+}
+
+.admin-table .btn:hover {
+    transform: translateY(-1px);
+}
+
+.admin-table .btn-danger {
+    background: #fef2f2;
+    color: #dc2626;
+    border-color: #fecaca;
+}
+
+.admin-table .btn-danger:hover {
+    background: #dc2626;
+    color: white;
+    border-color: #dc2626;
+}
+
+.admin-table .btn-success {
+    background: #f0fdf4;
+    color: #16a34a;
+    border-color: #bbf7d0;
+}
+
+.admin-table .btn-success:hover {
+    background: #16a34a;
+    color: white;
+    border-color: #16a34a;
+}
+
+/* Admin Panel Form Elements Text Color Fix */
+.admin-panel-page .form-control,
+.admin-panel-page .form-select,
+.admin-panel-page .admin-input {
+    color: #ffffff !important;
+}
+
+.admin-panel-page .form-select option {
+    color: #2c3e50 !important;
+    background: #ffffff !important;
+}
+
+.admin-panel-page .form-control::placeholder,
+.admin-panel-page .form-select::placeholder,
+.admin-panel-page .admin-input::placeholder {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* ======================== USER DASHBOARD STYLES ======================== */
+
+/* User Dashboard Page Background */
+.user-dashboard-page {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Welcome Title */
+.user-dashboard-page .welcome-title {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 2.2rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 2rem;
+}
+
+/* Filter Card */
+.user-dashboard-page .filter-card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    padding: 2rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.user-dashboard-page .filter-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+}
+
+.user-dashboard-page .filter-title {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Form Controls */
+.user-dashboard-page .user-input,
+.user-dashboard-page .user-select {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    color: #2c3e50;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.user-dashboard-page .user-input:focus,
+.user-dashboard-page .user-select:focus {
+    background: rgba(255, 255, 255, 1);
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+    outline: none;
+}
+
+.user-dashboard-page .user-input::placeholder {
+    color: #7f8c8d;
+}
+
+.user-dashboard-page .user-select option {
+    color: #2c3e50;
+    background: #ffffff;
+}
+
+/* Jobs Section */
+.user-dashboard-page .jobs-section {
+    margin-top: 2rem;
+}
+
+.user-dashboard-page .section-title {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.8rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Job Cards */
+.user-dashboard-page .job-card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+}
+
+.user-dashboard-page .job-card:hover {
+    animation: none;
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.user-dashboard-page .job-card h5 {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.user-dashboard-page .job-card .text-muted {
+    color: rgba(255, 255, 255, 0.8) !important;
+    font-weight: 500;
+}
+
+.user-dashboard-page .job-card .small {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.user-dashboard-page .job-card .badge {
+    border-radius: 15px;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+}
+
+.user-dashboard-page .job-card .btn-outline-light {
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    color: #ffffff;
+    background: transparent;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.user-dashboard-page .job-card .btn-outline-light:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Modals */
+.user-dashboard-page .user-modal {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    color: #2c3e50;
+}
+
+.user-dashboard-page .user-modal .modal-header {
+    border-bottom: 1px solid rgba(102, 126, 234, 0.2);
+    background: linear-gradient(135deg, rgba(102, 126, 234, 0.1) 0%, rgba(118, 75, 162, 0.1) 100%);
+    border-radius: 20px 20px 0 0;
+}
+
+.user-dashboard-page .user-modal .modal-header h5 {
+    color: #2c3e50;
+    font-weight: 600;
+}
+
+.user-dashboard-page .user-modal .modal-body {
+    padding: 2rem;
+    color: #2c3e50;
+}
+
+.user-dashboard-page .user-modal .modal-body strong {
+    color: #667eea;
+    font-weight: 600;
+}
+
+.user-dashboard-page .user-modal .form-control {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(102, 126, 234, 0.3);
+    border-radius: 10px;
+    color: #2c3e50;
+}
+
+.user-dashboard-page .user-modal .form-control:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 0.2rem rgba(102, 126, 234, 0.25);
+}
+
+.user-dashboard-page .user-modal .modal-footer {
+    border-top: 1px solid rgba(102, 126, 234, 0.2);
+    background: rgba(102, 126, 234, 0.05);
+    border-radius: 0 0 20px 20px;
+}
+
+/* Responsive Design for User Dashboard */
+@media (max-width: 768px) {
+    .user-dashboard-page .welcome-title {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .user-dashboard-page .filter-card {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+
+    .user-dashboard-page .filter-title {
+        font-size: 1.2rem;
+        text-align: center;
+    }
+
+    .user-dashboard-page .section-title {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .user-dashboard-page .job-card {
+        margin-bottom: 1rem;
+    }
+}
+
+.btn-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border: none;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.btn-gradient:hover {
+    background: linear-gradient(135deg, #5a6fd8 0%, #6a4190 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+/* Responsive admin panel */
+@media (max-width: 768px) {
+    .admin-panel-page {
+        padding-top: 10px;
+    }
+
+    .admin-filter-card,
+    .admin-card {
+        padding: 1.5rem !important;
+    }
+
+    .table-responsive {
+        font-size: 0.9rem;
+    }
+}
