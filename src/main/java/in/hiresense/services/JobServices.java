@@ -98,4 +98,24 @@ public class JobServices {
             throw new RuntimeException(e);
         }
     }
+
+    public static boolean deleteJob(int jobId)throws Exception{
+        Session s = DBConnection.getDBSession().openSession();
+        Transaction t = s.beginTransaction();
+        try{
+            JobPojo job = JobServices.getJobById(jobId);
+            if(job == null){
+                t.rollback();
+                return false;
+            }
+            JobDao.remove(s,job);
+            t.commit();
+            return true;
+        } catch (Exception e) {
+            t.rollback();
+            throw e;
+        }finally {
+            s.close();
+        }
+    }
 }

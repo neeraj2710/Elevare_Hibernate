@@ -1,10 +1,8 @@
 package in.hiresense.dao;
 
 
-import in.hiresense.dbutils.DBConnection;
 import in.hiresense.pojo.JobPojo;
 import org.hibernate.Session;
-import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 import java.util.ArrayList;
@@ -39,5 +37,14 @@ public class JobDao {
         );
         q.setParameter("id", jobId);
         q.executeUpdate();
+    }
+
+    public static void remove(Session s, JobPojo job)throws Exception{
+
+            Query<?> deleteApplications = s.createQuery("delete from ApplicationPojo where jobId = :jobId");
+            deleteApplications.setParameter("jobId", job.getId());
+            deleteApplications.executeUpdate();
+            s.remove(job);
+
     }
 }
