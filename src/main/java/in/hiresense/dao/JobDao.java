@@ -47,4 +47,20 @@ public class JobDao {
             s.remove(job);
 
     }
+
+    public static List<JobPojo> getAllJobs(Session s, Query qry)throws Exception{
+        return qry.getResultList();
+    }
+
+    public static List<JobPojo> getAllJobsWithEmployerAndApplicationCount(Query qry) {
+        List<JobPojo> jobList = new ArrayList<>();
+        List<Object[]> result = qry.getResultList();
+        for(Object[] res : result){
+            JobPojo job = (JobPojo) res[0];
+            Long applicantCount = (Long) res[1];
+            job.setApplicantCount(applicantCount.intValue());
+            jobList.add(job);
+        }
+        return jobList;
+    }
 }

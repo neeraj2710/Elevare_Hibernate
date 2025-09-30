@@ -19,7 +19,7 @@ public class ApplicationPojo {
     private String resume_path;
     @Column(name = "Score")
     private double score;
-    @Column(name = "status")
+    @Column(name = "status", insertable = false)
     private String status;
     @Column(name = "applied_id", insertable = false)
     private String appliedAt;
