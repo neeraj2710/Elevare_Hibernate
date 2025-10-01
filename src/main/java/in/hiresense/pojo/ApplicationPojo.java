@@ -17,11 +17,11 @@ public class ApplicationPojo {
     private int jobId;
     @Column(name = "resume_path")
     private String resume_path;
-    @Column(name = "Score")
+    @Column(name = "score")
     private double score;
     @Column(name = "status", insertable = false)
     private String status;
-    @Column(name = "applied_id", insertable = false)
+    @Column(name = "applied_at", insertable = false)
     private String appliedAt;
 
     public ApplicationPojo(int id, int userId, int jobId, String resume_path, double score, String status, String appliedAt) {
