@@ -27,23 +27,13 @@ public class UserDao {
         return s.find(UserPojo.class, id);
     }
 
-    public static List<UserPojo> getAllUsers()throws Exception {
-        List<UserPojo> userList = new ArrayList<>();
-        try (Session s = DBConnection.getDBSession().openSession()) {
-            Query<UserPojo> q = s.createQuery("from UserPojo", UserPojo.class);
-            userList = q.list();
-        }
-        return userList;
+    public static List<UserPojo> getAllUsers(Query query)throws Exception {
+        return query.list();
     }
 
-    public static void updateStatus(int userId,String status)throws Exception{
-        Transaction t;
-        try(Session s = DBConnection.getDBSession().openSession()){
-            t = s.beginTransaction();
+    public static void updateStatus(Session s,int userId,String status)throws Exception{
             UserPojo user = s.find(UserPojo.class, userId);
             user.setStatus(status);
             s.merge(user);
-            t.commit();
-        }
     }
 }
