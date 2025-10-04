@@ -8,6 +8,6 @@
     </listener>
     <context-param>
         <param-name>appName</param-name>
-        <param-value>HireSense</param-value>
+        <param-value>Elevare</param-value>
     </context-param>
 </web-app>

@@ -1,36 +1,55 @@
 <!-- Navigation Bar -->
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container">
-        <a class="navbar-brand" href="index.html"><i class="fas fa-brain me-2"></i>HireSense</a>
+        <a class="navbar-brand" href="./index.jsp"><i class="fas fa-brain me-2"></i><%= application.getAttribute("appName")%></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ms-auto">
+                <%
+                    String role = (String) session.getAttribute("userRole");
+                    if(role == null){ // common navbar starts
+                %>
                 <li class="nav-item">
-                    <a class="nav-link" href="register.html"><i class="fas fa-user-plus me-1"></i>Register</a>
+                    <a class="nav-link" href="./register.jsp"><i class="fas fa-user-plus me-1"></i>Register</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="login.html"><i class="fas fa-sign-in-alt me-1"></i>Login</a>
+                    <a class="nav-link" href="./login.jsp"><i class="fas fa-sign-in-alt me-1"></i>Login</a>
                 </li>
+                <%
+                } // common navbar ends
+                else if (role.equals("user")) { // user navbar starts
+                %>
                 <li class="nav-item">
-                    <a class="nav-link" href="employerDashboard.html"><i class="fas fa-tachometer-alt me-1"></i>Dashboard</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-sign-out-alt me-1"></i>Logout</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="employerDashboard.html"><i class="fas fa-tachometer-alt me-1"></i>Dashboard</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-sign-out-alt me-1"></i>Logout</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-user-shield me-1"></i>Admin Panel</a>
+                    <a class="nav-link" href="./userDashboard.jsp"><i class="fas fa-tachometer-alt me-1"></i>Dashboard</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="fas fa-sign-out-alt me-1"></i>Logout</a>
                 </li>
+                <%
+                } // user navbar ends
+                else if (role.equals("employer")) { // employer navbar starts
+                %>
+                <li class="nav-item">
+                    <a class="nav-link" href="./employerDashboard.jsp"><i class="fas fa-tachometer-alt me-1"></i>Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-sign-out-alt me-1"></i>Logout</a>
+                </li>
+                <%
+                } // employer navbar ends
+                else if (role.equals("admin")) { // admin navbar starts
+                %>
+                <li class="nav-item">
+                    <a class="nav-link" href="./adminPanel.jsp"><i class="fas fa-user-shield me-1"></i>Admin Panel</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#"><i class="fas fa-sign-out-alt me-1"></i>Logout</a>
+                </li>
+                <%
+                    }// admin navbar ends
+                %>
             </ul>
         </div>
     </div>
