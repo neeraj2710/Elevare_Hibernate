@@ -22,6 +22,20 @@
 <div class="container login-container mb-5">
     <div class="login-card">
         <div class="row g-0">
+            <%
+                String error = (String)request.getAttribute("error");
+                if(error != null){
+            %>
+            <div class="alert alert-danger text-center py-1"><%=error%></div>
+            <%
+                }
+                String reg = request.getParameter("registered");
+                if("true".equals(reg)){
+            %>
+            <div class="alert alert-success text-center py-1">✔️ Registration Successful</div>
+            <%
+                }
+            %>
             <!-- Left side - Welcome message -->
             <div class="col-lg-5 login-left">
                 <div>
@@ -45,19 +59,19 @@
                 <!-- Removed Google sign-in button and divider -->
 
                 <!-- Login form -->
-                <form>
+                <form action="LoginServlet" method="post">
                     <div class="mb-3">
                         <label for="email" class="form-label">
                             <i class="fas fa-envelope me-1"></i>Email Address
                         </label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                        <input type="email" name="email" class="form-control" id="email" placeholder="Enter your email" required>
                     </div>
 
                     <div class="mb-3">
                         <label for="password" class="form-label">
                             <i class="fas fa-lock me-1"></i>Password
                         </label>
-                        <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+                        <input type="password" name="password" class="form-control" id="password" placeholder="Enter your password" required>
                     </div>
 
                     <div class="d-flex justify-content-between align-items-center mb-4">

@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>HireSense-EmployerDashboard</title>
+    <title>EmployerDashboard | <%=application.getAttribute("appName")%></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
@@ -18,12 +18,20 @@
 <body>
 <%@include file="includes/header.jsp"%>
 
+<%
+    Integer userId = (Integer) session.getAttribute("userId");
+    if(userId == null){
+        response.sendRedirect("login.jsp");
+        return;
+    }
+%>
+
 <main class="container job-container main-content">
     <!-- Enhanced welcome section with subtitle and stats -->
     <div class="text-center mb-5">
         <h1 class="welcome-title">
             <i class="fas fa-user-tie me-3"></i>
-            Welcome Back, Neeraj!
+            Welcome Back, <%=session.getAttribute("userName")%>!
         </h1>
         <p class="welcome-subtitle">
             Manage your job postings and find the perfect candidates
