@@ -33,6 +33,7 @@ public class LoginServlet extends HttpServlet {
 
         try{
             UserPojo user  = UserService.getUserByEmail(email);
+            System.out.println(user);
             if(user != null && user.getPassword().equals(password) && user.getStatus().equals("active")){
                 HttpSession session = request.getSession();
                 session.setAttribute("userId", user.getId());

@@ -18,13 +18,6 @@
 <body>
 <%@include file="includes/header.jsp"%>
 
-<%
-    Integer userId = (Integer) session.getAttribute("userId");
-    if(userId == null){
-        response.sendRedirect("login.jsp");
-        return;
-    }
-%>
 
 <main class="container job-container main-content">
     <!-- Enhanced welcome section with subtitle and stats -->
@@ -38,15 +31,15 @@
         </p>
     </div>
 
-    <!-- Post job form starts -->
+    <!-- Post-job form starts -->
     <div class="job-form-card">
-        <!-- Fixed section title class name -->
+        <!-- Fixed the section title class name -->
         <h2 class="job-section-title">
             <i class="fas fa-bullhorn"></i>
             Post a New Job Opening
         </h2>
 
-        <form action="#" method="post">
+        <form action="PostJobServlet" method="post">
             <!-- Enhanced form fields with better spacing and modern styling -->
             <div class="row">
                 <div class="col-md-6 mb-4">

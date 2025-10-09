@@ -12,6 +12,7 @@ public class JobDao {
 
     public static boolean save(Session s, JobPojo job) throws Exception {
         s.persist(job);
+        s.flush();
         return job.getId() > 0;
     }
 

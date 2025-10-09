@@ -1,5 +1,6 @@
 package in.hiresense.controllers;
 
+import in.hiresense.dao.JobDao;
 import in.hiresense.pojo.JobPojo;
 import in.hiresense.services.JobServices;
 import jakarta.servlet.ServletException;
@@ -10,10 +11,9 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
-import java.util.List;
 
-@WebServlet(name = "EmployerDashboardServlet", value = "/EmployerDashboardServlet")
-public class EmployerDashboardServlet extends HttpServlet {
+@WebServlet(name = "PostJobServlet", value = "/PostJobServlet")
+public class PostJobServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         processRequest(request, response);
@@ -26,29 +26,39 @@ public class EmployerDashboardServlet extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession(false);
-        System.out.println(session == null);
-        System.out.println(session.getAttribute("userId"));
-        System.out.println(session.getAttribute("role"));
         if(session == null ||session.getAttribute("userId") == null || !"employer".equals(session.getAttribute("userRole"))){
             response.sendRedirect("login.jsp");
             return;
         }
 
         int userId = (Integer) session.getAttribute("userId");
-        String search = request.getParameter("search");
-        String status = request.getParameter("status");
-        String sort = request.getParameter("sort");
+        String title = request.getParameter("title");
+        String description = request.getParameter("description");
+        String skills = request.getParameter("skills");
+        String company = request.getParameter("company");
+        String location = request.getParameter("location");
+        String experience = request.getParameter("experience");
+        String packageLpa = request.getParameter("packageLpa");
+        int vacancies = Integer.parseInt(request.getParameter("vacancies"));
+
+        JobPojo job = new JobPojo();
+        job.setTitle(title);
+        job.setDescription(description);
+        job.setSkills(skills);
+        job.setCompany(company);
+        job.setLocation(location);
+        job.setExperience(experience);
+        job.setPackageLpa(packageLpa);
+        job.setVacancies(vacancies);
+        job.setEmployerId(userId);
 
         try{
-            List<JobPojo> jobList = JobServices.getJobsByEmployer(userId, search, status, sort);
-            request.setAttribute("jobList", jobList);
-            request.setAttribute("search", search);
-            request.setAttribute("status", status);
-            request.setAttribute("sort", sort);
-            request.getRequestDispatcher("employerDashboard.jsp").forward(request, response);
+            boolean result = JobServices.postJob(job);
+            if(result) response.sendRedirect("EmployerDashboardServlet?success=1");
+            else response.sendRedirect("EmployerDashboardServlet?error=1");
         } catch (Exception e) {
             e.printStackTrace();
-            response.sendRedirect("error.jsp");
+            response.sendRedirect("EmployerDashboardServlet?error=1");
         }
     }
 
