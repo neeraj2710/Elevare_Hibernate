@@ -1063,3 +1063,12 @@ textarea.form-control {
         font-size: 0.9rem;
     }
 }
+
+/* Employer Dashboard Job Listing Table Alternate Row Colors */
+.job-row {
+    background-color: #f8f9fa;
+}
+
+.job-row.bg-dark {
+    background-color: #e9ecef;
+}
