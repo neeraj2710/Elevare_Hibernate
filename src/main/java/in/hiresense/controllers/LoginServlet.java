@@ -43,7 +43,7 @@ public class LoginServlet extends HttpServlet {
                         response.sendRedirect("adminPanel.jsp");
                         break;
                     case "employer":
-                        response.sendRedirect("employerDashboard.jsp");
+                        response.sendRedirect("EmployerDashboardServlet");
                         break;
                     default:
                         response.sendRedirect("userDashboard.jsp");
