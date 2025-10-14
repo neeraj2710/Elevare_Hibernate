@@ -1064,11 +1064,4 @@ textarea.form-control {
     }
 }
 
-/* Employer Dashboard Job Listing Table Alternate Row Colors */
-.job-row {
-    background-color: #f8f9fa;
-}
 
-.job-row.bg-dark {
-    background-color: #e9ecef;
-}

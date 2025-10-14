@@ -1,4 +1,5 @@
-<%--
+<%@ page import="in.hiresense.pojo.JobPojo" %>
+<%@ page import="java.util.List" %><%--
   Created by IntelliJ IDEA.
   User: neera
   Date: 9/16/2025
@@ -8,16 +9,23 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>EmployerDashboard | <%=application.getAttribute("appName")%></title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <title>EmployerDashboard | <%=application.getAttribute("appName")%>
+    </title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
 
 
 </head>
 <body>
-<%@include file="includes/header.jsp"%>
-
+<%@include file="includes/header.jsp" %>
+<%
+    if (session == null || session.getAttribute("userId") == null || !session.getAttribute("userRole").equals("employer")) {
+        response.sendRedirect("login.jsp");
+        return;
+    }
+%>
 
 <main class="container job-container main-content">
     <!-- Enhanced welcome section with subtitle and stats -->
@@ -44,22 +52,27 @@
             <div class="row">
                 <div class="col-md-6 mb-4">
                     <label class="form-label">Job Title</label>
-                    <input type="text" class="form-control" placeholder="e.g. Senior Software Engineer" name="title" required>
+                    <input type="text" class="form-control" placeholder="e.g. Senior Software Engineer" name="title"
+                           required>
                 </div>
                 <div class="col-md-6 mb-4">
                     <label class="form-label">Company Name</label>
-                    <input type="text" name="company" class="form-control" placeholder="e.g. Tech Solutions Inc." required>
+                    <input type="text" name="company" class="form-control" placeholder="e.g. Tech Solutions Inc."
+                           required>
                 </div>
             </div>
 
             <div class="mb-4">
                 <label class="form-label">Job Description</label>
-                <textarea name="description" class="form-control" placeholder="Describe the role, responsibilities, and what makes this opportunity exciting..." required></textarea>
+                <textarea name="description" class="form-control"
+                          placeholder="Describe the role, responsibilities, and what makes this opportunity exciting..."
+                          required></textarea>
             </div>
 
             <div class="mb-4">
                 <label class="form-label">Required Skills</label>
-                <input type="text" name="skills" class="form-control" placeholder="e.g. React, Node.js, MongoDB, AWS" required>
+                <input type="text" name="skills" class="form-control" placeholder="e.g. React, Node.js, MongoDB, AWS"
+                       required>
             </div>
 
             <div class="row">
@@ -67,7 +80,7 @@
                     <label class="form-label">Location</label>
                     <select name="location" class="form-select">
                         <option value="" disabled selected>Choose Location</option>
-                        <option value="banglore">🏙️ Bangalore</option>
+                        <option value="bangalore">🏙️ Bangalore</option>
                         <option value="mumbai">🌆 Mumbai</option>
                         <option value="pune">🏢 Pune</option>
                         <option value="delhi">🏛️ Delhi</option>
@@ -103,7 +116,8 @@
             <div class="row">
                 <div class="col-md-6 mb-4">
                     <label class="form-label">Number of Vacancies</label>
-                    <input type="number" name="vacancies" class="form-control" placeholder="How many positions?" min="1" required>
+                    <input type="number" name="vacancies" class="form-control" placeholder="How many positions?" min="1"
+                           required>
                 </div>
                 <div class="col-md-6 mb-4 d-flex align-items-end">
                     <button type="submit" class="btn btn-login w-100">
@@ -116,34 +130,34 @@
 
     <!-- Search and filter starts -->
     <div class="search-filter-card ">
-        <!-- Fixed section title class name -->
+        <!-- Fixed the section title class name -->
         <h2 class="job-section-title">
             <i class="fas fa-search"></i>
             Manage Your Job Postings
         </h2>
 
-        <form action="#" method="post">
+        <form action="EmployerDashboardServlet" method="post">
             <div class="row g-3">
                 <div class="col-md-4">
                     <label class="form-label">Search Jobs</label>
-                    <input type="text" name="search" class="form-control" placeholder="Search by job title or company">
+                    <input type="text" name="search" value="${param.search}" class="form-control"
+                           placeholder="Search by job title or company">
                 </div>
                 <div class="col-md-3">
                     <label class="form-label">Status Filter</label>
                     <select name="status" class="form-select">
                         <option value="" disabled selected>All Status</option>
-                        <option value="active">✅ Active</option>
-                        <option value="inactive">⏸️ Inactive</option>
-                        <option value="draft">📝 Draft</option>
+                        <option value="active" ${param.status == 'active' ? 'selected' : ''}>✅ Active</option>
+                        <option value="inactive" ${param.status == 'inactive' ? 'selected' : ''}>⏸️ Inactive</option>
                     </select>
                 </div>
                 <div class="col-md-3">
                     <label class="form-label">Sort By</label>
                     <select name="sort" class="form-select">
                         <option value="" disabled selected>Sort Options</option>
-                        <option value="asc">📈 Least Applications</option>
-                        <option value="desc">📊 Most Applications</option>
-                        <option value="recent">🕒 Most Recent</option>
+                        <option value="asc" ${param.sort == 'asc' ? 'selected' : ''}>📈 Least Applications</option>
+                        <option value="desc" ${param.sort == 'desc' ? 'selected' : ''}>📊 Most Applications</option>
+
                     </select>
                 </div>
                 <div class="col-md-2 d-flex align-items-end">
@@ -155,37 +169,119 @@
         </form>
     </div>
 
+    <%
+        List<JobPojo> jobList = (List<JobPojo>) request.getAttribute("jobList");
+    %>
+
     <!-- manage job listing table -->
     <div class="admin-card p-4 mb-4">
-        <h5 class="text-white mb-3">
-            <i class="fas fa-briefcase me-2"></i> Manage Job Listing
-        </h5>
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h3 class="text-white mb-0">
+                <i class="fas fa-briefcase me-2"></i>Manage Job Listings
+            </h3>
+            <span class="badge bg-primary fs-6 px-3 py-2">
+                <i class="fas fa-list me-2"></i><%=jobList != null ? jobList.size() : 0%> Jobs
+            </span>
+        </div>
+
         <div class="table-responsive">
-            <table class="table table-hover admin-table">
+            <table class="table table-hover admin-table align-middle">
                 <thead>
                 <tr>
-                    <th class="text-white">Job title</th>
-                    <th class="text-white">Company</th>
-                    <th class="text-white">Applicants</th>
-                    <th class="text-white">Action</th>
+                    <th class="text-white" style="width: 40%;">
+                        <i class="fas fa-suitcase me-2"></i>Job Title
+                    </th>
+                    <th class="text-white text-center" style="width: 15%;">
+                        <i class="fas fa-users me-2"></i>Applicants
+                    </th>
+                    <th class="text-white text-center" style="width: 15%;">
+                        <i class="fas fa-info-circle me-2"></i>Status
+                    </th>
+                    <th class="text-white text-center" style="width: 30%;">
+                        <i class="fas fa-cog me-2"></i>Actions
+                    </th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td class="text-white">SDE</td>
-                    <td class="text-white">Google</td>
-                    <td class="text-white">1098</td>
-                    <td>
-                        <a href="#" class="btn btn-danger btn-sm">
-                            <i class="fas fa-trash me-1"></i>Remove
-                        </a>
+                <%
+                    if (jobList != null && !jobList.isEmpty()) {
+                        for (int i = 0; i < jobList.size(); i++) {
+                            JobPojo job = jobList.get(i);
+                            String rowClass = (i % 2 == 0) ? "job-row" : "job-row bg-dark";
+                %>
+                <tr class="<%=rowClass%>">
+                    <td class="fw-semibold">
+                        <i class="fas fa-bookmark me-2 text-primary"></i>
+                        <%=job.getTitle()%>
+                    </td>
+                    <td class="text-center">
+                        <span class="badge bg-info text-dark fs-6 px-3 py-2">
+                            <i class="fas fa-user-friends me-1"></i>
+                            <%=job.getApplicantCount()%>
+                        </span>
+                    </td>
+                    <td class="text-center">
+                        <%
+                            if (job.getStatus().equals("active")) {
+                        %>
+                        <span class="badge bg-success fs-6 px-3 py-2">
+                            <i class="fas fa-check-circle me-1"></i>Active
+                        </span>
+                        <%
+                        } else {
+                        %>
+                        <span class="badge bg-secondary fs-6 px-3 py-2">
+                            <i class="fas fa-pause-circle me-1"></i>Inactive
+                        </span>
+                        <%
+                            }
+                        %>
+                    </td>
+                    <td class="text-center">
+                        <div class="btn-group" role="group">
+                            <a href="ViewApplicantsServlet?jobId=<%=job.getId()%>"
+                               class="btn btn-sm btn-primary"
+                               title="View Applicants">
+                                <i class="fas fa-eye me-1"></i>View
+                            </a>
+                            <%
+                                if (job.getStatus().equals("active")) {
+                            %>
+                            <a href="ToggleJobStatusServlet?jobId=<%=job.getId()%>"
+                               class="btn btn-sm btn-danger"
+                               title="Deactivate Job"
+                               onclick="return confirm('Are you sure you want to deactivate this job?')">
+                                <i class="fas fa-times-circle me-1"></i>Deactivate
+                            </a>
+                            <%
+                            } else {
+                            %>
+                            <a href="ToggleJobStatusServlet?jobId=<%=job.getId()%>"
+                               class="btn btn-sm btn-success"
+                               title="Activate Job"
+                               onclick="return confirm('Are you sure you want to activate this job?')">
+                                <i class="fas fa-check-circle me-1"></i>Activate
+                            </a>
+                            <%
+                                }
+                            %>
+                        </div>
                     </td>
                 </tr>
+                <%
+                        }
+                    } else {
+                %>
                 <tr>
-                    <td colspan="4" class="text-center text-warning">
-                        <i class="fas fa-exclamation-triangle me-2"></i>No Job Listings found
+                    <td colspan="4" class="text-center text-white py-5">
+                        <i class="fas fa-inbox fa-3x mb-3 text-muted"></i>
+                        <p class="fs-5 mb-0">No job listings found</p>
+                        <p class="text-muted">Post your first job to see it here</p>
                     </td>
                 </tr>
+                <%
+                    }
+                %>
                 </tbody>
             </table>
         </div>
@@ -193,7 +289,9 @@
     <!-- manage job listing table ends -->
 </main>
 
-<%@include file="includes/footer.jsp"%>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+<%@include file="includes/footer.jsp" %>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
 </body>
 </html>
