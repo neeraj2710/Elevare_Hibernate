@@ -245,27 +245,13 @@
                                title="View Applicants">
                                 <i class="fas fa-eye me-1"></i>View
                             </a>
-                            <%
-                                if (job.getStatus().equals("active")) {
-                            %>
+
                             <a href="ToggleJobStatusServlet?jobId=<%=job.getId()%>"
-                               class="btn btn-sm btn-danger"
-                               title="Deactivate Job"
-                               onclick="return confirm('Are you sure you want to deactivate this job?')">
-                                <i class="fas fa-times-circle me-1"></i>Deactivate
+                               class="btn btn-sm <%=job.getStatus().equals("active")?"btn-danger":"btn-success"%>"
+                               title="Deactivate Job">
+                                <i class="fas fa-times-circle me-1"></i><%=job.getStatus().equals("active")?"Deactivate":"Activate"%>
                             </a>
-                            <%
-                            } else {
-                            %>
-                            <a href="ToggleJobStatusServlet?jobId=<%=job.getId()%>"
-                               class="btn btn-sm btn-success"
-                               title="Activate Job"
-                               onclick="return confirm('Are you sure you want to activate this job?')">
-                                <i class="fas fa-check-circle me-1"></i>Activate
-                            </a>
-                            <%
-                                }
-                            %>
+
                         </div>
                     </td>
                 </tr>
@@ -283,7 +269,7 @@
         <div colspan="4" class="text-center text-white py-5">
             <i class="fas fa-inbox fa-3x mb-3 text-muted"></i>
             <p class="fs-5 mb-0">No job listings found</p>
-            <p class="text-muted">Post your first job to see it here</p>
+            <p class="text-white">Post your first job to see it here</p>
         </div>
 
     <%

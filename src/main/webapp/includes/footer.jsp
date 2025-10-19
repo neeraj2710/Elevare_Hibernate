@@ -3,7 +3,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-6">
-                <h5><i class="fas fa-brain me-2"></i>HireSense</h5>
+                <h5><i class="fas fa-brain me-2"></i><%=application.getAttribute("appName")%></h5>
                 <p>Transforming the way companies hire talent with intelligent solutions.</p>
             </div>
             <div class="col-md-6">
@@ -18,7 +18,13 @@
         </div>
         <hr class="my-4">
         <div class="text-center">
-            <p>&copy; 2024 HireSense. All rights reserved. Made by Neeraj Wadhwaney</p>
+            <p>
+                &copy; 2024 <%=application.getAttribute("appName")%>. All rights reserved. Made by
+                <a href="https://drive.google.com/file/d/1SyvOVwS9o7lNuwX3raMwVTUSFAEfW2DN/view?usp=sharing"
+                   class="text-light text-decoration-none">
+                    Neeraj Wadhwaney
+                </a>
+            </p>
         </div>
     </div>
 </footer>
