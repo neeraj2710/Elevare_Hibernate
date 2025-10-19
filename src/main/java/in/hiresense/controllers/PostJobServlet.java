@@ -54,6 +54,7 @@ public class PostJobServlet extends HttpServlet {
 
         try{
             boolean result = JobServices.postJob(job);
+            System.out.println(result);
             if(result) response.sendRedirect("EmployerDashboardServlet?success=1");
             else response.sendRedirect("EmployerDashboardServlet?error=1");
         } catch (Exception e) {

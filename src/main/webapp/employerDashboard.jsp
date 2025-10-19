@@ -15,7 +15,7 @@
           integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </head>
 <body>
@@ -146,7 +146,7 @@
                 <div class="col-md-3">
                     <label class="form-label">Status Filter</label>
                     <select name="status" class="form-select">
-                        <option value="" disabled selected>All Status</option>
+                        <option value="" selected>All Status</option>
                         <option value="active" ${param.status == 'active' ? 'selected' : ''}>✅ Active</option>
                         <option value="inactive" ${param.status == 'inactive' ? 'selected' : ''}>⏸️ Inactive</option>
                     </select>
@@ -171,13 +171,14 @@
 
     <%
         List<JobPojo> jobList = (List<JobPojo>) request.getAttribute("jobList");
+        if (jobList != null && !jobList.isEmpty()) {
     %>
 
     <!-- manage job listing table -->
     <div class="admin-card p-4 mb-4">
         <div class="d-flex justify-content-between align-items-center mb-4">
             <h3 class="text-white mb-0">
-                <i class="fas fa-briefcase me-2"></i>Manage Job Listings
+                <i class="fas fa-briefcase me-2"></i><%=jobList.get(0).getCompany()%>'s Posted Jobs
             </h3>
             <span class="badge bg-primary fs-6 px-3 py-2">
                 <i class="fas fa-list me-2"></i><%=jobList != null ? jobList.size() : 0%> Jobs
@@ -204,7 +205,7 @@
                 </thead>
                 <tbody>
                 <%
-                    if (jobList != null && !jobList.isEmpty()) {
+
                         for (int i = 0; i < jobList.size(); i++) {
                             JobPojo job = jobList.get(i);
                             String rowClass = (i % 2 == 0) ? "job-row" : "job-row bg-dark";
@@ -215,8 +216,8 @@
                         <%=job.getTitle()%>
                     </td>
                     <td class="text-center">
-                        <span class="badge bg-info text-dark fs-6 px-3 py-2">
-                            <i class="fas fa-user-friends me-1"></i>
+                        <span class="badge text-dark fw-semibold fs-6 px-3 py-2">
+                            <i class="fas fa-user-friends me-1 text-info"></i>
                             <%=job.getApplicantCount()%>
                         </span>
                     </td>
@@ -224,14 +225,14 @@
                         <%
                             if (job.getStatus().equals("active")) {
                         %>
-                        <span class="badge bg-success fs-6 px-3 py-2">
-                            <i class="fas fa-check-circle me-1"></i>Active
+                        <span class="badge text-dark fw-semibold fs-6 px-3 py-2">
+                            <i class="fas fa-check-circle me-1 text-success"></i>Active
                         </span>
                         <%
                         } else {
                         %>
-                        <span class="badge bg-secondary fs-6 px-3 py-2">
-                            <i class="fas fa-pause-circle me-1"></i>Inactive
+                        <span class="badge text-dark fw-semibold fs-6 px-3 py-2">
+                            <i class="fas fa-pause-circle me-1 text-danger"></i>Inactive
                         </span>
                         <%
                             }
@@ -268,26 +269,58 @@
                         </div>
                     </td>
                 </tr>
-                <%
+                    <%
                         }
-                    } else {
-                %>
-                <tr>
-                    <td colspan="4" class="text-center text-white py-5">
-                        <i class="fas fa-inbox fa-3x mb-3 text-muted"></i>
-                        <p class="fs-5 mb-0">No job listings found</p>
-                        <p class="text-muted">Post your first job to see it here</p>
-                    </td>
-                </tr>
-                <%
-                    }
-                %>
+                    %>
                 </tbody>
             </table>
         </div>
     </div>
+    <%
+    } else {
+    %>
+
+        <div colspan="4" class="text-center text-white py-5">
+            <i class="fas fa-inbox fa-3x mb-3 text-muted"></i>
+            <p class="fs-5 mb-0">No job listings found</p>
+            <p class="text-muted">Post your first job to see it here</p>
+        </div>
+
+    <%
+        }
+    %>
     <!-- manage job listing table ends -->
 </main>
+
+<%
+    String success = request.getParameter("success");
+    if("1".equals(success)){
+%>
+<script>
+    Swal.fire({
+        title: "Job Posted!",
+        text: "Your job has been successfully posted!",
+        timer: 2000,
+        icon: "success",
+        showConfirmButton: false
+    });
+</script>
+<%
+    }
+    String error = request.getParameter("error");
+    if("1".equals(error)){
+%>
+<script>
+    Swal.fire({
+        title: "Failed!",
+        text: "Something went wrong! Please try again",
+        icon: "error",
+        confirmButtonText: "Okay"
+    });
+</script>
+<%
+    }
+%>
 
 <%@include file="includes/footer.jsp" %>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"

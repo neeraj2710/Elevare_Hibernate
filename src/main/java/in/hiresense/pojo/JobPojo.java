@@ -7,7 +7,8 @@ import java.util.Date;
 @Table(name = "jobs")
 public class JobPojo {
     @Id
-    @Column(name = "id", insertable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private int id;
     @Column(name = "title")
     private String title;
