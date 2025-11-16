@@ -1,10 +1,22 @@
 package in.hiresense.pojo;
 
+import jakarta.persistence.*;
+
+
+@Entity
+@Table(name = "resume_analysis_logs")
 public class ResumeAnalysisLogsPojo {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
+    @Column(name = "user_id")
     private int userId;
+    @Column(name = "result_json")
     private String jsonResult;
+    @Column(name = "created_at", insertable = false)
     private String createdAt;
+
 
     public ResumeAnalysisLogsPojo(int id, int userId, String jsonResult, String createdAt) {
         this.id = id;

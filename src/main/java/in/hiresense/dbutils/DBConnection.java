@@ -10,6 +10,7 @@ public class DBConnection {
         config.addAnnotatedClasses(in.hiresense.pojo.JobPojo.class);
         config.addAnnotatedClasses(in.hiresense.pojo.UserPojo.class);
         config.addAnnotatedClasses(in.hiresense.pojo.ApplicationPojo.class);
+        config.addAnnotatedClasses(in.hiresense.pojo.ResumeAnalysisLogsPojo.class);
         config.configure();
         sf = config.buildSessionFactory();
     }

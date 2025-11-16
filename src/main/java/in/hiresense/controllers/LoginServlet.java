@@ -47,7 +47,7 @@ public class LoginServlet extends HttpServlet {
                         response.sendRedirect("EmployerDashboardServlet");
                         break;
                     default:
-                        response.sendRedirect("userDashboard.jsp");
+                        response.sendRedirect("UserDashboardServlet");
                 }
             }else {
                 request.setAttribute("error", "Invalid credentials or account is blocked");
