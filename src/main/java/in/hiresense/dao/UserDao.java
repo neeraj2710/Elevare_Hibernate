@@ -31,9 +31,42 @@ public class UserDao {
         return query.list();
     }
 
-    public static void updateStatus(Session s,int userId,String status)throws Exception{
+    public static String updateStatus(Session s,int userId,String status)throws Exception{
             UserPojo user = s.find(UserPojo.class, userId);
             user.setStatus(status);
-            s.merge(user);
+            UserPojo p = s.merge(user);
+            return p.getStatus();
+    }
+
+    public static List<UserPojo> getFilteredUsers(Session s, String search, String role, String status) throws Exception {
+        StringBuilder hql = new StringBuilder("FROM UserPojo WHERE role != 'admin'");
+
+        // Dynamic filters
+        if (search != null && !search.trim().isEmpty()) {
+            hql.append(" AND (name LIKE :search OR email LIKE :search)");
+        }
+        if (role != null && !role.trim().isEmpty() && !role.equalsIgnoreCase("all")) {
+            hql.append(" AND role = :role");
+        }
+        if (status != null && !status.trim().isEmpty() && !status.equalsIgnoreCase("all")) {
+            hql.append(" AND status = :status");
+        }
+
+        hql.append(" ORDER BY createdAt DESC");
+
+        Query<UserPojo> query = s.createQuery(hql.toString(), UserPojo.class);
+
+        // Set dynamic parameters
+        if (search != null && !search.trim().isEmpty()) {
+            query.setParameter("search", "%" + search.trim() + "%");
+        }
+        if (role != null && !role.trim().isEmpty() && !role.equalsIgnoreCase("all")) {
+            query.setParameter("role", role);
+        }
+        if (status != null && !status.trim().isEmpty() && !status.equalsIgnoreCase("all")) {
+            query.setParameter("status", status);
+        }
+
+        return query.list();
     }
 }

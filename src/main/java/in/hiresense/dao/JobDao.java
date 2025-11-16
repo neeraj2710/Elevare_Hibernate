@@ -53,15 +53,36 @@ public class JobDao {
         return qry.getResultList();
     }
 
-    public static List<JobPojo> getAllJobsWithEmployerAndApplicationCount(Query qry) {
-        List<JobPojo> jobList = new ArrayList<>();
-        List<Object[]> result = qry.getResultList();
-        for(Object[] res : result){
-            JobPojo job = (JobPojo) res[0];
-            Long applicantCount = (Long) res[1];
+//    public static List<JobPojo> getAllJobsWithEmployerAndApplicationCount(Query qry) {
+//        List<JobPojo> jobList = new ArrayList<>();
+//        List<Object[]> result = qry.getResultList();
+//        for(Object[] res : result){
+//            JobPojo job = (JobPojo) res[0];
+//            Long applicantCount = (Long) res[1];
+//            job.setApplicantCount(applicantCount.intValue());
+//            jobList.add(job);
+//        }
+//        return jobList;
+//    }
+
+    public static List<JobPojo> getAllJobsWithEmployerAndApplicantCount(Session s) throws Exception {
+        String hql = "SELECT j, " +
+                     "(SELECT COUNT(a) FROM ApplicationPojo a WHERE a.jobId = j.id) " +
+                     "FROM JobPojo j";
+
+        Query<Object[]> query = s.createQuery(hql, Object[].class);
+        List<Object[]> results = query.getResultList();
+
+        List<JobPojo> jobs = new ArrayList<>();
+        for (Object[] result : results) {
+            JobPojo job = (JobPojo) result[0];
+            Long applicantCount = (Long) result[1];
             job.setApplicantCount(applicantCount.intValue());
-            jobList.add(job);
+            jobs.add(job);
         }
-        return jobList;
+
+        return jobs;
     }
+
+
 }

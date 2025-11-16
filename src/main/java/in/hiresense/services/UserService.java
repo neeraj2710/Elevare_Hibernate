@@ -66,13 +66,14 @@ public class UserService {
         }
     }
 
-    public static void updateStatus(int id, String status)throws Exception{
+    public static String updateStatus(int id, String status)throws Exception{
         Session s = null;
         Transaction t = null;
+        String result = null;
         try{
             s = DBConnection.getDBSession().openSession();
             t = s.beginTransaction();
-            UserDao.updateStatus(s,id, status);
+            result = UserDao.updateStatus(s,id, status);
             t.commit();
         }catch (Exception e) {
             t.rollback();
@@ -80,6 +81,22 @@ public class UserService {
             throw e;
         }finally{
             if(s!=null) s.close();
+            return result;
+        }
+    }
+
+    public static List<UserPojo> getFilteredUsers(String search, String role, String status) throws Exception {
+        Session s = null;
+        List<UserPojo> list = null;
+        try{
+            s = DBConnection.getDBSession().openSession();
+            list = UserDao.getFilteredUsers(s, search, role, status);
+        }catch (Exception e) {
+            System.out.println("Error in UserService: "+e.getMessage());
+            e.printStackTrace();
+        }finally{
+            if(s!=null) s.close();
+            return list;
         }
     }
 }

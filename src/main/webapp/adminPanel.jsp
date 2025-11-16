@@ -1,4 +1,6 @@
-<%--
+<%@ page import="in.hiresense.pojo.UserPojo" %>
+<%@ page import="java.util.List" %>
+<%@ page import="in.hiresense.pojo.JobPojo" %><%--
   Created by IntelliJ IDEA.
   User: neera
   Date: 9/16/2025
@@ -8,25 +10,31 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>HireSense-AdminPanel</title>
+    <title>AdminPanel | <%=application.getAttribute("appName")%></title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 <%@include file="includes/header.jsp"%>
-
+<%
+    if(session == null || session.getAttribute("userId") == null || !session.getAttribute("userRole").equals("admin")){
+        response.sendRedirect("login.jsp");
+        return;
+    }
+%>
 <main class="container py-5 mt-5">
     <h2 class="mb-4 text-white">
-        <i class="fas fa-crown me-2"></i>Admin Dashboard
+        <i class="fas fa-crown me-2"></i>Welcome, <%= session.getAttribute("userName")%>
     </h2>
 
-    <!-- filter section starts -->
+    <!-- the filter section starts -->
     <div class="admin-filter-card p-4 mb-4">
         <h5 class="text-white mb-3">
             <i class="fas fa-filter me-2"></i>Filter Users
         </h5>
-        <form action="#" method="get">
+        <form action="AdminPanelServlet" method="get">
             <div class="row g-2">
                 <div class="col-md-4">
                     <input
@@ -34,20 +42,21 @@
                             name="search"
                             class="form-control admin-input"
                             placeholder="Search by name or email"
+                            value = "${param.search}"
                     />
                 </div>
                 <div class="col-md-3">
                     <select name="role" class="form-select admin-input" id="">
                         <option value="" selected>All roles</option>
-                        <option value="employer">Employer</option>
-                        <option value="user">User</option>
+                        <option value="employer" ${param.role == 'employer'? 'selected' : ''}>Employer</option>
+                        <option value="user" ${param.role == 'user'? 'selected' : ''}>User</option>
                     </select>
                 </div>
                 <div class="col-md-2">
                     <select name="status" class="form-select admin-input" id="">
                         <option value="" selected>All status</option>
-                        <option value="employer">Active</option>
-                        <option value="user">Blocked</option>
+                        <option value="active" ${param.status == 'active'? 'selected' : ''}>Active</option>
+                        <option value="blocked" ${param.role == 'blocked'? 'selected' : ''}>Blocked</option>
                     </select>
                 </div>
                 <div class="col-md-3">
@@ -77,25 +86,46 @@
                 </tr>
                 </thead>
                 <tbody>
+                <%
+                    List<UserPojo> userList = (List<UserPojo>) request.getAttribute("userList");
+                    if(userList != null && !userList.isEmpty()){
+                        for(UserPojo u : userList){
+                %>
                 <tr>
-                    <td class="text-white">Neeraj</td>
-                    <td class="text-white">neerajwadhwaney2003@gmail.com</td>
-                    <td class="text-white">Employer</td>
-                    <td class="text-white">Active</td>
+                    <td class="text-white"><%=u.getName()%></td>
+                    <td class="text-white"><%=u.getEmail()%></td>
+                    <td class="text-white"><%=u.getRole()%></td>
+                    <td class="text-white"><%=u.getStatus()%></td>
                     <td>
-                        <a href="#" class="btn btn-danger btn-sm">
+                        <%
+                            if(u.getStatus().equals("active")){
+                        %>
+                        <a href="UpdateUserStatusServlet?userId=<%=u.getId()%>&status=blocked" class="btn btn-danger btn-sm">
                             <i class="fas fa-ban me-1"></i>Block
                         </a>
-                        <a href="#" class="btn btn-success btn-sm">
+                        <%
+                            }else{
+                        %>
+                        <a href="UpdateUserStatusServlet?userId=<%=u.getId()%>&status=active" class="btn btn-success btn-sm">
                             <i class="fas fa-check me-1"></i>Unblock
                         </a>
+                        <%
+                            }
+                        %>
                     </td>
                 </tr>
+                <%
+                        }
+                    }else{
+                %>
                 <tr>
                     <td colspan="5" class="text-center text-warning">
                         <i class="fas fa-exclamation-triangle me-2"></i>No Users found
                     </td>
                 </tr>
+                <%
+                    }
+                %>
                 </tbody>
             </table>
         </div>
@@ -118,21 +148,33 @@
                 </tr>
                 </thead>
                 <tbody>
+                <%
+                    List<JobPojo> jobList = (List<JobPojo>) request.getAttribute("jobList");
+                    if(jobList != null && !jobList.isEmpty()){
+                        for(JobPojo j : jobList){
+                %>
                 <tr>
-                    <td class="text-white">SDE</td>
-                    <td class="text-white">Google</td>
-                    <td class="text-white">1098</td>
+                    <td class="text-white"><%=j.getTitle()%></td>
+                    <td class="text-white"><%=j.getCompany()%></td>
+                    <td class="text-white"><%=j.getVacancies()%></td>
                     <td>
                         <a href="#" class="btn btn-danger btn-sm">
                             <i class="fas fa-trash me-1"></i>Remove
                         </a>
                     </td>
                 </tr>
+                <%
+                    }
+                }else{
+                %>
                 <tr>
                     <td colspan="4" class="text-center text-warning">
                         <i class="fas fa-exclamation-triangle me-2"></i>No Job Listings found
                     </td>
                 </tr>
+                <%
+                    }
+                %>
                 </tbody>
             </table>
         </div>
@@ -142,5 +184,16 @@
 
 <%@include file="includes/footer.jsp"%>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+<script>
+
+    <%
+        if("1".equals(request.getAttribute("userSuccess"))){
+    %>
+    Swal.fire({icon: 'success', title: 'User Status Updated Successfully', showConfirmButton: false, timer: 1500})
+    <%
+        }
+    %>
+
+</script>
 </body>
 </html>

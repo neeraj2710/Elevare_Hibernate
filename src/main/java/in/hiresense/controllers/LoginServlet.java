@@ -39,9 +39,10 @@ public class LoginServlet extends HttpServlet {
                 session.setAttribute("userId", user.getId());
                 session.setAttribute("userName", user.getName());
                 session.setAttribute("userRole", user.getRole());
+                System.out.println(user.getRole());
                 switch (user.getRole()){
                     case "admin":
-                        response.sendRedirect("adminPanel.jsp");
+                        response.sendRedirect("AdminPanelServlet");
                         break;
                     case "employer":
                         response.sendRedirect("EmployerDashboardServlet");

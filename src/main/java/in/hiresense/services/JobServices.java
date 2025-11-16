@@ -1,6 +1,7 @@
 package in.hiresense.services;
 
 import in.hiresense.dao.JobDao;
+import in.hiresense.dao.UserDao;
 import in.hiresense.dbutils.DBConnection;
 import in.hiresense.pojo.JobPojo;
 import org.hibernate.Session;
@@ -185,23 +186,39 @@ public class JobServices {
         }
     }
 
-    public static List<JobPojo> getAllJobsWithEmployerAndApplicationCount()throws Exception{
+//    public static List<JobPojo> getAllJobsWithEmployerAndApplicationCount()throws Exception{
+//        Session s = null;
+//        List<JobPojo> jobList = new ArrayList<>();
+//        try{
+//
+//            s = DBConnection.getDBSession().openSession();
+//            String hql = "SELECT j,(SELECT COUNT(a) FROM ApplicationPojo a WHERE a.jobId = j.id) FROM JobPojo j";
+//
+//            Query qry = s.createQuery(hql);
+//            jobList = JobDao.getAllJobsWithEmployerAndApplicationCount(qry);
+//        } catch (Exception e) {
+//            System.out.println("Error in JobService: "+e.getMessage());
+//            e.printStackTrace();
+//            throw e;
+//        }finally {
+//            if(s != null) s.close();
+//            return jobList;
+//        }
+//    }
+
+    public static List<JobPojo> getAllJobsWithEmployerAndApplicantCount() throws Exception {
         Session s = null;
-        List<JobPojo> jobList = new ArrayList<>();
+        List<JobPojo> list = null;
         try{
-
             s = DBConnection.getDBSession().openSession();
-            String hql = "SELECT j,(SELECT COUNT(a) FROM ApplicationPojo a WHERE a.jobId = j.id) FROM JobPojo j";
-
-            Query qry = s.createQuery(hql);
-            jobList = JobDao.getAllJobsWithEmployerAndApplicationCount(qry);
-        } catch (Exception e) {
+            list = JobDao.getAllJobsWithEmployerAndApplicantCount(s);
+        }catch (Exception e) {
             System.out.println("Error in JobService: "+e.getMessage());
             e.printStackTrace();
             throw e;
         }finally {
             if(s != null) s.close();
-            return jobList;
+            return list;
         }
     }
 }
