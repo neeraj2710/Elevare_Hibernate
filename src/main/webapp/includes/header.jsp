@@ -17,6 +17,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="./login.jsp"><i class="fas fa-sign-in-alt me-1"></i>Login</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./chat.jsp"><i class="fas fa-comment me-1"></i>chat</a>
+                </li>
                 <%
                 } // common navbar ends
                 else if (role.equals("user")) { // user navbar starts
@@ -26,6 +29,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="LogoutServlet"><i class="fas fa-sign-out-alt me-1"></i>Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./chat.jsp"><i class="fas fa-comment me-1"></i>chat</a>
                 </li>
                 <%
                 } // user navbar ends
@@ -37,6 +43,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="LogoutServlet"><i class="fas fa-sign-out-alt me-1"></i>Logout</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./chat.jsp"><i class="fas fa-comment me-1"></i>chat</a>
+                </li>
                 <%
                 } // employer navbar ends
                 else if (role.equals("admin")) { // admin navbar starts
@@ -46,6 +55,9 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="LogoutServlet"><i class="fas fa-sign-out-alt me-1"></i>Logout</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./chat.jsp"><i class="fas fa-comment me-1"></i>chat</a>
                 </li>
                 <%
                     }// admin navbar ends
