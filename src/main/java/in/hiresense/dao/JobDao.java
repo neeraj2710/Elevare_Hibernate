@@ -68,7 +68,7 @@ public class JobDao {
     public static List<JobPojo> getAllJobsWithEmployerAndApplicantCount(Session s) throws Exception {
         String hql = "SELECT j, " +
                      "(SELECT COUNT(a) FROM ApplicationPojo a WHERE a.jobId = j.id) " +
-                     "FROM JobPojo j";
+                     "FROM JobPojo j WHERE j.status = 'active'";
 
         Query<Object[]> query = s.createQuery(hql, Object[].class);
         List<Object[]> results = query.getResultList();
@@ -82,6 +82,14 @@ public class JobDao {
         }
 
         return jobs;
+    }
+
+    public static void updateJobStatus(Session s, int jobId)throws Exception{
+        Query<?> q = s.createQuery(
+                "update JobPojo set status = 'inactive'  where id = :id"
+        );
+        q.setParameter("id", jobId);
+        q.executeUpdate();
     }
 
 

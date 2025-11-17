@@ -49,12 +49,12 @@
     <div class="filter-card glass-card p-4 mb-4">
         <h4 class="filter-title mb-3"><i class="fas fa-filter me-2"></i>Filter Applicants</h4>
         <form method="get" action="ViewApplicantsServlet">
-            <input type="hidden" name="jobId" />
+            <input type="hidden" name="jobId" value="<%=job.getId()%>" />
             <div class="row align-items-center">
                 <div class="col-md-4">
                     <label for="status" class="form-label text-white">Filter by Status</label>
                     <select
-                            name="status" class="form-select user-select" onchange="this.form.submit">
+                            name="status" class="form-select user-select" onchange="this.form.submit()">
                         <option value="applied" <%="applied".equals(request.getAttribute("selectedStatus"))?"selected":""%>>
                             Applied
                         <option value="shortlisted" <%="shortlisted".equals(request.getAttribute("selectedStatus"))?"selected":""%>>
@@ -109,17 +109,34 @@
                       class="d-flex gap-2 mt-3">
                     <input type="hidden" name="appId" value="<%=a.getId()%>" /> <input
                         type="hidden" name="jobId" value="<%=a.getJobId()%>" />
+                    <%
+                        if(a.getStatus().equals("applied")){
+                    %>
                     <button type="submit" name="status" value="shortlisted"
                             class="btn btn-success btn-sm">Shortlist</button>
                     <button type="submit" name="status" value="rejected"
                             class="btn btn-danger btn-sm">Reject</button>
+                    <%
+                        } else if (a.getStatus().equals("shortlisted")) {
+                    %>
+                    <button type="submit" name="status" value="rejected"
+                            class="btn btn-danger btn-sm">Reject</button>
+                    <%
+                        }else{
+                    %>
+                    <span class="badge bg-danger-subtle col-md-2 p-2 mt-2">Rejected</span>
+                    <br/>
+                    <%
+                        }
+                    %>
+
                 </form>
                 <form action="" method="get">
                     <input type="hidden" name="userId" value="<%=a.getUserId()%>">
-                    <button type="submit"
+                    <a href="ViewFullDetailsServlet?id=<%=a.getUserId()%>&jobId=<%=a.getJobId()%>"
                             class="btn btn-gradient btn-sm mt-2">
                         <i class="bi bi-eye me-1"></i> View Full Details
-                    </button>
+                    </a>
                 </form>
                 <div class="position-absolute badge bg-primary bottom-0 end-0 p-2 small m-2">
 

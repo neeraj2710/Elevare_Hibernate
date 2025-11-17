@@ -1,5 +1,7 @@
 package in.hiresense.controllers;
 
+import in.hiresense.pojo.JobPojo;
+import in.hiresense.services.JobServices;
 import in.hiresense.services.UserService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -9,6 +11,7 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
+import java.util.List;
 
 @WebServlet(name = "UpdateUserStatusServlet", value = "/UpdateUserStatusServlet")
 public class UpdateUserStatusServlet extends HttpServlet {
@@ -27,15 +30,20 @@ public class UpdateUserStatusServlet extends HttpServlet {
         String status = request.getParameter("status");
 
         try{
+
+            List<JobPojo> jobList = JobServices.getJobsByEmployer(userId, null, null, null);
             String result = UserService.updateStatus(userId, status);
             if(result!=null && result.equals(status)){
+                if(status.equals("blocked")) JobServices.updateJobStatus(jobList);
                 response.sendRedirect("AdminPanelServlet?userSuccess=1");
             }else{
                 response.sendRedirect("AdminPanelServlet?userSuccess=0");
             }
 
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            System.out.println("Error in UpdateUserStatusServlet");
+            e.printStackTrace();
+
         }
     }
 

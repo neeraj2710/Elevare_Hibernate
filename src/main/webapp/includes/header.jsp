@@ -22,30 +22,30 @@
                 else if (role.equals("user")) { // user navbar starts
                 %>
                 <li class="nav-item">
-                    <a class="nav-link" href="./userDashboard.jsp"><i class="fas fa-tachometer-alt me-1"></i>Dashboard</a>
+                    <a class="nav-link" href="UserDashboardServlet"><i class="fas fa-tachometer-alt me-1"></i>Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-sign-out-alt me-1"></i>Logout</a>
+                    <a class="nav-link" href="LogoutServlet"><i class="fas fa-sign-out-alt me-1"></i>Logout</a>
                 </li>
                 <%
                 } // user navbar ends
                 else if (role.equals("employer")) { // employer navbar starts
                 %>
                 <li class="nav-item">
-                    <a class="nav-link" href="./employerDashboard.jsp"><i class="fas fa-tachometer-alt me-1"></i>Dashboard</a>
+                    <a class="nav-link" href="EmployerDashboardServlet"><i class="fas fa-tachometer-alt me-1"></i>Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-sign-out-alt me-1"></i>Logout</a>
+                    <a class="nav-link" href="LogoutServlet"><i class="fas fa-sign-out-alt me-1"></i>Logout</a>
                 </li>
                 <%
                 } // employer navbar ends
                 else if (role.equals("admin")) { // admin navbar starts
                 %>
                 <li class="nav-item">
-                    <a class="nav-link" href="./adminPanel.jsp"><i class="fas fa-user-shield me-1"></i>Admin Panel</a>
+                    <a class="nav-link" href="AdminPanelServlet"><i class="fas fa-user-shield me-1"></i>Admin Panel</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-sign-out-alt me-1"></i>Logout</a>
+                    <a class="nav-link" href="LogoutServlet"><i class="fas fa-sign-out-alt me-1"></i>Logout</a>
                 </li>
                 <%
                     }// admin navbar ends

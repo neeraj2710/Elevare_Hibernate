@@ -221,4 +221,20 @@ public class JobServices {
             return list;
         }
     }
+
+    public static void updateJobStatus(List<JobPojo> list) throws Exception {
+        Transaction t = null;
+        try (Session s = DBConnection.getDBSession().openSession()) {
+            t = s.beginTransaction();
+            for(JobPojo job : list){
+                JobDao.updateJobStatus(s, job.getId());
+            }
+            t.commit();
+        } catch (Exception e) {
+            if (t != null) t.rollback();
+            throw new RuntimeException(e);
+        }
+    }
+
+
 }

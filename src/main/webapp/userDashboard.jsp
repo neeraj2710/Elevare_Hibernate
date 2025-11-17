@@ -246,7 +246,7 @@
                         <strong>Vacancies:</strong> <span id="modalVacancies"></span>
                     </p>
                     <p>
-                        <strong>Skills:</strong> <span id="modalSkills"></span>
+                        <strong>Skills:</strong> <span id="modalJobSkills"></span>
                     </p>
                     <p>
                         <strong>Description:</strong> <span id="modalDescription"></span>
@@ -321,7 +321,7 @@
         document.getElementById("modalExperience").innerText = experience;
         document.getElementById("modalPackage").innerText = packageLpa;
         document.getElementById("modalVacancies").innerText = vacancies;
-        document.getElementById("modalSkills").innerText = skills;
+        document.getElementById("modalJobSkills").innerText = skills;
         document.getElementById("modalDescription").innerText = description;
         document.getElementById("modalPostedDate").innerText = posted;
         const jobModalEl = document.getElementById('jobDetailsModal');
