@@ -609,13 +609,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Contact
 
-**Project Maintainer**: Your Name
+**Project Maintainer**: Neeraj Wadhwaney
 
-- Email: your.email@example.com
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
+- Email: neerajwadhwaney2003@gmail.com
+- GitHub: [@neeraj2710](https://github.com/neeraj2710)
+- LinkedIn: [www.linkedin.com/in/neeraj-w](https://linkedin.com/in/neeraj-w)
 
-**Project Link**: [https://github.com/yourusername/elevare](https://github.com/yourusername/elevare)
+**Project Link**: [https://github.com/neeraj2710/Elevare_Hibernate](https://github.com/neeraj2710/Elevare_Hibernate)
 
 ---
 
@@ -631,10 +631,10 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📊 Project Stats
 
-![GitHub stars](https://img.shields.io/github/stars/yourusername/elevare?style=social)
-![GitHub forks](https://img.shields.io/github/forks/yourusername/elevare?style=social)
-![GitHub issues](https://img.shields.io/github/issues/yourusername/elevare)
-![GitHub pull requests](https://img.shields.io/github/issues-pr/yourusername/elevare)
+![GitHub stars](https://img.shields.io/github/stars/neeraj2710/Elevare_Hibernate?style=social)
+![GitHub forks](https://img.shields.io/github/forks/neeraj2710/Elevare_Hibernate?style=social)
+![GitHub issues](https://img.shields.io/github/issues/neeraj2710/Elevare_Hibernate)
+![GitHub pull requests](https://img.shields.io/github/issues-pr/neeraj2710/Elevare_Hibernate)
 
 ---
 
