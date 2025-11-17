@@ -18,6 +18,7 @@
             rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body class="user-dashboard-page">
 <%
@@ -55,6 +56,7 @@
                     <label for="status" class="form-label text-white">Filter by Status</label>
                     <select
                             name="status" class="form-select user-select" onchange="this.form.submit()">
+                        <option value="" selected>Select status</option>
                         <option value="applied" <%="applied".equals(request.getAttribute("selectedStatus"))?"selected":""%>>
                             Applied
                         <option value="shortlisted" <%="shortlisted".equals(request.getAttribute("selectedStatus"))?"selected":""%>>
@@ -105,7 +107,7 @@
                     }
                 %>
 
-                <form method="post" action="UpdateApplicationStatusServlet"
+                <form method="post" action="UpdateApplicationStatus"
                       class="d-flex gap-2 mt-3">
                     <input type="hidden" name="appId" value="<%=a.getId()%>" /> <input
                         type="hidden" name="jobId" value="<%=a.getJobId()%>" />
@@ -124,7 +126,7 @@
                     <%
                         }else{
                     %>
-                    <span class="badge bg-danger-subtle col-md-2 p-2 mt-2">Rejected</span>
+                    <span class="badge bg-danger col-md-2 p-2 mt-2">Rejected</span>
                     <br/>
                     <%
                         }
@@ -162,5 +164,14 @@
 <%@ include file="includes/footer.jsp"%>
 <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    <%
+        if("1".equals(request.getAttribute("update"))){
+    %>
+    Swal.fire({icon: 'success', title: 'Application Status Updated Successfully', showConfirmButton: false, timer: 1500})
+    <%
+        }
+    %>
+</script>
 </body>
 </html>

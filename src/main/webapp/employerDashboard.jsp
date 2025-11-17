@@ -154,7 +154,7 @@
                 <div class="col-md-3">
                     <label class="form-label">Sort By</label>
                     <select name="sort" class="form-select">
-                        <option value="" disabled selected>Sort Options</option>
+                        <option value="" selected>Sort Options</option>
                         <option value="asc" ${param.sort == 'asc' ? 'selected' : ''}>📈 Least Applications</option>
                         <option value="desc" ${param.sort == 'desc' ? 'selected' : ''}>📊 Most Applications</option>
 

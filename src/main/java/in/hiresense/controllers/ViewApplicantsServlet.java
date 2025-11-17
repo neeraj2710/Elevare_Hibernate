@@ -50,7 +50,9 @@ public class ViewApplicantsServlet extends HttpServlet {
             request.setAttribute("job", job);
             request.setAttribute("applicants", applicants);
             request.setAttribute("status", "status");
+            request.setAttribute("update", request.getParameter("update"));
             request.getRequestDispatcher("viewApplicants.jsp").forward(request, response);
+
         } catch (Exception e) {
             throw new ServletException("Unable to fetch applicants or job details");
         }

@@ -58,7 +58,7 @@
 
                 <div class="col-md-2">
                     <select name="experience" class="form-select user-select">
-                        <option value="" selected disabled>Experience</option>
+                        <option value="" selected >Experience</option>
                         <option value="fresher" ${param.experience == 'fresher' ? 'selected':''}>Fresher</option>
                         <option value="0-1 years" ${param.experience == '0-1' ? 'selected':''}>0-1 years</option>
                         <option value="1-2 years" ${param.experience == '1-2' ? 'selected':''}>1-2 years</option>
@@ -70,7 +70,7 @@
 
                 <div class="col-md-2">
                     <select name="packageLpa" class="form-select user-select">
-                        <option value="" selected disabled>Package (LPA)</option>
+                        <option value="" selected >Package (LPA)</option>
                         <option value="1-3 lpa" ${param.packageLpa == '1-3 lpa' ? 'selected':''}>1-3 LPA</option>
                         <option value="3-5 lpa" ${param.packageLpa == '3-5 lpa' ? 'selected':''}>3-5 LPA</option>
                         <option value="5-7 lpa" ${param.packageLpa == '5-7 lpa' ? 'selected':''}>5-7 LPA</option>
@@ -82,7 +82,7 @@
 
                 <div class="col-md-2">
                     <select name="sort" class="form-select user-select">
-                        <option value="" selected disabled>Sort</option>
+                        <option value="" selected>Sort</option>
                         <option value="asc" ${param.sort == 'asc' ? 'selected':''}>Fewest</option>
                         <option value="desc" ${param.sort == 'desc' ? 'selected':''}>Most</option>
                     </select>
