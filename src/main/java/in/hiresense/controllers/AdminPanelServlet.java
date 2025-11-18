@@ -31,10 +31,10 @@ public class AdminPanelServlet extends HttpServlet {
         HttpSession session = request.getSession(false);
         System.out.println("in adminpanel servlet user id :" +session.getAttribute("userId"));
         System.out.println("in adminpanel servlet user role :" +session.getAttribute("userRole"));
-//        if( session.getAttribute("userId") == null || !"admin".equals(session.getAttribute("userRole"))){
-//            response.sendRedirect("login.jsp");
-//            return;
-//        }
+        if( session.getAttribute("userId") == null || !"admin".equals(session.getAttribute("userRole"))){
+            response.sendRedirect("login.jsp");
+            return;
+        }
         int userId = (Integer) session.getAttribute("userId");
         String search = request.getParameter("search");
         String  role = request.getParameter("role");
@@ -50,6 +50,7 @@ public class AdminPanelServlet extends HttpServlet {
             request.setAttribute("userList", userList);
             request.setAttribute("jobList", jobList);
             request.setAttribute("userSuccess", request.getParameter("userSuccess"));
+            request.setAttribute("delete", request.getParameter("delete"));
 
             request.getRequestDispatcher("adminPanel.jsp").forward(request, response);
         } catch (Exception e) {

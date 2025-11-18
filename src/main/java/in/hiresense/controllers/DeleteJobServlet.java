@@ -1,8 +1,6 @@
 package in.hiresense.controllers;
 
-import in.hiresense.pojo.JobPojo;
 import in.hiresense.services.JobServices;
-import in.hiresense.services.UserService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -11,10 +9,9 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
-import java.util.List;
 
-@WebServlet(name = "UpdateUserStatusServlet", value = "/UpdateUserStatusServlet")
-public class UpdateUserStatusServlet extends HttpServlet {
+@WebServlet(name = "DeleteJobServlet", value = "/DeleteJobServlet")
+public class DeleteJobServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         processRequest(request, response);
@@ -26,25 +23,25 @@ public class UpdateUserStatusServlet extends HttpServlet {
     }
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        int userId = Integer.parseInt(request.getParameter("userId"));
-        String status = request.getParameter("status");
-        String role = request.getParameter("role");
+        HttpSession session = request.getSession(false);
+        if( session.getAttribute("userId") == null || !"admin".equals(session.getAttribute("userRole"))){
+            response.sendRedirect("login.jsp");
+            return;
+        }
 
+        int jobId = Integer.parseInt(request.getParameter("jobId"));
         try{
-
-            String result = UserService.updateStatus(userId, status);
-            if(result!=null && result.equals(status)){ // in jdbc only result >=1
-                if(status.equals("blocked") && role.equals("employer")) JobServices.updateJobStatusByEmployer(userId);
-                response.sendRedirect("AdminPanelServlet?userSuccess=1");
+            if(JobServices.deleteJob(jobId)){
+                response.sendRedirect("AdminPanelServlet?delete=1");
             }else{
-                response.sendRedirect("AdminPanelServlet?userSuccess=0");
+                response.sendRedirect("AdminPanelServlet?delete=0");
             }
-
         } catch (Exception e) {
-            System.out.println("Error in UpdateUserStatusServlet");
+            System.out.println("Error in delete job servlet "+e.getMessage());
             e.printStackTrace();
 
         }
+
     }
 
 }

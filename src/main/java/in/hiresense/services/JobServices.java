@@ -222,13 +222,13 @@ public class JobServices {
         }
     }
 
-    public static void updateJobStatus(List<JobPojo> list) throws Exception {
+
+
+    public static void updateJobStatusByEmployer(int empId) throws Exception {
         Transaction t = null;
         try (Session s = DBConnection.getDBSession().openSession()) {
             t = s.beginTransaction();
-            for(JobPojo job : list){
-                JobDao.updateJobStatus(s, job.getId());
-            }
+            JobDao.updateJobStatusByEmployer(s, empId);
             t.commit();
         } catch (Exception e) {
             if (t != null) t.rollback();

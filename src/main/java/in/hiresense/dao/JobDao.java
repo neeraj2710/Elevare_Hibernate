@@ -92,5 +92,13 @@ public class JobDao {
         q.executeUpdate();
     }
 
+    public static void updateJobStatusByEmployer(Session s, int empId)throws Exception{
+        Query<?> q = s.createQuery(
+                "update JobPojo set status = 'inactive'  where employerId = :id"
+        );
+        q.setParameter("id", empId);
+        q.executeUpdate();
+    }
+
 
 }

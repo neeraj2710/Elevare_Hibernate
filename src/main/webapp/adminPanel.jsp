@@ -100,13 +100,13 @@
                         <%
                             if(u.getStatus().equals("active")){
                         %>
-                        <a href="UpdateUserStatusServlet?userId=<%=u.getId()%>&status=blocked" class="btn btn-danger btn-sm">
+                        <a href="UpdateUserStatusServlet?userId=<%=u.getId()%>&status=blocked&role=<%=u.getRole()%>" class="btn btn-danger btn-sm">
                             <i class="fas fa-ban me-1"></i>Block
                         </a>
                         <%
                             }else{
                         %>
-                        <a href="UpdateUserStatusServlet?userId=<%=u.getId()%>&status=active" class="btn btn-success btn-sm">
+                        <a href="UpdateUserStatusServlet?userId=<%=u.getId()%>&status=active&role=<%=u.getRole()%>" class="btn btn-success btn-sm">
                             <i class="fas fa-check me-1"></i>Unblock
                         </a>
                         <%
@@ -156,9 +156,9 @@
                 <tr>
                     <td class="text-white"><%=j.getTitle()%></td>
                     <td class="text-white"><%=j.getCompany()%></td>
-                    <td class="text-white"><%=j.getVacancies()%></td>
+                    <td class="text-white"><%=j.getApplicantCount()%></td>
                     <td>
-                        <a href="#" class="btn btn-danger btn-sm">
+                        <a href="DeleteJobServlet?jobId=<%=j.getId()%>" class="btn btn-danger btn-sm">
                             <i class="fas fa-trash me-1"></i>Remove
                         </a>
                     </td>
@@ -190,6 +190,17 @@
         if("1".equals(request.getAttribute("userSuccess"))){
     %>
     Swal.fire({icon: 'success', title: 'User Status Updated Successfully', showConfirmButton: false, timer: 1500})
+    <%
+        }else{
+    %>
+    Swal.fire({icon: 'error', title: 'User status update Failed', showConfirmButton: false, timer: 1500})
+    <%
+        }
+    %>
+    <%
+        if("1".equals(request.getAttribute("delete"))){
+    %>
+    Swal.fire({icon: 'success', title: 'Job Deleted Successfully', showConfirmButton: false, timer: 1500})
     <%
         }
     %>
