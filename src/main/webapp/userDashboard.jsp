@@ -287,21 +287,35 @@
             })
                 .then((result) => {
                     if (result.isConfirmed) {
-                        const form = document.createElement("form");
-                        form.method = "POST";
-                        form.action = "ApplyJobServlet";
-                        const input1 = document.createElement("input");
-                        input1.type = "hidden";
-                        input1.name = "jobId";
-                        input1.value = jobId;
-                        form.appendChild(input1);
-                        const input2 = document.createElement("input");
-                        input2.type = "hidden";
-                        input2.name = "score";
-                        input2.value = score;
-                        form.appendChild(input2);
-                        document.body.appendChild(form);
-                        form.submit();
+                        Swal.fire({
+                            title: "Apply with same resume", icon:
+                                "question", showCancelButton: true, confirmButtonText: "Yes, Apply",
+                            cancelButtonText: "Upload new"
+                        }).then((result)=>{
+                           if(result.isConfirmed){
+                               const form = document.createElement("form");
+                               form.method = "POST";
+                               form.action = "ApplyJobServlet";
+                               const input1 = document.createElement("input");
+                               input1.type = "hidden";
+                               input1.name = "jobId";
+                               input1.value = jobId;
+                               form.appendChild(input1);
+                               const input2 = document.createElement("input");
+                               input2.type = "hidden";
+                               input2.name = "score";
+                               input2.value = score;
+                               form.appendChild(input2);
+                               document.body.appendChild(form);
+                               form.submit();
+                           }else{
+                               document.getElementById("modalJobId").value = jobId;
+                               document.getElementById("modalSkills").value = skills;
+                               document.getElementById("resumeFile").value = "";
+                               new
+                               bootstrap.Modal(document.getElementById('resumeModal')).show();
+                           }
+                        });
                     }
                 });
         } else {
