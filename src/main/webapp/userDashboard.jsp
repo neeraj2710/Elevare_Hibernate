@@ -1,7 +1,8 @@
 <%@ page import="in.hiresense.pojo.JobPojo" %>
 <%@ page import="java.util.Set" %>
 <%@ page import="java.util.List" %>
-<%@ page import="java.text.SimpleDateFormat" %><%--
+<%@ page import="java.text.SimpleDateFormat" %>
+<%@ page import="java.util.Map" %><%--
   Created by IntelliJ IDEA.
   User: neera
   Date: 9/16/2025
@@ -99,7 +100,7 @@
     <!-- job cards section starts -->
     <%
         List<JobPojo> jobs = (List<JobPojo>) request.getAttribute("jobs");
-        Set<Integer> appliedJobIds = (Set<Integer>) request.getAttribute("appliedJobIds");
+        Map<Integer,String> appliedJobIds = (Map<Integer,String>) request.getAttribute("appliedJobIds");
         boolean resumeUploaded = (boolean) request.getAttribute("resumeUploaded");
         if (jobs != null && !jobs.isEmpty()) {
     %>
@@ -133,9 +134,9 @@
                         </div>
 
                         <%
-                            if (appliedJobIds.contains(job.getId())) {
+                            if (appliedJobIds.containsKey(job.getId())) {
                         %>
-                        <span class="badge bg-success col-md-2 p-2 mt-2">Applied</span>
+                        <span class="badge bg-<%=appliedJobIds.get(job.getId()).equals("rejected")?"danger":"success"%> col-md-2 p-2 mt-2"><%=appliedJobIds.get(job.getId())%></span>
                         <br/>
                         <%
                         } else {

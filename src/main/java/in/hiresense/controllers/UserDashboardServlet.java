@@ -16,9 +16,7 @@ import jakarta.servlet.http.HttpSession;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 @WebServlet(name = "UserDashboardServlet", value = "/UserDashboardServlet")
 public class UserDashboardServlet extends HttpServlet {
@@ -68,9 +66,9 @@ public class UserDashboardServlet extends HttpServlet {
                 }
             }
             List<ApplicationPojo> applicationList = ApplicationService.getApplicationsByUser(userId);
-            Set<Integer> appliedJobIds = new HashSet<>();
+            Map<Integer,String> appliedJobIds = new HashMap<>();
             for(ApplicationPojo app : applicationList){
-                appliedJobIds.add(app.getJobId());
+                appliedJobIds.put(app.getJobId(),app.getStatus());
             }
             request.setAttribute("jobs", jobs);
             request.setAttribute("appliedJobIds", appliedJobIds);

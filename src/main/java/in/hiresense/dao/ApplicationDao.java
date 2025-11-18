@@ -1,6 +1,7 @@
 package in.hiresense.dao;
 
 import in.hiresense.pojo.ApplicationPojo;
+import jakarta.ws.rs.core.Application;
 import org.hibernate.Session;
 import org.hibernate.query.Query;
 
@@ -22,5 +23,9 @@ public class ApplicationDao {
 
     public static boolean updateStatus(Query query)throws Exception{
         return query.executeUpdate()>0;
+    }
+
+    public static ApplicationPojo findById(Session s,int appId)throws Exception{
+        return s.find(ApplicationPojo.class, appId);
     }
 }

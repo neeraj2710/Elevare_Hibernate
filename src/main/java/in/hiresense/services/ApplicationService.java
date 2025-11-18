@@ -89,4 +89,17 @@ public class ApplicationService {
         }
     }
 
+    public static ApplicationPojo getApplicationById(int appId)throws Exception{
+        ApplicationPojo app = null;
+        try(Session s = DBConnection.getDBSession().openSession()){
+            app = ApplicationDao.findById(s, appId);
+        }catch (Exception e) {
+            System.out.println("Error in ApplicationService getApplicationById() : " + e.getMessage());
+            e.printStackTrace();
+        } finally {
+            return app;
+        }
+
+    }
+
 }

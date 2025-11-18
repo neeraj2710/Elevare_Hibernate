@@ -42,6 +42,18 @@ public class MailUtil {
                 + "Team Elevare";
         sendTextEmail(toEmail, subject, body);
     }
+    public static void applicationShortlistMail(String name, String toEmail, String jobTitle, String company) throws MessagingException {
+        String subject = "🔔 New Application Received: " + jobTitle;
+
+        String body = "Dear " + name + ",\n\n"
+                + "You have received a new job application.\n\n"
+                + "Applicant Name: " +company + "\n"
+                + "Applied Position: " + jobTitle + "\n\n"
+                + "Please review the candidate's details at your earliest convenience.\n\n"
+                + "Best regards,\n"
+                + "Team Elevare";
+        sendTextEmail(toEmail, subject, body);
+    }
 
     public static void main(String[] args) {
         try {

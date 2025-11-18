@@ -1,6 +1,10 @@
 package in.hiresense.controllers;
 
+import in.hiresense.pojo.JobPojo;
+import in.hiresense.pojo.UserPojo;
 import in.hiresense.services.ApplicationService;
+import in.hiresense.services.JobServices;
+import in.hiresense.services.UserService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -37,6 +41,13 @@ public class UpdateApplicationStatusServlet extends HttpServlet {
             boolean result = ApplicationService.updateApplicationStatus(appId, status);
             request.setAttribute("jobId", jobId);
             if(result){
+                JobPojo job = JobServices.getJobById(jobId);
+                UserPojo user = UserService.getUserById(ApplicationService.getApplicationById(appId).getUserId());
+                if(status.equals("shortlisted")){
+                    // mail for shortlist
+                }else{
+                    // mail for rejection
+                }
                 request.getRequestDispatcher("ViewApplicantsServlet?update=1&jobId="+jobId).forward(request, response);
             }else {
                 request.getRequestDispatcher("ViewApplicantsServlet?update=0&jobId="+jobId).forward(request, response);
