@@ -1,0 +1,904 @@
+{
+  "data": {
+    "name": {
+      "raw": "Neeraj Wadhwaney",
+      "last": "Wadhwaney",
+      "first": "Neeraj",
+      "title": "",
+      "middle": ""
+    },
+    "emails": [
+      "neerajwadhwaney2003@gmail.com"
+    ],
+    "skills": [
+      {
+        "id": 1181381338,
+        "name": "Air Quality",
+        "type": "specialized_skill",
+        "emsiId": "KS120CC6CSHSXNVW82TX",
+        "sources": [
+          {
+            "section": "Projects",
+            "position": null,
+            "workExperienceId": null
+          }
+        ],
+        "lastUsed": null,
+        "numberOfMonths": null
+      },
+      {
+        "id": 1181381332,
+        "name": "Application Programming Interface (API)",
+        "type": "specialized_skill",
+        "emsiId": "KS1208P6ZMZ4N872Y7X5",
+        "sources": [
+          {
+            "section": "Projects",
+            "position": null,
+            "workExperienceId": null
+          }
+        ],
+        "lastUsed": null,
+        "numberOfMonths": null
+      },
+      {
+        "id": 1181381345,
+        "name": "Cascading Style Sheets (CSS)",
+        "type": "specialized_skill",
+        "emsiId": "KS121F45VPV8C9W3QFYH",
+        "sources": [
+          {
+            "section": "Projects",
+            "position": null,
+            "workExperienceId": null
+          },
+          {
+            "section": "Skills/Interests/Languages",
+            "position": null,
+            "workExperienceId": null
+          }
+        ],
+        "lastUsed": null,
+        "numberOfMonths": null
+      },
+      {
+        "id": 1181381326,
+        "name": "Classification And Regression Tree (CART)",
+        "type": "specialized_skill",
+        "emsiId": "KS121F17945FMQSZZPC6",
+        "sources": [
+          {
+            "section": "Projects",
+            "position": null,
+            "workExperienceId": null
+          }
+        ],
+        "lastUsed": null,
+        "numberOfMonths": null
+      },
+      {
+        "id": 1181381357,
+        "name": "Collections",
+        "type": "common_skill",
+        "emsiId": "KS7G4YT72YHJ3BVJ4P56",
+        "sources": [
+          {
+            "section": "Skills/Interests/Languages",
+            "position": null,
+            "workExperienceId": null
+          }
+        ],
+        "lastUsed": null,
+        "numberOfMonths": null
+      },
+      {
+        "id": 1181381340,
+        "name": "Deserialization",
+        "type": "specialized_skill",
+        "emsiId": "KST8RAW2GMV1KOYZVFNC",
+        "sources": [
+          {
+            "section": "WorkExperience",
+            "position": 0,
+            "workExperienceId": 204789527
+          }
+        ],
+        "lastUsed": "2024-07-01",
+        "numberOfMonths": 1
+      },
+      {
+        "id": 1181381355,
+        "name": "Firmware",
+        "type": "specialized_skill",
+        "emsiId": "KS123Z864ZW0NFMTV4W3",
+        "sources": [
+          {
+            "section": "Projects",
+            "position": null,
+            "workExperienceId": null
+          }
+        ],
+        "lastUsed": null,
+        "numberOfMonths": null
+      },
+      {
+        "id": 1181381352,
+        "name": "Food Delivery",
+        "type": "specialized_skill",
+        "emsiId": "KSYVPLS8WQGXS3GG4YJM",
+        "sources": [
+          {
+            "section": "Projects",
+            "position": null,
+            "workExperienceId": null
+          }
+        ],
+        "lastUsed": null,
+        "numberOfMonths": null
+      },
+      {
+        "id": 1181381335,
+        "name": "Full Stack Development",
+        "type": "specialized_skill",
+        "emsiId": "ES3937EEC3D5D7345412",
+        "sources": [
+          {
+            "section": "Achievements",
+            "position": null,
+            "workExperienceId": null
+          }
+        ],
+        "lastUsed": null,
+        "numberOfMonths": null
+      },
+      {
+        "id": 1181381339,
+        "name": "Hibernate (Java)",
+        "type": "specialized_skill",
+        "emsiId": "KS124PR62MV42B5C9S9F",
+        "sources": [
+          {
+            "section": "Projects",
+            "position": null,
+            "workExperienceId": null
+          },
+          {
+            "section": "Skills/Interests/Languages",
+            "position": null,
+            "workExperienceId": null
+          }
+        ],
+        "lastUsed": null,
+        "numberOfMonths": null
+      },
+      {
+        "id": 1181381344,
+        "name": "HyperText Markup Language (HTML)",
+        "type": "specialized_skill",
+        "emsiId": "KS1200578T5QCYT0Z98G",
+        "sources": [
+          {
+            "section": "Projects",
+            "position": null,
+            "workExperienceId": null
+          },
+          {
+            "section": "Skills/Interests/Languages",
+            "position": null,
+            "workExperienceId": null
+          }
+        ],
+        "lastUsed": null,
+        "numberOfMonths": null
+      },
+      {
+        "id": 1181381346,
+        "name": "IntelliJ IDEA",
+        "type": "specialized_skill",
+        "emsiId": "KS1257Q76213ZQ4YBNVD",
+        "sources": [
+          {
+            "section": "Skills/Interests/Languages",
+            "position": null,
+            "workExperienceId": null
+          }
+        ],
+        "lastUsed": null,
+        "numberOfMonths": null
+      },
+      {
+        "id": 1181381325,
+        "name": "Java (Programming Language)",
+        "type": "specialized_skill",
+        "emsiId": "KS120076FGP5WGWYMP0F",
+        "sources": [
+          {
+            "section": "Projects",
+            "position": null,
+            "workExperienceId": null
+          },
+          {
+            "section": "WorkExperience",
+            "position": 1,
+            "workExperienceId": 204789528
+          },
+          {
+            "section": "Skills/Interests/Languages",
+            "position": null,
+            "workExperienceId": null
+          },
+          {
+            "section": "Achievements",
+            "position": null,
+            "workExperienceId": null
+          },
+          {
+            "section": "WorkExperience",
+            "position": 0,
+            "workExperienceId": 204789527
+          }
+        ],
+        "lastUsed": "2024-07-01",
+        "numberOfMonths": 2
+      },
+      {
+        "id": 1181381359,
+        "name": "JavaFX",
+        "type": "specialized_skill",
+        "emsiId": "KS125H45VVV58MWVNGRT",
+        "sources": [
+          {
+            "section": "WorkExperience",
+            "position": 0,
+            "workExperienceId": 204789527
+          }
+        ],
+        "lastUsed": "2024-07-01",
+        "numberOfMonths": 1
+      },
+      {
+        "id": 1181381328,
+        "name": "JavaScript (Programming Language)",
+        "type": "specialized_skill",
+        "emsiId": "KS1200771D9CR9LB4MWW",
+        "sources": [
+          {
+            "section": "Projects",
+            "position": null,
+            "workExperienceId": null
+          },
+          {
+            "section": "Skills/Interests/Languages",
+            "position": null,
+            "workExperienceId": null
+          }
+        ],
+        "lastUsed": null,
+        "numberOfMonths": null
+      },
+      {
+        "id": 1181381330,
+        "name": "Job Descriptions",
+        "type": "specialized_skill",
+        "emsiId": "ES36B436F09327200286",
+        "sources": [
+          {
+            "section": "Projects",
+            "position": null,
+            "workExperienceId": null
+          }
+        ],
+        "lastUsed": null,
+        "numberOfMonths": null
+      },
+      {
+        "id": 1181381336,
+        "name": "Junit",
+        "type": "specialized_skill",
+        "emsiId": "KS125LJ6SDQF89N2J4ZP",
+        "sources": [
+          {
+            "section": "Skills/Interests/Languages",
+            "position": null,
+            "workExperienceId": null
+          }
+        ],
+        "lastUsed": null,
+        "numberOfMonths": null
+      },
+      {
+        "id": 1181381337,
+        "name": "Logging (Construction)",
+        "type": "specialized_skill",
+        "emsiId": "KS68281768ZW4FDJZJSY",
+        "sources": [
+          {
+            "section": "Projects",
+            "position": null,
+            "workExperienceId": null
+          }
+        ],
+        "lastUsed": null,
+        "numberOfMonths": null
+      },
+      {
+        "id": 1181381349,
+        "name": "Management",
+        "type": "common_skill",
+        "emsiId": "KS1218W78FGVPVP2KXPX",
+        "sources": [
+          {
+            "section": "WorkExperience",
+            "position": 1,
+            "workExperienceId": 204789528
+          }
+        ],
+        "lastUsed": "2023-03-01",
+        "numberOfMonths": 1
+      },
+      {
+        "id": 1181381343,
+        "name": "Multithreading",
+        "type": "specialized_skill",
+        "emsiId": "KS7G0675VN0M1HML97W0",
+        "sources": [
+          {
+            "section": "WorkExperience",
+            "position": 0,
+            "workExperienceId": 204789527
+          }
+        ],
+        "lastUsed": "2024-07-01",
+        "numberOfMonths": 1
+      },
+      {
+        "id": 1181381333,
+        "name": "MySQL",
+        "type": "specialized_skill",
+        "emsiId": "KS126QY605N7YVHFYCTW",
+        "sources": [
+          {
+            "section": "Projects",
+            "position": null,
+            "workExperienceId": null
+          }
+        ],
+        "lastUsed": null,
+        "numberOfMonths": null
+      },
+      {
+        "id": 1181381358,
+        "name": "NetBeans",
+        "type": "specialized_skill",
+        "emsiId": "KS126XV67YHQVRJJP2D6",
+        "sources": [
+          {
+            "section": "Skills/Interests/Languages",
+            "position": null,
+            "workExperienceId": null
+          }
+        ],
+        "lastUsed": null,
+        "numberOfMonths": null
+      },
+      {
+        "id": 1181381354,
+        "name": "Node.js (Javascript Library)",
+        "type": "specialized_skill",
+        "emsiId": "KS127296VDYS7ZFWVC46",
+        "sources": [
+          {
+            "section": "Projects",
+            "position": null,
+            "workExperienceId": null
+          }
+        ],
+        "lastUsed": null,
+        "numberOfMonths": null
+      },
+      {
+        "id": 1181381353,
+        "name": "Operations",
+        "type": "common_skill",
+        "emsiId": "KS127D361PF0FTXDZ7C4",
+        "sources": [
+          {
+            "section": "WorkExperience",
+            "position": 0,
+            "workExperienceId": 204789527
+          }
+        ],
+        "lastUsed": "2024-07-01",
+        "numberOfMonths": 1
+      },
+      {
+        "id": 1181381350,
+        "name": "Quality Monitoring",
+        "type": "specialized_skill",
+        "emsiId": "ESAF834A5A6F8575AB20",
+        "sources": [
+          {
+            "section": "Projects",
+            "position": null,
+            "workExperienceId": null
+          }
+        ],
+        "lastUsed": null,
+        "numberOfMonths": null
+      },
+      {
+        "id": 1181381331,
+        "name": "Registration",
+        "type": "specialized_skill",
+        "emsiId": "KS7G1YH6989K60428HFJ",
+        "sources": [
+          {
+            "section": "Projects",
+            "position": null,
+            "workExperienceId": null
+          }
+        ],
+        "lastUsed": null,
+        "numberOfMonths": null
+      },
+      {
+        "id": 1181381356,
+        "name": "SQL (Programming Language)",
+        "type": "specialized_skill",
+        "emsiId": "KS440W865GC4VRBW6LJP",
+        "sources": [
+          {
+            "section": "WorkExperience",
+            "position": 1,
+            "workExperienceId": 204789528
+          },
+          {
+            "section": "Projects",
+            "position": null,
+            "workExperienceId": null
+          },
+          {
+            "section": "Skills/Interests/Languages",
+            "position": null,
+            "workExperienceId": null
+          }
+        ],
+        "lastUsed": "2023-03-01",
+        "numberOfMonths": 1
+      },
+      {
+        "id": 1181381327,
+        "name": "Spring Boot",
+        "type": "specialized_skill",
+        "emsiId": "ES6D557B9D5BE598FD74",
+        "sources": [
+          {
+            "section": "Skills/Interests/Languages",
+            "position": null,
+            "workExperienceId": null
+          }
+        ],
+        "lastUsed": null,
+        "numberOfMonths": null
+      },
+      {
+        "id": 1181381347,
+        "name": "Swing (Java)",
+        "type": "specialized_skill",
+        "emsiId": "KS125HH71YY36QY5H1YX",
+        "sources": [
+          {
+            "section": "Projects",
+            "position": null,
+            "workExperienceId": null
+          },
+          {
+            "section": "WorkExperience",
+            "position": 1,
+            "workExperienceId": 204789528
+          }
+        ],
+        "lastUsed": "2023-03-01",
+        "numberOfMonths": 1
+      },
+      {
+        "id": 1181381329,
+        "name": "Transmission",
+        "type": "specialized_skill",
+        "emsiId": "KS128G96M9GTV4HH0MBS",
+        "sources": [
+          {
+            "section": "Projects",
+            "position": null,
+            "workExperienceId": null
+          }
+        ],
+        "lastUsed": null,
+        "numberOfMonths": null
+      },
+      {
+        "id": 1181381334,
+        "name": "User Registration",
+        "type": "specialized_skill",
+        "emsiId": "KS128H961QV9DK1PMNC1",
+        "sources": [
+          {
+            "section": "Projects",
+            "position": null,
+            "workExperienceId": null
+          }
+        ],
+        "lastUsed": null,
+        "numberOfMonths": null
+      },
+      {
+        "id": 1181381341,
+        "name": "Database Management",
+        "type": "specialized_skill",
+        "emsiId": "BGS44B0B6FBF1324A81D",
+        "sources": [
+          {
+            "section": "WorkExperience",
+            "position": 1,
+            "workExperienceId": 204789528
+          }
+        ],
+        "lastUsed": "2023-03-01",
+        "numberOfMonths": 1
+      },
+      {
+        "id": 1181381342,
+        "name": "Esp32",
+        "type": "specialized_skill",
+        "emsiId": "ES93BAD2D75219743A2D",
+        "sources": [
+          {
+            "section": "Projects",
+            "position": null,
+            "workExperienceId": null
+          }
+        ],
+        "lastUsed": null,
+        "numberOfMonths": null
+      },
+      {
+        "id": 1181381324,
+        "name": "Sensors",
+        "type": "specialized_skill",
+        "emsiId": "ESB3BCBBB4C6E59DE5DC",
+        "sources": [
+          {
+            "section": "Projects",
+            "position": null,
+            "workExperienceId": null
+          }
+        ],
+        "lastUsed": null,
+        "numberOfMonths": null
+      },
+      {
+        "id": 1181381348,
+        "name": "Serialization",
+        "type": "specialized_skill",
+        "emsiId": "KS122PZ6VCBBKS89X562",
+        "sources": [
+          {
+            "section": "WorkExperience",
+            "position": 0,
+            "workExperienceId": 204789527
+          }
+        ],
+        "lastUsed": "2024-07-01",
+        "numberOfMonths": 1
+      },
+      {
+        "id": 1181381351,
+        "name": "VS Code",
+        "type": "specialized_skill",
+        "emsiId": "ES271C4EB47A4BD5AD68",
+        "sources": [
+          {
+            "section": "Skills/Interests/Languages",
+            "position": null,
+            "workExperienceId": null
+          }
+        ],
+        "lastUsed": null,
+        "numberOfMonths": null
+      }
+    ],
+    "rawText": "Neeraj Wadhwaney \nƒ +91 7805055283 # neerajwadhwaney2003@gmail.com ï linkedin.com / in / neeraj - w \n§ github.com / neeraj2710 \nEducation \n\nLakshmi Narain College of Technology Excellence, Bhopal, MP 2021 – 2025 Bachelor of Technology in Computer Science and Engineering Current CGPA — 7.40 \nSt. Xavier's Sr. Sec. Co - Ed School, Bhopal, MP 2020 – 2021 12th — CBSE 81.6% \nSt. Xavier's Sr. Sec. Co - Ed School, Bhopal, MP 2018 – 2019 10th — CBSE 83.6% \nTechnical Skills \n\nLanguages: Java, SQL, HTML, CSS, JavaScript Technologies / Frameworks: Spring Boot, Hibernate, JDBC, Collections, Servlet, JSP, JUnit \nDeveloper Tools: IntelliJ Idea, VS Code, NetBeans 8.2, CodeBlocks, SQL Developer \nProfessional Experience \nZ IT Solutions June 2024 – July 2024 Java Development Intern \n• Gained hands - on experience in implementing CRUD operations using Java to efficiently manage and interact with databases. \n• Developed dynamic desktop applications using JavaFX with responsive UI components. \n• Acquired foundational knowledge of multithreading and serialization / deserialization, ensuring efficient application performance and data handling. A2infotech Feb 2023 – Mar 2023 Java SE Intern \n• Gained experience with Java Swing and AWT, designed and implemented graphical user interfaces for desktop applications. \n• Worked with JDBC to connect and interact with an Oracle database, enhancing my skills in database management and SQL queries. \n• Developed a standalone Java desktop application, integrating GUI components and database connectivity to create a fully functional software solution. \nProjects \nElevare \n§ Present \n• Developed a full - stack job portal \"Hiresense\" using Jakarta EE (Servlets, JSP) and Hibernate with MySQL as the backend database, and HTML, CSS, JavaScript for the frontend. \n• Integrated Affinda AI API to automatically parse and analyze candidate resumes and calculate percentage match with job descriptions based on skills, experience, and qualifications. \n• Implemented features like user registration / login, job posting, resume upload, and real - time AI - based profile - to - job matching, enhancing recruitment efficiency. Air Quality Monitoring System \n§ November 2024 \n• Worked on an IoT - based Air Quality Monitoring System using ESP32, integrating sensors for AQI, temperature, humidity, and pressure. \n• Developed firmware in C++ and contributed to data transmission for real - time monitoring via a React frontend and Node.js backend. \n• System supports 30 - day historical data logging and is patent - published (Application No. \n202521019321). Happy Tummy \n§ January 2024 \n• Developed HappyTummy, a user - friendly Web / Desktop application, to optimize the online food delivery process for customers and restaurants. \n• Utilized Java SE, Java Swing, Jakarta EE, HTML, CSS, Servlet, JSP and JDBC for efficient development and enhanced user experience. Integrated Oracle 11g as database. \n• Implemented key features including mail confirmation, Spoonacular API integration for menu information, seamless food ordering, add - to - cart functionality, and customer review options. \nActivities & Honors \n\n• Completed a 12 - week course on Programming in Java, from the National Programme on Technology Enhanced Learning platform — IIT Bombay. \n• Completed Wipro Talent Next certification in Java Full Stack Development (May – September) with 90%+ across all four milestones. \n• Awarded second runner - up position at the Code Beta competition held at LNCTE. \n• Awarded the A - Certificate by the 2 MP Air Squadron in Bhopal, reflecting a high level of achievement and commitment to air squadron training and duties. ",
+    "summary": "",
+    "headShot": null,
+    "linkedin": "https://linkedin.com/in/neeraj-w",
+    "location": null,
+    "referees": [],
+    "sections": [
+      {
+        "bbox": [
+          39.789097,
+          14.408447,
+          550.9426,
+          47.84973
+        ],
+        "text": "Neeraj Wadhwaney \nƒ +91 7805055283 # neerajwadhwaney2003@gmail.com ï linkedin.com / in / neeraj - w \n§ github.com / neeraj2710 ",
+        "pageIndex": 0,
+        "sectionType": "PersonalDetails"
+      },
+      {
+        "bbox": [
+          29.254297,
+          49.95221,
+          564.95483,
+          151.39856
+        ],
+        "text": "Education \n\nLakshmi Narain College of Technology Excellence, Bhopal, MP 2021 – 2025 Bachelor of Technology in Computer Science and Engineering Current CGPA — 7.40 \nSt. Xavier's Sr. Sec. Co - Ed School, Bhopal, MP 2020 – 2021 12th — CBSE 81.6% \nSt. Xavier's Sr. Sec. Co - Ed School, Bhopal, MP 2018 – 2019 10th — CBSE 83.6% ",
+        "pageIndex": 0,
+        "sectionType": "Education"
+      },
+      {
+        "bbox": [
+          29.290182,
+          158.99432,
+          525.9618,
+          213.65833
+        ],
+        "text": "Technical Skills \n\nLanguages: Java, SQL, HTML, CSS, JavaScript Technologies / Frameworks: Spring Boot, Hibernate, JDBC, Collections, Servlet, JSP, JUnit \nDeveloper Tools: IntelliJ Idea, VS Code, NetBeans 8.2, CodeBlocks, SQL Developer ",
+        "pageIndex": 0,
+        "sectionType": "Skills/Interests/Languages"
+      },
+      {
+        "bbox": [
+          29.254301,
+          221.1933,
+          565.25366,
+          426.98685
+        ],
+        "text": "Professional Experience \nZ IT Solutions June 2024 – July 2024 Java Development Intern \n• Gained hands - on experience in implementing CRUD operations using Java to efficiently manage and interact with databases. \n• Developed dynamic desktop applications using JavaFX with responsive UI components. \n• Acquired foundational knowledge of multithreading and serialization / deserialization, ensuring efficient application performance and data handling. A2infotech Feb 2023 – Mar 2023 Java SE Intern \n• Gained experience with Java Swing and AWT, designed and implemented graphical user interfaces for desktop applications. \n• Worked with JDBC to connect and interact with an Oracle database, enhancing my skills in database management and SQL queries. \n• Developed a standalone Java desktop application, integrating GUI components and database connectivity to create a fully functional software solution. ",
+        "pageIndex": 0,
+        "sectionType": "WorkExperience"
+      },
+      {
+        "bbox": [
+          29.254297,
+          429.65607,
+          565.85724,
+          705.59686
+        ],
+        "text": "Projects \nElevare \n§ Present \n• Developed a full - stack job portal \"Hiresense\" using Jakarta EE (Servlets, JSP) and Hibernate with MySQL as the backend database, and HTML, CSS, JavaScript for the frontend. \n• Integrated Affinda AI API to automatically parse and analyze candidate resumes and calculate percentage match with job descriptions based on skills, experience, and qualifications. \n• Implemented features like user registration / login, job posting, resume upload, and real - time AI - based profile - to - job matching, enhancing recruitment efficiency. Air Quality Monitoring System \n§ November 2024 \n• Worked on an IoT - based Air Quality Monitoring System using ESP32, integrating sensors for AQI, temperature, humidity, and pressure. \n• Developed firmware in C++ and contributed to data transmission for real - time monitoring via a React frontend and Node.js backend. \n• System supports 30 - day historical data logging and is patent - published (Application No. \n202521019321). Happy Tummy \n§ January 2024 \n• Developed HappyTummy, a user - friendly Web / Desktop application, to optimize the online food delivery process for customers and restaurants. \n• Utilized Java SE, Java Swing, Jakarta EE, HTML, CSS, Servlet, JSP and JDBC for efficient development and enhanced user experience. Integrated Oracle 11g as database. \n• Implemented key features including mail confirmation, Spoonacular API integration for menu information, seamless food ordering, add - to - cart functionality, and customer review options. ",
+        "pageIndex": 0,
+        "sectionType": "Projects"
+      },
+      {
+        "bbox": [
+          29.266222,
+          710.1156,
+          564.5147,
+          815.4729
+        ],
+        "text": "Activities & Honors \n\n• Completed a 12 - week course on Programming in Java, from the National Programme on Technology Enhanced Learning platform — IIT Bombay. \n• Completed Wipro Talent Next certification in Java Full Stack Development (May – September) with 90%+ across all four milestones. \n• Awarded second runner - up position at the Code Beta competition held at LNCTE. \n• Awarded the A - Certificate by the 2 MP Air Squadron in Bhopal, reflecting a high level of achievement and commitment to air squadron training and duties. ",
+        "pageIndex": 0,
+        "sectionType": "Achievements"
+      }
+    ],
+    "websites": [
+      "https://linkedin.com/in/neeraj-w",
+      "https://github.com/neeraj2710"
+    ],
+    "education": [
+      {
+        "id": 100904865,
+        "dates": {
+          "rawText": "2021 – 2025",
+          "isCurrent": false,
+          "startDate": "2021-01-01",
+          "completionDate": "2025-01-01"
+        },
+        "grade": {
+          "raw": "Current CGPA — 7.40",
+          "value": "7.40",
+          "metric": "Current CGPA"
+        },
+        "location": {
+          "city": "Bhopal",
+          "poBox": null,
+          "state": "Madhya Pradesh",
+          "street": null,
+          "country": "India",
+          "latitude": 23.2599333,
+          "rawInput": "Bhopal, MP",
+          "formatted": "Bhopal, Madhya Pradesh, India",
+          "longitude": 77.412615,
+          "stateCode": "MP",
+          "postalCode": null,
+          "countryCode": "IN",
+          "streetNumber": null,
+          "apartmentNumber": null
+        },
+        "organization": "Lakshmi Narain College Of Technology Excellence",
+        "accreditation": {
+          "inputStr": "Bachelor of Technology in Computer Science and Engineering",
+          "matchStr": "",
+          "education": "Bachelor of Technology in Computer Science and Engineering",
+          "educationLevel": "bachelors"
+        }
+      },
+      {
+        "id": 100904866,
+        "dates": {
+          "rawText": "2020 – 2021",
+          "isCurrent": false,
+          "startDate": "2020-01-01",
+          "completionDate": "2021-01-01"
+        },
+        "grade": null,
+        "location": {
+          "city": "Bhopal",
+          "poBox": null,
+          "state": "Madhya Pradesh",
+          "street": null,
+          "country": "India",
+          "latitude": 23.2599333,
+          "rawInput": "Bhopal, MP",
+          "formatted": "Bhopal, Madhya Pradesh, India",
+          "longitude": 77.412615,
+          "stateCode": "MP",
+          "postalCode": null,
+          "countryCode": "IN",
+          "streetNumber": null,
+          "apartmentNumber": null
+        },
+        "organization": "St. Xavier's Sr. Sec. Co-Ed School",
+        "accreditation": {
+          "inputStr": "",
+          "matchStr": "",
+          "educationLevel": null
+        }
+      },
+      {
+        "id": 100904867,
+        "dates": {
+          "rawText": "2018 – 2019",
+          "isCurrent": false,
+          "startDate": "2018-01-01",
+          "completionDate": "2019-01-01"
+        },
+        "grade": {
+          "raw": "81.6%",
+          "value": "81.6%",
+          "metric": null
+        },
+        "location": {
+          "city": "Bhopal",
+          "poBox": null,
+          "state": "Madhya Pradesh",
+          "street": null,
+          "country": "India",
+          "latitude": 23.2599333,
+          "rawInput": "Bhopal, MP",
+          "formatted": "Bhopal, Madhya Pradesh, India",
+          "longitude": 77.412615,
+          "stateCode": "MP",
+          "postalCode": null,
+          "countryCode": "IN",
+          "streetNumber": null,
+          "apartmentNumber": null
+        },
+        "organization": "St. Xavier's Sr. Sec. Co-Ed School",
+        "accreditation": {
+          "inputStr": "12th —",
+          "matchStr": "",
+          "education": "12th —",
+          "educationLevel": null
+        }
+      }
+    ],
+    "languages": [
+      "English"
+    ],
+    "objective": "",
+    "profession": "Development",
+    "resumePath": "D:\\Adv Java Project\\Hibernate\\HireSense_Hibernate\\target\\HireSenseHibernate-1.0-SNAPSHOT\\resumes\\Neeraj_Wadhwaney.pdf",
+    "dateOfBirth": null,
+    "phoneNumbers": [
+      "+917805055283"
+    ],
+    "publications": [],
+    "redactedText": "****** ********* ƒ *** ********** # ***************************** ï ************ / in / ****** - w § ********** / neeraj2710\nEducation Lakshmi Narain College of Technology Excellence, Bhopal, MP **** – **** Bachelor of Technology in Computer Science and Engineering Current CGPA — 7.40 St. Xavier's Sr. Sec. Co - Ed School, Bhopal, MP **** – **** **** — CBSE 81.6% St. Xavier's Sr. Sec. Co - Ed School, Bhopal, MP **** – **** **** — CBSE 83.6%\nTechnical Skills Languages: Java, SQL, HTML, CSS, JavaScript Technologies / Frameworks: Spring Boot, Hibernate, JDBC, Collections, Servlet, JSP, JUnit Developer Tools: IntelliJ Idea, VS Code, NetBeans 8.2, CodeBlocks, SQL Developer\nProfessional Experience Z IT Solutions June 2024 – **** **** Java Development Intern • Gained hands - on experience in implementing CRUD operations using Java to efficiently manage and interact with databases. • Developed dynamic desktop applications using JavaFX with responsive UI components. • Acquired foundational knowledge of multithreading and serialization / deserialization, ensuring efficient application performance and data handling. A2infotech *** **** – *** **** Java SE Intern • Gained experience with Java Swing and AWT, designed and implemented graphical user interfaces for desktop applications. • Worked with JDBC to connect and interact with an Oracle database, enhancing my skills in database management and SQL queries. • Developed a standalone Java desktop application, integrating GUI components and database connectivity to create a fully functional software solution.\nProjects Elevare § Present • Developed a full - stack job portal \"Hiresense\" using Jakarta EE (Servlets, JSP) and Hibernate with MySQL as the backend database, and HTML, CSS, JavaScript for the frontend. • Integrated Affinda AI API to automatically parse and analyze candidate resumes and calculate percentage match with job descriptions based on skills, experience, and qualifications. • Implemented features like user registration / login, job posting, resume upload, and real - time AI - based profile - to - job matching, enhancing recruitment efficiency. Air Quality Monitoring System § ******** **** • Worked on an IoT - based Air Quality Monitoring System using ESP32, integrating sensors for AQI, temperature, humidity, and pressure. • Developed firmware in C++ and contributed to data transmission for real - time monitoring via a React frontend and Node.js backend. • System supports 30 - day historical data logging and is patent - published (Application No. ************). Happy Tummy § ******* **** • Developed HappyTummy, a user - friendly Web / Desktop application, to optimize the online food delivery process for customers and restaurants. • Utilized Java SE, Java Swing, Jakarta EE, HTML, CSS, Servlet, JSP and JDBC for efficient development and enhanced user experience. Integrated Oracle 11g as database. • Implemented key features including mail confirmation, Spoonacular API integration for menu information, seamless food ordering, add - to - cart functionality, and customer review options.\nActivities & Honors • Completed a 12 - week course on Programming in Java, from the National Programme on Technology Enhanced Learning platform — IIT Bombay. • Completed Wipro Talent Next certification in Java Full Stack Development (May – September) with 90%+ across all four milestones. • Awarded second runner - up position at the Code Beta competition held at LNCTE. • Awarded the A - Certificate by the 2 MP Air Squadron in Bhopal, reflecting a high level of achievement and commitment to air squadron training and duties.",
+    "certifications": [],
+    "workExperience": [
+      {
+        "id": 204789527,
+        "dates": {
+          "endDate": "2024-07-01",
+          "rawText": "June 2024 – July 2024",
+          "isCurrent": false,
+          "startDate": "2024-06-01",
+          "monthsInPosition": 1
+        },
+        "jobTitle": "Java Development Intern",
+        "location": null,
+        "occupation": {
+          "emsiId": "ET38799F39F20A49AD",
+          "jobTitle": "Java Development Intern",
+          "classification": null,
+          "managementLevel": "Low",
+          "jobTitleNormalized": "Java Intern"
+        },
+        "organization": "Z IT Solutions",
+        "jobDescription": "• Gained hands - on experience in implementing CRUD operations using Java to efficiently manage and interact with databases. \n• Developed dynamic desktop applications using JavaFX with responsive UI components. \n• Acquired foundational knowledge of multithreading and serialization / deserialization, ensuring efficient application performance and data handling. "
+      },
+      {
+        "id": 204789528,
+        "dates": {
+          "endDate": "2023-03-01",
+          "rawText": "Feb 2023 – Mar 2023",
+          "isCurrent": false,
+          "startDate": "2023-02-01",
+          "monthsInPosition": 1
+        },
+        "jobTitle": "Java SE Intern",
+        "location": null,
+        "occupation": {
+          "emsiId": "ET38799F39F20A49AD",
+          "jobTitle": "Java SE Intern",
+          "classification": null,
+          "managementLevel": "Low",
+          "jobTitleNormalized": "Java Intern"
+        },
+        "organization": "A2 Infotech",
+        "jobDescription": "• Gained experience with Java Swing and AWT, designed and implemented graphical user interfaces for desktop applications. \n• Worked with JDBC to connect and interact with an Oracle database, enhancing my skills in database management and SQL queries. \n• Developed a standalone Java desktop application, integrating GUI components and database connectivity to create a fully functional software solution. "
+      }
+    ],
+    "phoneNumberDetails": [
+      {
+        "rawText": "+917805055283",
+        "countryCode": "IN",
+        "nationalNumber": "078050 55283",
+        "formattedNumber": "+91 78050 55283",
+        "internationalCountryCode": 91
+      }
+    ],
+    "isResumeProbability": null,
+    "totalYearsExperience": 0
+  },
+  "meta": {
+    "pdf": "https://affinda-api-data-prod-ap1.s3.amazonaws.com/media/documents/Neeraj_Wadhwaney_n5khTak.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAU4IX6YWNDQKHTRAV%2F20251117%2Fap-southeast-2%2Fs3%2Faws4_request&X-Amz-Date=20251117T025225Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENr%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDmFwLXNvdXRoZWFzdC0yIkYwRAIgKXcelQVYOQlN40JVsgQlAH1lscZWjgti6Kc3%2Fj3jdwoCIGh0QTMes3JmQzXh6wB0tG7l6UE3LPOm3mhtApno5aH9KpQFCKP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMzM1NTk0NTcxMTYyIgzBHnEnhDZKLI%2FNzrkq6ASfB8pkf%2FI7lcE7K4xpnnGlXHOaTnX3EV2PcI6oGfMG2Rt5fGTuiO%2FjN7VNq6jYbhwGffbW4Rf%2FrXjkhR1l9Ks2aq42fXJtJ4GGBc5co3RQuIcTIGDOBzGKfAoqOX1bOii6KfO3Tg7CzEIeiOQFzjEjyBtPjiclIzIP7ZIr0Y83%2B4w2ZI9gktW9Na5Ms7I8n%2FRgkB1zWAmDLNy2Bdvvw5j3h1a183r%2FYBmKKGr4N4NOMfiHJe2vsgQLYpLyda7qQdwjgfgVzIt8e4M%2BZnxruA4FrbmqkPbTEnUyQJnwRiEl0xV2at%2FZbMAFOZyXmJXSIRCYtQbZuwkH2chQYz8B85soyuUFfJmBPclf71LuVsMI0nj42F5%2FdZ6A4usMCjNF5qSJTU7NV0CIZlu%2F%2BHUBejomX4LJadBbytSPFWgUYOi8cRBJ6h83b1fwGE4qwNf%2FrvtNT4HESiCWhkpHOGn81zBBKZbg1NveJ3mhoup6D8xMxH5CO%2B7q8%2BLdsost85SHQpnN4v%2FBVk3VtpaqbRDLGWeRLVMFD6UrxuH2zRHaLmweY8Y4F%2B9BMcEn3mYiKhE0LJEz5rw2MOrbjI%2BJT1IIk1dmAw82KMhvN14B2HriT2fRVaC8%2FRbrm%2F5cL8FbkZKVbMhUp7EkB4G9lJ66RxMU%2BdNCsArXo4IZaFYumdBDUNIH0w%2BBd9fO46ggG0THtYLNRdkA3dmi%2BIiTaKpNKjgSEl3OvSU1QaUIa5yvfaQJLof77iGr%2BikfqUje43U5HAfHyVVKkBE%2FG8PwyD%2FwoHfXIal1OQ%2FjvUbzhR%2FHLiFLTW0TCexJQi22CluQMP6J6sgGOpkBgtPqZTY8baaJHdTT8yvgvIuRC2d2unFBU2gYlpL3ATouSTmPlZNL5WX14Xgr1haPFL9GoGs794PzcTJrzfudMytSZ6FvAgULkdFktk7gAcWRz%2F9cRiWqA%2BHtHxABJ%2Bue4yDExSbPwMiXDkCThskLJYgRAY%2B9eWuSAbsQtlNtF8gFaE894LoT9xK6XdFXnKyQNd1qoUPe%2F5mf&X-Amz-Signature=39a9dc0b4ae62deaa8cd78e7b1cc2cdc3453737af1471a5d97e6f8018002a29d",
+    "file": "https://affinda-api-data-prod-ap1.s3.amazonaws.com/media/documents/Neeraj_Wadhwaney_n5khTak.pdf?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAU4IX6YWNDQKHTRAV%2F20251117%2Fap-southeast-2%2Fs3%2Faws4_request&X-Amz-Date=20251117T025225Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENr%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDmFwLXNvdXRoZWFzdC0yIkYwRAIgKXcelQVYOQlN40JVsgQlAH1lscZWjgti6Kc3%2Fj3jdwoCIGh0QTMes3JmQzXh6wB0tG7l6UE3LPOm3mhtApno5aH9KpQFCKP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMzM1NTk0NTcxMTYyIgzBHnEnhDZKLI%2FNzrkq6ASfB8pkf%2FI7lcE7K4xpnnGlXHOaTnX3EV2PcI6oGfMG2Rt5fGTuiO%2FjN7VNq6jYbhwGffbW4Rf%2FrXjkhR1l9Ks2aq42fXJtJ4GGBc5co3RQuIcTIGDOBzGKfAoqOX1bOii6KfO3Tg7CzEIeiOQFzjEjyBtPjiclIzIP7ZIr0Y83%2B4w2ZI9gktW9Na5Ms7I8n%2FRgkB1zWAmDLNy2Bdvvw5j3h1a183r%2FYBmKKGr4N4NOMfiHJe2vsgQLYpLyda7qQdwjgfgVzIt8e4M%2BZnxruA4FrbmqkPbTEnUyQJnwRiEl0xV2at%2FZbMAFOZyXmJXSIRCYtQbZuwkH2chQYz8B85soyuUFfJmBPclf71LuVsMI0nj42F5%2FdZ6A4usMCjNF5qSJTU7NV0CIZlu%2F%2BHUBejomX4LJadBbytSPFWgUYOi8cRBJ6h83b1fwGE4qwNf%2FrvtNT4HESiCWhkpHOGn81zBBKZbg1NveJ3mhoup6D8xMxH5CO%2B7q8%2BLdsost85SHQpnN4v%2FBVk3VtpaqbRDLGWeRLVMFD6UrxuH2zRHaLmweY8Y4F%2B9BMcEn3mYiKhE0LJEz5rw2MOrbjI%2BJT1IIk1dmAw82KMhvN14B2HriT2fRVaC8%2FRbrm%2F5cL8FbkZKVbMhUp7EkB4G9lJ66RxMU%2BdNCsArXo4IZaFYumdBDUNIH0w%2BBd9fO46ggG0THtYLNRdkA3dmi%2BIiTaKpNKjgSEl3OvSU1QaUIa5yvfaQJLof77iGr%2BikfqUje43U5HAfHyVVKkBE%2FG8PwyD%2FwoHfXIal1OQ%2FjvUbzhR%2FHLiFLTW0TCexJQi22CluQMP6J6sgGOpkBgtPqZTY8baaJHdTT8yvgvIuRC2d2unFBU2gYlpL3ATouSTmPlZNL5WX14Xgr1haPFL9GoGs794PzcTJrzfudMytSZ6FvAgULkdFktk7gAcWRz%2F9cRiWqA%2BHtHxABJ%2Bue4yDExSbPwMiXDkCThskLJYgRAY%2B9eWuSAbsQtlNtF8gFaE894LoT9xK6XdFXnKyQNd1qoUPe%2F5mf&X-Amz-Signature=39a9dc0b4ae62deaa8cd78e7b1cc2cdc3453737af1471a5d97e6f8018002a29d",
+    "pages": [
+      {
+        "id": 151193396,
+        "image": "https://affinda-api-data-prod-ap1.s3.amazonaws.com/media/pages/151193396_MwF6Mdy.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=ASIAU4IX6YWNDQKHTRAV%2F20251117%2Fap-southeast-2%2Fs3%2Faws4_request&X-Amz-Date=20251117T025225Z&X-Amz-Expires=3600&X-Amz-SignedHeaders=host&X-Amz-Security-Token=IQoJb3JpZ2luX2VjENr%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaDmFwLXNvdXRoZWFzdC0yIkYwRAIgKXcelQVYOQlN40JVsgQlAH1lscZWjgti6Kc3%2Fj3jdwoCIGh0QTMes3JmQzXh6wB0tG7l6UE3LPOm3mhtApno5aH9KpQFCKP%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEQAxoMMzM1NTk0NTcxMTYyIgzBHnEnhDZKLI%2FNzrkq6ASfB8pkf%2FI7lcE7K4xpnnGlXHOaTnX3EV2PcI6oGfMG2Rt5fGTuiO%2FjN7VNq6jYbhwGffbW4Rf%2FrXjkhR1l9Ks2aq42fXJtJ4GGBc5co3RQuIcTIGDOBzGKfAoqOX1bOii6KfO3Tg7CzEIeiOQFzjEjyBtPjiclIzIP7ZIr0Y83%2B4w2ZI9gktW9Na5Ms7I8n%2FRgkB1zWAmDLNy2Bdvvw5j3h1a183r%2FYBmKKGr4N4NOMfiHJe2vsgQLYpLyda7qQdwjgfgVzIt8e4M%2BZnxruA4FrbmqkPbTEnUyQJnwRiEl0xV2at%2FZbMAFOZyXmJXSIRCYtQbZuwkH2chQYz8B85soyuUFfJmBPclf71LuVsMI0nj42F5%2FdZ6A4usMCjNF5qSJTU7NV0CIZlu%2F%2BHUBejomX4LJadBbytSPFWgUYOi8cRBJ6h83b1fwGE4qwNf%2FrvtNT4HESiCWhkpHOGn81zBBKZbg1NveJ3mhoup6D8xMxH5CO%2B7q8%2BLdsost85SHQpnN4v%2FBVk3VtpaqbRDLGWeRLVMFD6UrxuH2zRHaLmweY8Y4F%2B9BMcEn3mYiKhE0LJEz5rw2MOrbjI%2BJT1IIk1dmAw82KMhvN14B2HriT2fRVaC8%2FRbrm%2F5cL8FbkZKVbMhUp7EkB4G9lJ66RxMU%2BdNCsArXo4IZaFYumdBDUNIH0w%2BBd9fO46ggG0THtYLNRdkA3dmi%2BIiTaKpNKjgSEl3OvSU1QaUIa5yvfaQJLof77iGr%2BikfqUje43U5HAfHyVVKkBE%2FG8PwyD%2FwoHfXIal1OQ%2FjvUbzhR%2FHLiFLTW0TCexJQi22CluQMP6J6sgGOpkBgtPqZTY8baaJHdTT8yvgvIuRC2d2unFBU2gYlpL3ATouSTmPlZNL5WX14Xgr1haPFL9GoGs794PzcTJrzfudMytSZ6FvAgULkdFktk7gAcWRz%2F9cRiWqA%2BHtHxABJ%2Bue4yDExSbPwMiXDkCThskLJYgRAY%2B9eWuSAbsQtlNtF8gFaE894LoT9xK6XdFXnKyQNd1qoUPe%2F5mf&X-Amz-Signature=c8669f25b264260c05479fcd2000388abf0a24439a1893327af64fe049cdd594",
+        "width": 595.2760009765625,
+        "height": 841.8900146484375,
+        "rotation": 0,
+        "pageIndex": 0
+      }
+    ],
+    "ready": true,
+    "failed": false,
+    "isOcrd": false,
+    "readyDt": "2025-11-17T02:52:25.504121Z",
+    "fileName": "Neeraj_Wadhwaney.pdf",
+    "language": "en",
+    "createdDt": "2025-11-17T02:52:22.388522Z",
+    "reviewUrl": "https://app.affinda.com/review/70357112?document_signature=eyJkb2N1bWVudF9pZCI6NzAzNTcxMTIsIndvcmtzcGFjZV9pZCI6MTE0NzgxNCwib3JnYW5pemF0aW9uX2lkIjozMzU1OSwiZGVsZWdhdGluZ191c2VyX2lkIjoyNjYyNn0:1vKpLt:BC8-FVyDkVkWiFzGFcASF1Ye9qQePoEraT0TTbr8sWo:1vKpLt:mTGTNKuEJPXMaxp6o6Nrj9RbDovRsyBGHjvtVLH5hdQ",
+    "expiryTime": null,
+    "exportedDt": null,
+    "identifier": "ZzseMitO",
+    "isExported": false,
+    "isVerified": false,
+    "regionBias": null,
+    "errorDetail": null,
+    "validatedDt": null,
+    "documentType": "resume",
+    "ocrConfidence": null,
+    "childDocuments": [],
+    "parentDocument": null,
+    "customIdentifier": null
+  },
+  "error": {
+    "errorCode": null,
+    "errorDetail": null
+  }
+}
