@@ -111,7 +111,6 @@
         <p class="text-white">
             <%=s%>
         </p>
-        <br>
         <%
                 }
             }else{
