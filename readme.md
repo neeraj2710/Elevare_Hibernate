@@ -558,7 +558,7 @@ elevare/
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
 ### Home Page
 ![Home Page](screenshots/index_elevare.png)
