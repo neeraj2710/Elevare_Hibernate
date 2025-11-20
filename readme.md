@@ -10,7 +10,7 @@
 [![Hibernate](https://img.shields.io/badge/Hibernate-7.0.8-59666C?style=flat&logo=hibernate)](https://hibernate.org/)
 [![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=flat&logo=mysql&logoColor=white)](https://www.mysql.com/)
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.8-7952B3?style=flat&logo=bootstrap)](https://getbootstrap.com/)
-[![License](https://img.shields.io/badge/License-MIT-green.svg?style=flat)](LICENSE)
+
 
 [Features](#-features) • [Tech Stack](#-tech-stack) • [Installation](#-installation) • [Usage](#-usage-guide) • [API Integration](#-api-integration) • [Screenshots](#-screenshots)
 
