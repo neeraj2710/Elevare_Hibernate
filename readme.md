@@ -34,7 +34,6 @@
 - [Project Structure](#-project-structure)
 - [Screenshots](#-screenshots)
 - [Contributing](#-contributing)
-- [License](#-license)
 - [Contact](#-contact)
 
 ---
@@ -432,7 +431,7 @@ http://localhost:8080/
 
 ---
 
-## 🔌 API Integration
+## API Integration
 
 ### Affinda Resume Parser API
 
@@ -614,12 +613,6 @@ Contributions are welcome! Please follow these steps:
 - Add comments for complex logic
 - Write meaningful commit messages
 - Test before submitting PR
-
----
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
