@@ -588,7 +588,7 @@ elevare/
 ### View Applicant's Full Details
 ![View Full Details](screenshots/viewfulldetails_elevare_1.png)
 ![View Full Details](screenshots/viewfulldetails_elevare_2.png)
-![View Full Details](screenshots/viewfulldetails_elevare_2.png)
+![View Full Details](screenshots/viewfulldetails_elevare_3.png)
 *Full Details of applicant including personal details, skills, work experience, summary & education*
 
 ### Admin Panel
