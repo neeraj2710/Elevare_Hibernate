@@ -191,7 +191,7 @@
     %>
     Swal.fire({icon: 'success', title: 'User Status Updated Successfully', showConfirmButton: false, timer: 1500})
     <%
-        }else{
+        }else if("0".equals(request.getAttribute("userSuccess"))){
     %>
     Swal.fire({icon: 'error', title: 'User status update Failed', showConfirmButton: false, timer: 1500})
     <%
@@ -201,6 +201,10 @@
         if("1".equals(request.getAttribute("delete"))){
     %>
     Swal.fire({icon: 'success', title: 'Job Deleted Successfully', showConfirmButton: false, timer: 1500})
+    <%
+        }else if("1".equals(request.getAttribute("delete"))){
+    %>
+    Swal.fire({icon: 'success', title: 'Job Deletion failed', showConfirmButton: false, timer: 1500})
     <%
         }
     %>

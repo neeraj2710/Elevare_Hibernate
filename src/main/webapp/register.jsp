@@ -29,7 +29,7 @@
             <div class="col-lg-5 login-left">
                 <div>
                     <!-- Updated welcome text for registration -->
-                    <h2 class="welcome-text">Join HireSense!</h2>
+                    <h2 class="welcome-text">Join <%=application.getAttribute("appName")%>!</h2>
                     <p class="welcome-subtitle">Create your account and start your smart hiring journey with our AI-powered platform.</p>
 
                     <ul class="feature-list">

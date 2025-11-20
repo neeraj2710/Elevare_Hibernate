@@ -58,7 +58,7 @@
             <div class="col-lg-5 login-left">
                 <div>
                     <h2 class="welcome-text">Welcome Back!</h2>
-                    <p class="welcome-subtitle">Sign in to access your HireSense dashboard and continue your smart hiring journey.</p>
+                    <p class="welcome-subtitle">Sign in to access your <%=application.getAttribute("appName")%> dashboard and continue your smart hiring journey.</p>
 
                     <ul class="feature-list">
                         <li><i class="fas fa-check-circle"></i> AI-Powered Candidate Matching</li>
