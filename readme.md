@@ -18,7 +18,7 @@
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [About](#-about)
 - [Features](#-features)
@@ -39,61 +39,61 @@
 
 ---
 
-## 📖 About
+## About
 
-**Elevare** (formerly HireSense) is an intelligent recruitment platform that revolutionizes the hiring process through AI-powered resume analysis and smart candidate matching. The platform connects job seekers with employers while automating tedious recruitment tasks through advanced resume parsing and skill matching algorithms.
+**Elevare** is an intelligent recruitment platform that revolutionizes the hiring process through AI-powered resume analysis and smart candidate matching. The platform connects job seekers with employers while automating tedious recruitment tasks through advanced resume parsing and skill matching algorithms.
 
 ### Key Highlights
 
-- 🤖 **AI-Powered Matching**: Automatic resume analysis using Affinda API
-- 📊 **Smart Scoring**: Real-time candidate-job compatibility scoring
-- 👥 **Multi-Role System**: Separate dashboards for Users, Employers, and Admins
-- 📧 **Email Integration**: OTP verification and notification system
-- 🎨 **Modern UI**: Responsive glassmorphism design with smooth animations
-- 🔒 **Secure**: Session-based authentication with role management
+- **AI-Powered Matching**: Automatic resume analysis using Affinda API
+- **Smart Scoring**: Real-time candidate-job compatibility scoring
+- **Multi-Role System**: Separate dashboards for Users, Employers, and Admins
+- **Email Integration**: OTP verification and notification system
+- **Modern UI**: Responsive glassmorphism design with smooth animations
+- **Secure**: Session-based authentication with role management
 
 ---
 
-## ✨ Features
+## Features
 
 ### For Job Seekers (Users)
 
-- 👤 **Profile Creation**: Register and create professional profiles
-- 📄 **Resume Upload**: Upload PDF resumes for automatic parsing
-- 🔍 **Smart Job Search**: Search and filter jobs by location, experience, package, etc.
-- 🎯 **Match Score**: See your compatibility percentage with each job
-- 📈 **Application Tracking**: Track application status (Applied/Shortlisted/Rejected)
-- 💡 **Personalized Recommendations**: AI-based job matching
+- **Profile Creation**: Register and create professional profiles
+- **Resume Upload**: Upload PDF resumes for automatic parsing
+- **Smart Job Search**: Search and filter jobs by location, experience, package, etc.
+- **Match Score**: See your compatibility percentage with each job
+- **Application Tracking**: Track application status (Applied/Shortlisted/Rejected)
+- **Personalized Recommendations**: AI-based job matching
 
 ### For Employers
 
-- 📝 **Job Posting**: Create detailed job listings with required skills
-- 👀 **View Applicants**: See all candidates who applied for your jobs
-- 🔎 **Filter Applicants**: Filter by application status
-- 🏆 **Resume Scoring**: Automatic candidate-job match percentage
-- 📥 **Resume Download**: Download candidate resumes
-- ✅ **Application Management**: Shortlist or reject candidates
-- 📊 **Dashboard Analytics**: Track posted jobs and applicant metrics
+- **Job Posting**: Create detailed job listings with required skills
+- **View Applicants**: See all candidates who applied for your jobs
+- **Filter Applicants**: Filter by application status
+- **Resume Scoring**: Automatic candidate-job match percentage
+- **Resume Download**: Download candidate resumes
+- **Application Management**: Shortlist or reject candidates
+- **Dashboard Analytics**: Track posted jobs and applicant metrics
 
 ### For Administrators
 
-- 🛡️ **User Management**: View and manage all users (employers & job seekers)
-- 🔐 **Account Control**: Block/unblock user accounts
-- 🔍 **Search & Filter**: Search users by name, email, or role
-- 📊 **System Overview**: Monitor platform activity
+- **User Management**: View and manage all users (employers & job seekers)
+- **Account Control**: Block/unblock user accounts
+- **Search & Filter**: Search users by name, email, or role
+- **System Overview**: Monitor platform activity
 
 ### System Features
 
-- 🔐 **Authentication**: Email-based registration with OTP verification
-- 🔑 **Session Management**: Secure session handling with role-based access
-- 📧 **Email Notifications**: Automated email for OTP and notifications
-- 📱 **Responsive Design**: Mobile-first, fully responsive UI
-- 🎨 **Modern UI/UX**: Glassmorphism design with gradient backgrounds
-- ⚡ **Fast Performance**: Hibernate ORM for optimized database operations
+- **Authentication**: Email-based registration with OTP verification
+- **Session Management**: Secure session handling with role-based access
+- **Email Notifications**: Automated email for OTP and notifications
+- **Responsive Design**: Mobile-first, fully responsive UI
+- **Modern UI/UX**: Glassmorphism design with gradient backgrounds
+- **Fast Performance**: Hibernate ORM for optimized database operations
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Backend
 
@@ -132,7 +132,7 @@
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ### Three-Tier Architecture
 
@@ -169,16 +169,16 @@ in.hiresense
 
 ---
 
-## 📋 Prerequisites
+## Prerequisites
 
 Before you begin, ensure you have the following installed:
 
-- ☕ **Java Development Kit (JDK)** 17 or higher
-- 📦 **Apache Maven** 3.6 or higher
-- 🗄️ **MySQL Server** 8.0 or higher
-- 🐱 **Apache Tomcat** 10.x or higher
-- 🌿 **Git** (for cloning the repository)
-- 💻 **IntelliJ IDEA** (recommended) or any Java IDE
+- **Java Development Kit (JDK)** 17 or higher
+- **Apache Maven** 3.6 or higher
+- **MySQL Server** 8.0 or higher
+- **Apache Tomcat** 10.x or higher
+- **Git** (for cloning the repository)
+- **IntelliJ IDEA** (recommended) or any Java IDE
 
 ### System Requirements
 
@@ -188,7 +188,7 @@ Before you begin, ensure you have the following installed:
 
 ---
 
-## 📥 Installation
+## Installation
 
 ### Step 1: Clone the Repository
 
@@ -207,7 +207,7 @@ This will download all required dependencies specified in `pom.xml`.
 
 ---
 
-## ⚙️ Configuration
+## Configuration
 
 ### 1. Database Configuration
 
@@ -257,7 +257,7 @@ Edit `src/main/webapp/WEB-INF/web.xml` if needed:
 
 ---
 
-## 🗄️ Database Setup
+## Database Setup
 
 ### Step 1: Create Database
 
@@ -347,7 +347,7 @@ VALUES ('Admin', 'admin@elevare.com', 'admin123', 'admin', TRUE, 'active');
 
 ---
 
-## 🚀 Running the Application
+## Running the Application
 
 ### Method 1: Using IDE (IntelliJ IDEA)
 
@@ -404,7 +404,7 @@ http://localhost:8080/
 
 ---
 
-## 📖 Usage Guide
+## Usage Guide
 
 ### For Job Seekers
 
@@ -478,7 +478,7 @@ POST https://api.affinda.com/v2/resumes
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 elevare/
@@ -561,28 +561,44 @@ elevare/
 ## 📸 Screenshots
 
 ### Home Page
-![Home Page](screenshots/home.png)
+![Home Page](screenshots/index_elevare.png)
 *Landing page with hero section and features*
 
+### Registration Page
+![Register Page](screenshots/register_elevare.png)
+*Registration page with otp verification*
+
+### Login Page
+![Login Page](screenshots/login_elevare.png)
+*Login page with session tracking*
+
 ### User Dashboard
-![User Dashboard](screenshots/user-dashboard.png)
+![User Dashboard](screenshots/userdashboard_elevare.png)
 *Job listings with smart filtering and match scores*
 
 ### Employer Dashboard
-![Employer Dashboard](screenshots/employer-dashboard.png)
+![Employer Dashboard](screenshots/employerdashboard_elevare_1.png)
+![Employer Dashboard](screenshots/employerdashboard_elevare_2.png)
 *Job posting and management interface*
 
 ### View Applicants
-![View Applicants](screenshots/view-applicants.png)
+![View Applicants](screenshots/viewapplicants_elevare.png)
 *Applicant management with scoring*
 
+### View Applicant's Full Details
+![View Full Details](screenshots/viewfulldetails_elevare_1.png)
+![View Full Details](screenshots/viewfulldetails_elevare_2.png)
+![View Full Details](screenshots/viewfulldetails_elevare_2.png)
+*Full Details of applicant including personal details, skills, work experience, summary & education*
+
 ### Admin Panel
-![Admin Panel](screenshots/admin-panel.png)
+![Admin Panel](screenshots/adminpanel_elevare_1.png)
+![Admin Panel](screenshots/adminpanel_elevare_2.png)
 *User management interface*
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please follow these steps:
 
@@ -601,13 +617,13 @@ Contributions are welcome! Please follow these steps:
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ---
 
-## 📧 Contact
+## Contact
 
 **Project Maintainer**: Neeraj Wadhwaney
 
@@ -619,7 +635,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - [Affinda](https://www.affinda.com/) - Resume parsing API
 - [Bootstrap](https://getbootstrap.com/) - Frontend framework
@@ -629,7 +645,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-## 📊 Project Stats
+## Project Stats
 
 ![GitHub stars](https://img.shields.io/github/stars/neeraj2710/Elevare_Hibernate?style=social)
 ![GitHub forks](https://img.shields.io/github/forks/neeraj2710/Elevare_Hibernate?style=social)
@@ -640,8 +656,8 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
 
-**Made with ❤️ by the Elevare Team**
+**Made by the Neeraj Wadhwaney**
 
-⭐ Star this repository if you find it helpful!
+Star this repository if you find it helpful!
 
 </div>
