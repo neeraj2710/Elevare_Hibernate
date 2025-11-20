@@ -12,6 +12,24 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <style>
+
+        .links {
+            display: inline-block !important;
+            transition: all 0.3s ease !important;
+            opacity: 0.8 !important;
+            color: white !important;
+            text-decoration: none !important;
+        }
+
+        .links:hover {
+            opacity: 1 !important;
+            transform: translateY(-2px) !important;
+            color: #ffc107 !important;
+            text-shadow: 0 2px 4px rgba(255, 193, 7, 0.3) !important;
+        }
+
+    </style>
 </head>
 <body >
 <%@include file="includes/header.jsp"%>
@@ -81,7 +99,7 @@
                                 Remember me
                             </label>
                         </div>
-                        <a href="#" class="forgot-password">Forgot Password?</a>
+                        <a href="#" class="links">Forgot Password?</a>
                     </div>
 
                     <button type="submit" class="btn btn-primary btn-login">

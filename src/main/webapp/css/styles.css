@@ -272,7 +272,7 @@ body {
     opacity: 0.8;
     color: white !important;
 }
-.footer a:hover {
+.footer a:hover{
     opacity: 1;
     transform: translateY(-2px);
     color: #ffc107 !important;
@@ -1063,5 +1063,7 @@ textarea.form-control {
         font-size: 0.9rem;
     }
 }
+
+
 
 

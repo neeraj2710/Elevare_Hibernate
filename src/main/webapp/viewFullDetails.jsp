@@ -11,6 +11,24 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <style>
+
+        a {
+            display: inline-block !important;
+            transition: all 0.3s ease !important;
+            opacity: 0.8 !important;
+            color: white !important;
+            text-decoration: none !important;
+        }
+
+        a:hover {
+            opacity: 1 !important;
+            transform: translateY(-2px) !important;
+            color: #ffc107 !important;
+            text-shadow: 0 2px 4px rgba(255, 193, 7, 0.3) !important;
+        }
+
+    </style>
 </head>
 <body class="user-dashboard-page">
 <%
@@ -50,7 +68,7 @@
                         cleanUrl = "https://" + cleanUrl;
                     }
         %>
-        <a href="<%=cleanUrl%>" target="_blank">
+        <a href="<%=cleanUrl%>"  class="links">
            <%=s.trim()%>
         </a><br>
         <%
@@ -140,7 +158,7 @@
         <ul class="list-unstyled">
             <% for(String skill : skills) { %>
             <li class="text-white mb-2">
-                <i class="bi bi-check-circle-fill me-2 text-success"></i><%= skill.trim() %>
+                <i class="bi bi-check-circle-fill me-2"></i><%= skill.trim() %>
             </li>
             <% } %>
         </ul>
