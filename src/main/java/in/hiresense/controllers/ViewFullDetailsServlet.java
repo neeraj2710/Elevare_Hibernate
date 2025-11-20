@@ -40,9 +40,9 @@ public class ViewFullDetailsServlet extends HttpServlet {
             List<ResumeAnalysisLogsPojo> list = ResumeAnalysisLogService.getLogsByUser(id);
             String resultJson = list.get(0).getJsonResult();
             String summary = AffindaAPI.extractSummary(resultJson);
-            String personalDetails = AffindaAPI.extractPersonalDetails(resultJson);
-            String education = AffindaAPI.extractEducation(resultJson);
-            String workEx = AffindaAPI.extractWorkExperience(resultJson);
+            String[] personalDetails = AffindaAPI.extractPersonalDetails(resultJson);
+            String[] education = AffindaAPI.extractEducation(resultJson);
+            String[] workEx = AffindaAPI.extractWorkExperience(resultJson);
             List<String> skills = AffindaAPI.extractSkills(resultJson);
 
             request.setAttribute("summary" , summary);

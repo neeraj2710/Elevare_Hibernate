@@ -1,4 +1,5 @@
 <%@ page import="java.util.List" %>
+<%@ page import="java.net.URLEncoder" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -20,10 +21,10 @@
 
     // Backend se ye data pass hoga
     String applicantName = (String) request.getAttribute("applicantName");
-    String personalDetails = (String) request.getAttribute("personalDetails");
+    String[] personalDetails = (String[]) request.getAttribute("personalDetails");
     String resumeSummary = (String) request.getAttribute("summary");
-    String education = (String) request.getAttribute("education");
-    String workExperience = (String) request.getAttribute("workEx");
+    String[] education = (String[]) request.getAttribute("education");
+    String[] workExperience = (String[]) request.getAttribute("workEx");
     List<String> skills = (List<String>) request.getAttribute("skills");
 %>
 <%@ include file="includes/header.jsp"%>
@@ -39,9 +40,29 @@
         <h4 class="job-section-title text-white">
             <i class="fas fa-id-card me-2 text-white"></i>Personal Details
         </h4>
+        <%
+            for(String s : personalDetails){
+                if(s.contains(".com")){
+                    String cleanUrl = s.replaceAll("\\s+", "");
+
+                    // https:// add karo agar nahi hai to
+                    if(!cleanUrl.startsWith("http://") && !cleanUrl.startsWith("https://")){
+                        cleanUrl = "https://" + cleanUrl;
+                    }
+        %>
+        <a href="<%=cleanUrl%>" target="_blank">
+           <%=s.trim()%>
+        </a><br>
+        <%
+            }else{
+        %>
         <p class="text-white">
-            <%= personalDetails != null ? personalDetails : "No personal details available" %>
+            <%=s%>
         </p>
+        <%
+                }
+            }
+        %>
     </div>
 
     <!-- Resume Summary Card -->
@@ -59,9 +80,28 @@
         <h4 class="job-section-title text-white">
             <i class="fas fa-graduation-cap me-2 text-white"></i>Education
         </h4>
+        <%
+            if(education.length != 0){
+                for(String s : education){
+        %>
+        <%
+            if(s.length()==0){
+                continue;
+            }
+        %>
+
         <p class="text-white">
-            <%= education != null ? education : "No education details available" %>
+            <%=s%>
         </p>
+        <br>
+        <%
+                }
+            }else{
+        %>
+        <p class="text-white">No Data Available</p>
+        <%
+            }
+        %>
     </div>
 
     <!-- Work Experience Card -->
@@ -69,9 +109,23 @@
         <h4 class="job-section-title text-white">
             <i class="fas fa-briefcase me-2 text-white"></i>Work Experience
         </h4>
+        <%
+            if(workExperience.length != 0){
+                for(String s : workExperience){
+        %>
         <p class="text-white">
-            <%= workExperience != null ? workExperience : "No work experience available" %>
+            <%=s%>
         </p>
+        <%
+                }
+            }else{
+        %>
+        <p class="text-white">
+            No Data Available
+        </p>
+        <%
+            }
+        %>
     </div>
 
     <!-- Skills Card -->

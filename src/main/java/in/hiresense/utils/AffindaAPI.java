@@ -71,7 +71,7 @@ public class AffindaAPI {
         return summary;
     }
 
-    public static String extractPersonalDetails(String resultJson){
+    public static String[] extractPersonalDetails(String resultJson){
         String personalDetails = null;
         try{
             JSONObject result = new JSONObject(resultJson);
@@ -90,10 +90,10 @@ public class AffindaAPI {
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return personalDetails;
+        return personalDetails.split("[ƒ#ï§œ]+");
     }
 
-    public static String extractEducation(String resultJson) {
+    public static String[] extractEducation(String resultJson) {
         String education=null;
         try {
             JSONObject result = new JSONObject(resultJson);
@@ -112,10 +112,10 @@ public class AffindaAPI {
         }catch (Exception e) {
             e.printStackTrace();
         }
-        return education;
+        return education.split("\n");
     }
 
-    public static String extractWorkExperience(String resultJson) {
+    public static String[] extractWorkExperience(String resultJson) {
         String workEx = null;
         try {
             JSONObject result = new JSONObject(resultJson);
@@ -134,7 +134,7 @@ public class AffindaAPI {
         }catch (Exception e) {
             e.printStackTrace();
         }
-        return workEx;
+        return workEx.split("\\n|\\. ");
     }
 
     public static List<String> extractSkills(String resultJson) {
