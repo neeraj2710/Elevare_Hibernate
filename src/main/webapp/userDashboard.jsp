@@ -97,6 +97,8 @@
     </div>
     <!-- filter code ends -->
 
+    <!-- Replace the jobs section (line ~114 to ~180) with this -->
+
     <!-- job cards section starts -->
     <%
         List<JobPojo> jobs = (List<JobPojo>) request.getAttribute("jobs");
@@ -106,69 +108,55 @@
     %>
     <div class="jobs-section">
         <h4 class="section-title mb-4"><i class="fas fa-briefcase me-2"></i>Available Jobs</h4>
-        <div class="row">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
             <%
                 for (JobPojo job : jobs) {
             %>
-            <div class="col-md-4">
-                <div class="job-card glass-card p-3 position-relative">
-          <span class="position-absolute top-0 end-0 px-2 py-1 small"
-          >
-              <%=job.getCreatedAt() != null ? new SimpleDateFormat("d MMM").format(job.getCreatedAt()) : ""%>
-          </span>
+            <div class="col">
+                <div class="job-card glass-card p-3 position-relative h-100 d-flex flex-column">
+                <span class="position-absolute top-0 end-0 px-2 py-1 small">
+                    <%=job.getCreatedAt() != null ? new SimpleDateFormat("d MMM").format(job.getCreatedAt()) : ""%>
+                </span>
 
-                    <div class="card-body">
-                        <h5 class="mb-1"><%=job.getTitle()%>
-                        </h5>
-                        <p class="text-muted"><%=job.getCompany()%>
-                        </p>
+                    <div class="card-body flex-grow-1 d-flex flex-column">
+                        <br>
+                        <h5 class="mb-1"><%=job.getTitle()%></h5>
+                        <p class="text-muted"><%=job.getCompany()%></p>
 
                         <div class="d-flex flex-wrap text-muted small mb-2 gap-3">
-                            <div><i class="bi bi-briefcase-fill me-1"></i><%=job.getExperience()%>
-                            </div>
-                            <div><i class="bi bi-currency-rupee me-1"></i><%=job.getPackageLpa()%>
-                            </div>
-                            <div><i class="bi bi-geo-alt me-1"></i><%=job.getLocation()%>
-                            </div>
+                            <div><i class="bi bi-briefcase-fill me-1"></i><%=job.getExperience()%></div>
+                            <div><i class="bi bi-currency-rupee me-1"></i><%=job.getPackageLpa()%></div>
+                            <div><i class="bi bi-geo-alt me-1"></i><%=job.getLocation()%></div>
                             <div><i class="bi bi-people-fill me-1"></i><%=job.getVacancies()%> Openings</div>
                         </div>
 
-                        <%
-                            if (appliedJobIds.containsKey(job.getId())) {
-                        %>
-                        <span class="badge bg-<%=appliedJobIds.get(job.getId()).equals("rejected")?"danger":"success"%> col-md-2 p-2 mt-2"><%=appliedJobIds.get(job.getId())%></span>
-                        <br/>
-                        <%
-                        } else {
-                        %>
-
-                        <button
-                                type="button"
-                                class="btn btn-gradient btn-sm mt-2 small"
-
-                                onclick="openResumePopup(<%=job.getId()%>, <%=job.getScore()%>, '<%=job.getSkills().replace("'", "\\'")%>')"
-
-                        >
-                            Apply Now
-                        </button>
-                        <button
-                                type="button"
-                                class="btn btn-outline-light btn-sm mt-2 small"
-
-                                onclick='showDetails(<%=job.getId()%>,"<%=job.getTitle().replace("\"", "&quot;")%>", " <%=job.getCompany().replace("\"", "&quot;")%>", "<%=job.getLocation().replace("\"", "&quot;")%>", "<%=job.getExperience().replace("\"", "&quot;")%>", "<%=job.getPackageLpa().replace("\"", "&quot;")%>", "<%=job.getVacancies()%>", "<%=job.getSkills().replace("\"", "&quot;")%>", "<%=job.getDescription().replace("\"", "&quot;")%>", "<%=new java.text.SimpleDateFormat("dd MMM yyyy").format(job.getCreatedAt())%>")'
-                        >
-                            View Details
-                        </button>
-                        <%
-                            }
-                        %>
+                        <div class="mt-auto">
+                            <%
+                                if (appliedJobIds.containsKey(job.getId())) {
+                            %>
+                            <span class="badge bg-<%=appliedJobIds.get(job.getId()).equals("rejected")?"danger":"success"%> col-md-2 p-2 mt-2"><%=appliedJobIds.get(job.getId())%></span>
+                            <br/>
+                            <%
+                            } else {
+                            %>
+                            <button type="button" class="btn btn-gradient btn-sm mt-2 small"
+                                    onclick="openResumePopup(<%=job.getId()%>, <%=job.getScore()%>, '<%=job.getSkills().replace("'", "\\'")%>')">
+                                Apply Now
+                            </button>
+                            <button type="button" class="btn btn-outline-light btn-sm mt-2 small"
+                                    onclick='showDetails(<%=job.getId()%>,"<%=job.getTitle().replace("\"", "&quot;")%>", " <%=job.getCompany().replace("\"", "&quot;")%>", "<%=job.getLocation().replace("\"", "&quot;")%>", "<%=job.getExperience().replace("\"", "&quot;")%>", "<%=job.getPackageLpa().replace("\"", "&quot;")%>", "<%=job.getVacancies()%>", "<%=job.getSkills().replace("\"", "&quot;")%>", "<%=job.getDescription().replace("\"", "&quot;")%>", "<%=new java.text.SimpleDateFormat("dd MMM yyyy").format(job.getCreatedAt())%>")'>
+                                View Details
+                            </button>
+                            <%
+                                }
+                            %>
+                        </div>
                     </div>
+
                     <%
                         if (resumeUploaded) {
                     %>
-                    <div
-                            class="position-absolute badge bg-primary bottom-0 end-0 p-2 small m-2"
-                    >
+                    <div class="position-absolute badge bg-primary bottom-0 end-0 p-2 small m-2">
                         <%=job.getScore()%>% Match
                     </div>
                     <%
@@ -182,7 +170,6 @@
         </div>
     </div>
     <%
-
     } else {
     %>
     <p class="text-danger text-center"> No Jobs Found</p>

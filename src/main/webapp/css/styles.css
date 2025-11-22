@@ -1064,6 +1064,39 @@ textarea.form-control {
     }
 }
 
+/* Make all job cards equal height */
+.jobs-section .row {
+    display: flex;
+    flex-wrap: wrap;
+}
 
+.jobs-section .row > .col-md-4 {
+    display: flex;
+    margin-bottom: 1.5rem;
+}
+
+.job-card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 280px; /* Adjust this value based on your needs */
+    height: 100%;
+}
+
+.job-card .card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.job-card .card-body > h5,
+.job-card .card-body > p,
+.job-card .card-body > .d-flex {
+    margin-bottom: 0.5rem;
+}
+
+.job-card .card-body > button:first-of-type {
+    margin-top: auto; /* This pushes buttons to bottom */
+}
 
 
