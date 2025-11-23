@@ -119,121 +119,22 @@
 
         .message-text {
             font-size: 1.05rem;
+            white-space: pre-wrap;
             color: rgba(255, 255, 255, 0.95);
             background: rgba(255, 255, 255, 0.1);
             padding: 1rem 1.25rem;
             border-radius: 16px;
             margin-top: 8px;
-            line-height: 1.8;
         }
 
         .user-wrapper .message-text {
             background: linear-gradient(135deg, rgba(102, 126, 234, 0.3) 0%, rgba(118, 75, 162, 0.3) 100%);
             border: 1px solid rgba(102, 126, 234, 0.4);
-            white-space: pre-wrap;
         }
 
         .ai-wrapper .message-text {
             background: rgba(255, 255, 255, 0.08);
             border: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-        /* AI Response Formatting */
-        .ai-wrapper .message-text p {
-            margin-bottom: 1rem;
-        }
-
-        .ai-wrapper .message-text p:last-child {
-            margin-bottom: 0;
-        }
-
-        .ai-wrapper .message-text strong {
-            color: #fff;
-            font-weight: 600;
-        }
-
-        .ai-wrapper .message-text em {
-            color: rgba(255, 255, 255, 0.9);
-            font-style: italic;
-        }
-
-        .ai-wrapper .message-text code {
-            background: rgba(0, 0, 0, 0.3);
-            padding: 0.2rem 0.4rem;
-            border-radius: 4px;
-            font-family: 'Courier New', monospace;
-            font-size: 0.9em;
-            color: #a8dadc;
-        }
-
-        .ai-wrapper .message-text pre {
-            background: rgba(0, 0, 0, 0.4);
-            padding: 1rem;
-            border-radius: 8px;
-            overflow-x: auto;
-            margin: 1rem 0;
-            border-left: 3px solid #667eea;
-        }
-
-        .ai-wrapper .message-text pre code {
-            background: none;
-            padding: 0;
-            color: #a8dadc;
-        }
-
-        .ai-wrapper .message-text ul,
-        .ai-wrapper .message-text ol {
-            margin: 0.75rem 0;
-            padding-left: 1.5rem;
-        }
-
-        .ai-wrapper .message-text li {
-            margin-bottom: 0.5rem;
-            line-height: 1.6;
-        }
-
-        .ai-wrapper .message-text blockquote {
-            border-left: 3px solid rgba(102, 126, 234, 0.6);
-            padding-left: 1rem;
-            margin: 1rem 0;
-            color: rgba(255, 255, 255, 0.8);
-            font-style: italic;
-        }
-
-        .ai-wrapper .message-text h1,
-        .ai-wrapper .message-text h2,
-        .ai-wrapper .message-text h3 {
-            color: #fff;
-            margin-top: 1.5rem;
-            margin-bottom: 0.75rem;
-            font-weight: 600;
-        }
-
-        .ai-wrapper .message-text h1 {
-            font-size: 1.5rem;
-        }
-
-        .ai-wrapper .message-text h2 {
-            font-size: 1.3rem;
-        }
-
-        .ai-wrapper .message-text h3 {
-            font-size: 1.15rem;
-        }
-
-        .ai-wrapper .message-text a {
-            color: #667eea;
-            text-decoration: underline;
-        }
-
-        .ai-wrapper .message-text a:hover {
-            color: #764ba2;
-        }
-
-        .ai-wrapper .message-text hr {
-            border: none;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            margin: 1.5rem 0;
         }
 
         .empty-state {

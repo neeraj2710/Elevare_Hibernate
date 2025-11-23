@@ -47,16 +47,16 @@
                 </div>
                 <div class="col-md-3">
                     <select name="role" class="form-select admin-input" id="">
-                        <option value="" selected>All roles</option>
-                        <option value="employer" ${param.role == 'employer'? 'selected' : ''}>Employer</option>
-                        <option value="user" ${param.role == 'user'? 'selected' : ''}>User</option>
+                        <option class="text-dark" value="" selected>All roles</option>
+                        <option class="text-dark" value="employer" ${param.role == 'employer'? 'selected' : ''}>Employer</option>
+                        <option class="text-dark" value="user" ${param.role == 'user'? 'selected' : ''}>User</option>
                     </select>
                 </div>
                 <div class="col-md-2">
                     <select name="status" class="form-select admin-input" id="">
-                        <option value="" selected>All status</option>
-                        <option value="active" ${param.status == 'active'? 'selected' : ''}>Active</option>
-                        <option value="blocked" ${param.role == 'blocked'? 'selected' : ''}>Blocked</option>
+                        <option class="text-dark" value="" selected>All status</option>
+                        <option class="text-dark" value="active" ${param.status == 'active'? 'selected' : ''}>Active</option>
+                        <option class="text-dark" value="blocked" ${param.role == 'blocked'? 'selected' : ''}>Blocked</option>
                     </select>
                 </div>
                 <div class="col-md-3">

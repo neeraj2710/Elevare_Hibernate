@@ -19,7 +19,7 @@
         <hr class="my-4">
         <div class="text-center">
             <p>
-                &copy; 2024 <%=application.getAttribute("appName")%>. All rights reserved. Made by
+                &copy; 2025 <%=application.getAttribute("appName")%>. All rights reserved. Made by
                 <a href="https://drive.google.com/file/d/1SyvOVwS9o7lNuwX3raMwVTUSFAEfW2DN/view?usp=sharing"
                    class="text-light text-decoration-none">
                     Neeraj Wadhwaney

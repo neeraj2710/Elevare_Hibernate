@@ -18,7 +18,7 @@
                     <a class="nav-link" href="./login.jsp"><i class="fas fa-sign-in-alt me-1"></i>Login</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./chat.jsp"><i class="fas fa-comment me-1"></i>chat</a>
+                    <a class="nav-link" href="./chat.jsp"><i class="fas fa-comment me-1"></i>Chat</a>
                 </li>
                 <%
                 } // common navbar ends
@@ -31,7 +31,7 @@
                     <a class="nav-link" href="LogoutServlet"><i class="fas fa-sign-out-alt me-1"></i>Logout</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./chat.jsp"><i class="fas fa-comment me-1"></i>chat</a>
+                    <a class="nav-link" href="./chat.jsp"><i class="fas fa-comment me-1"></i>Chat</a>
                 </li>
                 <%
                 } // user navbar ends
@@ -44,7 +44,7 @@
                     <a class="nav-link" href="LogoutServlet"><i class="fas fa-sign-out-alt me-1"></i>Logout</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./chat.jsp"><i class="fas fa-comment me-1"></i>chat</a>
+                    <a class="nav-link" href="./chat.jsp"><i class="fas fa-comment me-1"></i>Chat</a>
                 </li>
                 <%
                 } // employer navbar ends
@@ -57,7 +57,7 @@
                     <a class="nav-link" href="LogoutServlet"><i class="fas fa-sign-out-alt me-1"></i>Logout</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="./chat.jsp"><i class="fas fa-comment me-1"></i>chat</a>
+                    <a class="nav-link" href="./chat.jsp"><i class="fas fa-comment me-1"></i>Chat</a>
                 </li>
                 <%
                     }// admin navbar ends

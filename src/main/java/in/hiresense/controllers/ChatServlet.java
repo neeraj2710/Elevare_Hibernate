@@ -1,5 +1,6 @@
 package in.hiresense.controllers; // adjust to your package
 
+import in.hiresense.utils.AIResponseFormatter;
 import in.hiresense.utils.AppConfig;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -80,7 +81,13 @@ public class ChatServlet extends HttpServlet {
                     JSONObject firstChoice = choices.getJSONObject(0);
                     JSONObject aiMsg = firstChoice.getJSONObject("message");
                     // Add AI reply to history
-                    chatHistory.add(aiMsg);
+
+                    String formatted = AIResponseFormatter.improveAIResponse(aiMsg.getString("content"));
+                    JSONObject jsonObj = new JSONObject();
+                    jsonObj.put("role", "assistant");
+                    jsonObj.put("content", formatted);
+                    System.out.println("AI msg:\n"+aiMsg.toString());
+                    chatHistory.add(jsonObj);
                 } else {
                     //API Error, add notice
                     JSONObject errorMsg = new JSONObject();
@@ -93,6 +100,7 @@ public class ChatServlet extends HttpServlet {
                 errMsg.put("role", "assistant");
                 errMsg.put("content", "Error: "+e.getMessage());
                 chatHistory.add(errMsg);
+                e.printStackTrace();
             }
         }
         // Save updated history and reload page
