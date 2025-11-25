@@ -78,6 +78,7 @@ public class UserDashboardServlet extends HttpServlet {
             request.setAttribute("experience", experience);
             request.setAttribute("packageLpa", packageLpa);
             request.setAttribute("resumeUploaded", resumeUploaded);
+            request.setAttribute("success",request.getParameter("success"));
             request.getRequestDispatcher("userDashboard.jsp").forward(request, response);
 
         } catch (Exception e) {

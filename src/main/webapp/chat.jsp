@@ -428,7 +428,7 @@
                     <i class="fas fa-code"></i>How to prepare for technical interviews?
                 </button>
                 <button class="btn quick-question" data-question="Best skills to learn in 2024?">
-                    <i class="fas fa-graduation-cap"></i>Best skills to learn in 2024?
+                    <i class="fas fa-graduation-cap"></i>Best skills to learn in 2025?
                 </button>
             </div>
         </div>

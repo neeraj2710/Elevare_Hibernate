@@ -46,6 +46,7 @@
 
 - **AI-Powered Matching**: Automatic resume analysis using Affinda API
 - **Smart Scoring**: Real-time candidate-job compatibility scoring
+- **AI Chat Assistant**: Integrated Perplexity Pro chatbot for instant career guidance
 - **Multi-Role System**: Separate dashboards for Users, Employers, and Admins
 - **Email Integration**: OTP verification and notification system
 - **Modern UI**: Responsive glassmorphism design with smooth animations
@@ -63,6 +64,7 @@
 - **Match Score**: See your compatibility percentage with each job
 - **Application Tracking**: Track application status (Applied/Shortlisted/Rejected)
 - **Personalized Recommendations**: AI-based job matching
+- **AI Chat Assistant**: Get instant help with career advice, resume tips, and job search queries through an intelligent chatbot powered by Perplexity Pro AI
 
 ### For Employers
 
@@ -86,6 +88,7 @@
 - **Authentication**: Email-based registration with OTP verification
 - **Session Management**: Secure session handling with role-based access
 - **Email Notifications**: Automated email for OTP and notifications
+- **AI Chat Assistant**: Integrated Perplexity Pro AI-powered chatbot for career guidance and support
 - **Responsive Design**: Mobile-first, fully responsive UI
 - **Modern UI/UX**: Glassmorphism design with gradient backgrounds
 - **Fast Performance**: Hibernate ORM for optimized database operations
@@ -121,6 +124,7 @@
 | API | Purpose |
 |-----|---------|
 | **Affinda API** | Resume parsing and skill extraction |
+| **Perplexity Pro AI** | AI-powered chat assistant for career guidance |
 
 ### Development Tools
 
@@ -239,9 +243,13 @@ mail.password=your-app-password
 
 # Affinda API Configuration
 api.key=YOUR_AFFINDA_API_KEY
+
+# Perplexity AI Configuration
+chat.api=YOUR_PERPLEXITY_API_KEY
 ```
 
 **Note**: For Gmail, use [App Password](https://support.google.com/accounts/answer/185833) instead of your regular password.
+**Note**: Get your Perplexity API key from [Perplexity AI Settings](https://www.perplexity.ai/settings/api).
 
 ### 3. Application Configuration
 
@@ -413,6 +421,7 @@ http://localhost:8080/
 4. **Browse Jobs**: View available jobs with match percentages
 5. **Apply**: Click "Apply Now" on desired jobs
 6. **Track**: Monitor application status
+7. **AI Chat**: Click on the chat icon to get instant career advice, resume tips, and job search assistance
 
 ### For Employers
 
@@ -477,6 +486,53 @@ POST https://api.affinda.com/v2/resumes
 
 ---
 
+### Perplexity Pro AI Chat Assistant
+
+Elevare integrates [Perplexity AI](https://www.perplexity.ai/) to provide an intelligent chat assistant for job seekers.
+
+#### Setup
+
+1. Visit [Perplexity AI Settings](https://www.perplexity.ai/settings/api)
+2. Sign in with your Perplexity account
+3. Generate an API key (requires Pro subscription)
+4. Add to `config.properties`:
+
+```properties
+chat.api=YOUR_PERPLEXITY_API_KEY
+```
+
+#### Model Used
+
+- **sonar-pro**: Perplexity's most advanced reasoning model with real-time web access
+
+#### Features
+
+- **Career Guidance**: Get personalized career advice and job search strategies
+- **Resume Tips**: Receive suggestions to improve your resume
+- **Interview Preparation**: Ask questions about interview tips and techniques
+- **Job Market Insights**: Real-time industry trends and requirements from the web
+- **Skill Development**: Get recommendations for skills to learn
+- **Web-Enhanced Responses**: Answers enriched with current web information
+- **Contextual Conversations**: Maintains chat history for context-aware responses
+
+#### API Endpoint Used
+
+```
+POST https://api.perplexity.ai/chat/completions
+```
+
+#### Chat Interface Features
+
+- Modern chat UI with message bubbles
+- Markdown support for formatted responses
+- Code syntax highlighting
+- Auto-scroll to latest messages
+- Error handling with user-friendly messages
+- Session-based chat history
+- Real-time web-enhanced AI responses
+
+---
+
 ## Project Structure
 
 ```
@@ -501,6 +557,7 @@ elevare/
 │   │   │           │   ├── AdminPanelServlet.java
 │   │   │           │   ├── UpdateUserStatusServlet.java
 │   │   │           │   ├── ToggleJobStatusServlet.java
+│   │   │           │   ├── ChatServlet.java
 │   │   │           │   ├── LogoutServlet.java
 │   │   │           │   └── ViewFullDetailsServlet.java
 │   │   │           ├── services/
@@ -520,6 +577,7 @@ elevare/
 │   │   │           │   └── ResumeAnalysisLogsPojo.java
 │   │   │           ├── utils/
 │   │   │           │   ├── AffindaAPI.java
+│   │   │           │   ├── AIResponseFormatter.java
 │   │   │           │   ├── MailUtil.java
 │   │   │           │   ├── MailConfig.java
 │   │   │           │   ├── MyAuthenticator.java
@@ -545,6 +603,7 @@ elevare/
 │   │       ├── employerDashboard.jsp
 │   │       ├── viewApplicants.jsp
 │   │       ├── viewFullDetails.jsp
+│   │       ├── chat.jsp
 │   │       └── adminPanel.jsp
 │   └── test/
 │       └── java/
@@ -590,6 +649,10 @@ elevare/
 ![View Full Details](screenshots/viewfulldetails_elevare_3.png)
 *Full Details of applicant including personal details, skills, work experience, summary & education*
 
+### AI Chat Assistant
+![AI Chat](screenshots/chat.png)
+*Perplexity Pro AI-powered chat assistant for career guidance with real-time web access*
+
 ### Admin Panel
 ![Admin Panel](screenshots/adminpanel_elevare_1.png)
 ![Admin Panel](screenshots/adminpanel_elevare_2.png)
@@ -631,10 +694,13 @@ Contributions are welcome! Please follow these steps:
 ## Acknowledgments
 
 - [Affinda](https://www.affinda.com/) - Resume parsing API
+- [Perplexity AI](https://www.perplexity.ai/) - AI chat assistant with real-time web access
 - [Bootstrap](https://getbootstrap.com/) - Frontend framework
 - [Hibernate](https://hibernate.org/) - ORM framework
 - [Font Awesome](https://fontawesome.com/) - Icons
 - [SweetAlert2](https://sweetalert2.github.io/) - Beautiful alerts
+- [Marked.js](https://marked.js.org/) - Markdown parser
+- [Highlight.js](https://highlightjs.org/) - Code syntax highlighting
 
 ---
 

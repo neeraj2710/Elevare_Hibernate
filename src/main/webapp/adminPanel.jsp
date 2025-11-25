@@ -94,8 +94,8 @@
                 <tr>
                     <td class="text-white"><%=u.getName()%></td>
                     <td class="text-white"><%=u.getEmail()%></td>
-                    <td class="text-white"><%=u.getRole()%></td>
-                    <td class="text-white"><%=u.getStatus()%></td>
+                    <td class="text-white"><%=u.getRole().substring(0, 1).toUpperCase() + u.getRole().substring(1)%></td>
+                    <td class="text-white"><%=u.getStatus().substring(0, 1).toUpperCase() + u.getStatus().substring(1)%></td>
                     <td>
                         <%
                             if(u.getStatus().equals("active")){

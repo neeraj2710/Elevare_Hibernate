@@ -2,7 +2,8 @@
 <%@ page import="java.util.Set" %>
 <%@ page import="java.util.List" %>
 <%@ page import="java.text.SimpleDateFormat" %>
-<%@ page import="java.util.Map" %><%--
+<%@ page import="java.util.Map" %>
+<%@ page import="com.mysql.cj.util.StringUtils" %><%--
   Created by IntelliJ IDEA.
   User: neera
   Date: 9/16/2025
@@ -97,7 +98,7 @@
     </div>
     <!-- filter code ends -->
 
-    <!-- Replace the jobs section (line ~114 to ~180) with this -->
+
 
     <!-- job cards section starts -->
     <%
@@ -113,7 +114,8 @@
                 for (JobPojo job : jobs) {
             %>
             <div class="col">
-                <div class="job-card glass-card p-3 position-relative h-100 d-flex flex-column">
+                <!-- CHANGE 1: Card ka height chota kar diya -->
+                <div class="job-card glass-card p-3 position-relative d-flex flex-column" style="height: 220px;">
                 <span class="position-absolute top-0 end-0 px-2 py-1 small">
                     <%=job.getCreatedAt() != null ? new SimpleDateFormat("d MMM").format(job.getCreatedAt()) : ""%>
                 </span>
@@ -126,7 +128,7 @@
                         <div class="d-flex flex-wrap text-muted small mb-2 gap-3">
                             <div><i class="bi bi-briefcase-fill me-1"></i><%=job.getExperience()%></div>
                             <div><i class="bi bi-currency-rupee me-1"></i><%=job.getPackageLpa()%></div>
-                            <div><i class="bi bi-geo-alt me-1"></i><%=job.getLocation()%></div>
+                            <div><i class="bi bi-geo-alt me-1"></i><%=job.getLocation().substring(0, 1).toUpperCase() + job.getLocation().substring(1)%></div>
                             <div><i class="bi bi-people-fill me-1"></i><%=job.getVacancies()%> Openings</div>
                         </div>
 
@@ -134,7 +136,8 @@
                             <%
                                 if (appliedJobIds.containsKey(job.getId())) {
                             %>
-                            <span class="badge bg-<%=appliedJobIds.get(job.getId()).equals("rejected")?"danger":"success"%> col-md-2 p-2 mt-2"><%=appliedJobIds.get(job.getId())%></span>
+                            <!-- CHANGE 2: badge width badhai -->
+                            <span class="badge bg-<%=appliedJobIds.get(job.getId()).equals("rejected")?"danger":"success"%> p-2 mt-2 d-inline-block" style="min-width: 100px; text-align: center;"><%=appliedJobIds.get(job.getId())%></span>
                             <br/>
                             <%
                             } else {
@@ -144,8 +147,20 @@
                                 Apply Now
                             </button>
                             <button type="button" class="btn btn-outline-light btn-sm mt-2 small"
-                                    onclick='showDetails(<%=job.getId()%>,"<%=job.getTitle().replace("\"", "&quot;")%>", " <%=job.getCompany().replace("\"", "&quot;")%>", "<%=job.getLocation().replace("\"", "&quot;")%>", "<%=job.getExperience().replace("\"", "&quot;")%>", "<%=job.getPackageLpa().replace("\"", "&quot;")%>", "<%=job.getVacancies()%>", "<%=job.getSkills().replace("\"", "&quot;")%>", "<%=job.getDescription().replace("\"", "&quot;")%>", "<%=new java.text.SimpleDateFormat("dd MMM yyyy").format(job.getCreatedAt())%>")'>
-                                View Details
+                                    class="btn btn-outline-light btn-sm mt-2 small"
+                                    onclick="showDetailsById(this)"
+                                    data-job-id="<%=job.getId()%>"
+                                    data-job-title="<%=job.getTitle()%>"
+                                    data-job-company="<%=job.getCompany()%>"
+                                    data-job-location="<%=job.getLocation()%>"
+                                    data-job-experience="<%=job.getExperience()%>"
+                                    data-job-package="<%=job.getPackageLpa()%>"
+                                    data-job-vacancies="<%=job.getVacancies()%>"
+                                    data-job-skills="<%=job.getSkills()%>"
+                                    data-job-description="<%=job.getDescription()%>"
+                                    data-job-posted="<%=new java.text.SimpleDateFormat("dd MMM yyyy").format(job.getCreatedAt())%>"
+                                    >
+                                    View Details
                             </button>
                             <%
                                 }
@@ -255,7 +270,7 @@
         crossorigin="anonymous"></script>
 <script>
 <%
-    if (request.getParameter("applied") != null) {
+    if (request.getParameter("success") != null) {
 
 %>
 
@@ -310,26 +325,26 @@
             document.getElementById("modalJobId").value = jobId;
             document.getElementById("modalSkills").value = skills;
             document.getElementById("resumeFile").value = "";
-            new
-            bootstrap.Modal(document.getElementById('resumeModal')).show();
+            new bootstrap.Modal(document.getElementById('resumeModal')).show();
         }
     }
 
-    function showDetails(id, title, company, location, experience, packageLpa, vacancies, skills, description, posted) {
-        lastFocusedElement = document.activeElement;
-        document.getElementById("modalJobTitle").innerText = title;
-        document.getElementById("modalCompany").innerText = company;
-        document.getElementById("modalLocation").innerText = location;
-        document.getElementById("modalExperience").innerText = experience;
-        document.getElementById("modalPackage").innerText = packageLpa;
-        document.getElementById("modalVacancies").innerText = vacancies;
-        document.getElementById("modalJobSkills").innerText = skills;
-        document.getElementById("modalDescription").innerText = description;
-        document.getElementById("modalPostedDate").innerText = posted;
-        const jobModalEl = document.getElementById('jobDetailsModal');
-        const jobModal = new bootstrap.Modal(jobModalEl);
-        new bootstrap.Modal(document.getElementById('jobDetailsModal')).show();
-    }
+function showDetailsById(button) {
+    lastFocusedElement = document.activeElement;
+
+    const dataset = button.dataset;
+    document.getElementById("modalJobTitle").innerText = dataset.jobTitle;
+    document.getElementById("modalCompany").innerText = dataset.jobCompany;
+    document.getElementById("modalLocation").innerText = dataset.jobLocation;
+    document.getElementById("modalExperience").innerText = dataset.jobExperience;
+    document.getElementById("modalPackage").innerText = dataset.jobPackage;
+    document.getElementById("modalVacancies").innerText = dataset.jobVacancies;
+    document.getElementById("modalJobSkills").innerText = dataset.jobSkills;
+    document.getElementById("modalDescription").innerText = dataset.jobDescription;
+    document.getElementById("modalPostedDate").innerText = dataset.jobPosted;
+
+    new bootstrap.Modal(document.getElementById('jobDetailsModal')).show();
+}
 
 // On modal hidden, restore focus to opener if possible
 document.getElementById('jobDetailsModal').addEventListener('hidden.bs.modal', function () {

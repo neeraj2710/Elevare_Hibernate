@@ -102,7 +102,7 @@
 
                 <!-- Updated link text for login -->
                 <div class="signup-link">
-                    Already have an account? <a href="login.html">Sign in here</a>
+                    Already have an account? <a href="login.jsp">Sign in here</a>
                 </div>
             </div>
         </div>

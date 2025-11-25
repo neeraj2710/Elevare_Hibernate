@@ -47,6 +47,7 @@ public class UploadResumeServlet extends HttpServlet {
 
         //creating a new dir if dir doesn't exist
         String uploadDir = getServletContext().getRealPath("/resumes");
+        System.out.println(uploadDir);
         File dir = new File(uploadDir);
         if(!dir.exists()){
             dir.mkdirs();
