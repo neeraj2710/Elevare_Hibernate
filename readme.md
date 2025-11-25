@@ -253,26 +253,26 @@ flowchart LR
     Admin -->|performs| BlockUser[Block/Unblock Accounts]
     Admin -->|performs| ViewJobs[View All Jobs]
 
-    %% Styling
-    style JobSeeker fill:#E3F2FD,stroke:#1976D2,stroke-width:3px
-    style Employer fill:#FFF3E0,stroke:#F57C00,stroke-width:3px
-    style Admin fill:#FFEBEE,stroke:#C62828,stroke-width:3px
+    %% Styling with better contrast
+    style JobSeeker fill:#1976D2,stroke:#0D47A1,stroke-width:3px,color:#fff
+    style Employer fill:#F57C00,stroke:#E65100,stroke-width:3px,color:#fff
+    style Admin fill:#C62828,stroke:#8E0000,stroke-width:3px,color:#fff
 
-    style Login fill:#C8E6C9,stroke:#388E3C,stroke-width:2px
-    style UploadResume fill:#B3E5FC,stroke:#0277BD,stroke-width:2px
-    style BrowseJobs fill:#B3E5FC,stroke:#0277BD,stroke-width:2px
-    style ApplyJob fill:#B3E5FC,stroke:#0277BD,stroke-width:2px
-    style TrackApp fill:#B3E5FC,stroke:#0277BD,stroke-width:2px
-    style ChatAI fill:#E1BEE7,stroke:#7B1FA2,stroke-width:2px
+    style Login fill:#388E3C,stroke:#1B5E20,stroke-width:2px,color:#fff
+    style UploadResume fill:#0277BD,stroke:#01579B,stroke-width:2px,color:#fff
+    style BrowseJobs fill:#0277BD,stroke:#01579B,stroke-width:2px,color:#fff
+    style ApplyJob fill:#0277BD,stroke:#01579B,stroke-width:2px,color:#fff
+    style TrackApp fill:#0277BD,stroke:#01579B,stroke-width:2px,color:#fff
+    style ChatAI fill:#7B1FA2,stroke:#4A148C,stroke-width:2px,color:#fff
 
-    style PostJob fill:#FFE0B2,stroke:#E65100,stroke-width:2px
-    style ViewApplicants fill:#FFE0B2,stroke:#E65100,stroke-width:2px
-    style Shortlist fill:#FFE0B2,stroke:#E65100,stroke-width:2px
-    style DownloadResume fill:#FFE0B2,stroke:#E65100,stroke-width:2px
+    style PostJob fill:#E65100,stroke:#BF360C,stroke-width:2px,color:#fff
+    style ViewApplicants fill:#E65100,stroke:#BF360C,stroke-width:2px,color:#fff
+    style Shortlist fill:#E65100,stroke:#BF360C,stroke-width:2px,color:#fff
+    style DownloadResume fill:#E65100,stroke:#BF360C,stroke-width:2px,color:#fff
 
-    style ManageUsers fill:#FFCDD2,stroke:#B71C1C,stroke-width:2px
-    style BlockUser fill:#FFCDD2,stroke:#B71C1C,stroke-width:2px
-    style ViewJobs fill:#FFCDD2,stroke:#B71C1C,stroke-width:2px
+    style ManageUsers fill:#B71C1C,stroke:#7F0000,stroke-width:2px,color:#fff
+    style BlockUser fill:#B71C1C,stroke:#7F0000,stroke-width:2px,color:#fff
+    style ViewJobs fill:#B71C1C,stroke:#7F0000,stroke-width:2px,color:#fff
 ```
 
 ### Data Flow Diagram
@@ -355,14 +355,18 @@ flowchart TB
     AdminServlet --> UsersTable
     AdminServlet --> JobsTable
 
-    %% Styling
-    style AffindaAPI fill:#FFE0B2,stroke:#E65100,stroke-width:3px
-    style PerplexityAPI fill:#B2DFDB,stroke:#00695C,stroke-width:3px
-    style DataLayer fill:#BBDEFB,stroke:#1565C0,stroke-width:2px
-    style ExternalAPIs fill:#FFF9C4,stroke:#F57F17,stroke-width:2px
-    style BusinessLayer fill:#C5CAE9,stroke:#303F9F,stroke-width:2px
-    style PresentationLayer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px
-    style Actors fill:#F8BBD0,stroke:#C2185B,stroke-width:2px
+    %% Styling with better contrast
+    style AffindaAPI fill:#E65100,stroke:#BF360C,stroke-width:3px,color:#fff
+    style PerplexityAPI fill:#00695C,stroke:#004D40,stroke-width:3px,color:#fff
+    style DataLayer fill:#1565C0,stroke:#0D47A1,stroke-width:2px,color:#fff
+    style ExternalAPIs fill:#F57F17,stroke:#E65100,stroke-width:2px,color:#fff
+    style BusinessLayer fill:#303F9F,stroke:#1A237E,stroke-width:2px,color:#fff
+    style PresentationLayer fill:#0277BD,stroke:#01579B,stroke-width:2px,color:#fff
+    style Actors fill:#C2185B,stroke:#880E4F,stroke-width:2px,color:#fff
+
+    style JobSeeker fill:#1976D2,stroke:#0D47A1,stroke-width:2px,color:#fff
+    style Employer fill:#F57C00,stroke:#E65100,stroke-width:2px,color:#fff
+    style Admin fill:#C62828,stroke:#8E0000,stroke-width:2px,color:#fff
 ```
 
 ### System Workflow
