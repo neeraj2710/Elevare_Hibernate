@@ -12,7 +12,7 @@
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3.8-7952B3?style=flat&logo=bootstrap)](https://getbootstrap.com/)
 
 
-[Features](#-features) • [Tech Stack](#-tech-stack) • [Installation](#-installation) • [Usage](#-usage-guide) • [API Integration](#-api-integration) • [Screenshots](#-screenshots)
+[Features](#features) • [Tech Stack](#tech-stack) • [Installation](#installation) • [Usage](#usage-guide) • [API Integration](#api-integration) • [Screenshots](#screenshots)
 
 </div>
 
@@ -20,21 +20,21 @@
 
 ## Table of Contents
 
-- [About](#-about)
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Architecture](#-architecture)
-- [Prerequisites](#-prerequisites)
-- [Installation](#-installation)
-- [Configuration](#%EF%B8%8F-configuration)
-- [Database Setup](#-database-setup)
-- [Running the Application](#-running-the-application)
-- [Usage Guide](#-usage-guide)
-- [API Integration](#-api-integration)
-- [Project Structure](#-project-structure)
-- [Screenshots](#-screenshots)
-- [Contributing](#-contributing)
-- [Contact](#-contact)
+- [About](#about)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Architecture](#architecture)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Database Setup](#database-setup)
+- [Running the Application](#running-the-application)
+- [Usage Guide](#usage-guide)
+- [API Integration](#api-integration)
+- [Project Structure](#project-structure)
+- [Screenshots](#screenshots)
+- [Contributing](#contributing)
+- [Contact](#contact)
 
 ---
 
