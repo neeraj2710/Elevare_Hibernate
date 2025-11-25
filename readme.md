@@ -170,6 +170,243 @@ in.hiresense
 └── dbutils/            # Database configuration
 ```
 
+### Database Schema (ER Diagram)
+
+```mermaid
+erDiagram
+    USERS ||--o{ JOBS : "posts"
+    USERS ||--o{ APPLICATIONS : "applies"
+    USERS ||--o{ RESUME_ANALYSIS_LOGS : "has"
+    JOBS ||--o{ APPLICATIONS : "receives"
+
+    USERS {
+        int id PK
+        varchar name
+        varchar email UK
+        varchar password
+        enum role
+        enum status
+        timestamp created_at
+    }
+
+    JOBS {
+        int id PK
+        varchar title
+        text description
+        text skills
+        varchar company
+        varchar location
+        varchar experience
+        varchar package_lpa
+        int vacancies
+        int employer_id FK
+        varchar status
+        timestamp created_at
+    }
+
+    APPLICATIONS {
+        int id PK
+        int user_id FK
+        int job_id FK
+        varchar resume_path
+        float score
+        enum status
+        timestamp applied_at
+    }
+
+    RESUME_ANALYSIS_LOGS {
+        int id PK
+        int user_id FK
+        json result_json
+        timestamp created_at
+    }
+```
+
+### Use Case Diagram
+
+```mermaid
+flowchart LR
+    %% Actors
+    JobSeeker[Job Seeker]
+    Employer[Employer]
+    Admin[Administrator]
+
+    %% Job Seeker Use Cases
+    JobSeeker -->|performs| Login[Login/Register]
+    JobSeeker -->|performs| UploadResume[Upload Resume]
+    JobSeeker -->|performs| BrowseJobs[Browse Jobs]
+    JobSeeker -->|performs| ApplyJob[Apply for Job]
+    JobSeeker -->|performs| TrackApp[Track Applications]
+    JobSeeker -->|performs| ChatAI[Chat with AI]
+
+    %% Employer Use Cases
+    Employer -->|performs| Login
+    Employer -->|performs| PostJob[Post Job Opening]
+    Employer -->|performs| ViewApplicants[View Applicants]
+    Employer -->|performs| Shortlist[Shortlist/Reject Candidates]
+    Employer -->|performs| DownloadResume[Download Resume]
+    Employer -->|performs| ChatAI
+
+    %% Admin Use Cases
+    Admin -->|performs| Login
+    Admin -->|performs| ManageUsers[Manage Users]
+    Admin -->|performs| BlockUser[Block/Unblock Accounts]
+    Admin -->|performs| ViewJobs[View All Jobs]
+
+    %% Styling
+    style JobSeeker fill:#E3F2FD,stroke:#1976D2,stroke-width:3px
+    style Employer fill:#FFF3E0,stroke:#F57C00,stroke-width:3px
+    style Admin fill:#FFEBEE,stroke:#C62828,stroke-width:3px
+
+    style Login fill:#C8E6C9,stroke:#388E3C,stroke-width:2px
+    style UploadResume fill:#B3E5FC,stroke:#0277BD,stroke-width:2px
+    style BrowseJobs fill:#B3E5FC,stroke:#0277BD,stroke-width:2px
+    style ApplyJob fill:#B3E5FC,stroke:#0277BD,stroke-width:2px
+    style TrackApp fill:#B3E5FC,stroke:#0277BD,stroke-width:2px
+    style ChatAI fill:#E1BEE7,stroke:#7B1FA2,stroke-width:2px
+
+    style PostJob fill:#FFE0B2,stroke:#E65100,stroke-width:2px
+    style ViewApplicants fill:#FFE0B2,stroke:#E65100,stroke-width:2px
+    style Shortlist fill:#FFE0B2,stroke:#E65100,stroke-width:2px
+    style DownloadResume fill:#FFE0B2,stroke:#E65100,stroke-width:2px
+
+    style ManageUsers fill:#FFCDD2,stroke:#B71C1C,stroke-width:2px
+    style BlockUser fill:#FFCDD2,stroke:#B71C1C,stroke-width:2px
+    style ViewJobs fill:#FFCDD2,stroke:#B71C1C,stroke-width:2px
+```
+
+### Data Flow Diagram
+
+```mermaid
+flowchart TB
+    subgraph Actors["ACTORS"]
+        JobSeeker[Job Seeker]
+        Employer[Employer]
+        Admin[Administrator]
+    end
+
+    subgraph PresentationLayer["PRESENTATION LAYER - JSP Pages"]
+        LoginPage[Login/Register Page]
+        UserDashboard[User Dashboard]
+        EmployerDashboard[Employer Dashboard]
+        AdminPanel[Admin Panel]
+        ChatPage[Chat Page]
+    end
+
+    subgraph BusinessLayer["BUSINESS LOGIC LAYER - Servlets"]
+        AuthServlet[Authentication Servlet]
+        UploadServlet[Upload Resume Servlet]
+        ApplyServlet[Apply Job Servlet]
+        PostServlet[Post Job Servlet]
+        ViewServlet[View Applicants Servlet]
+        ChatServlet[Chat Servlet]
+        AdminServlet[Admin Servlet]
+    end
+
+    subgraph ExternalAPIs["EXTERNAL APIs"]
+        AffindaAPI["Affinda API - Resume Parser"]
+        PerplexityAPI["Perplexity Pro - AI Assistant"]
+    end
+
+    subgraph DataLayer["DATA ACCESS LAYER - MySQL Database"]
+        UsersTable[(Users Table)]
+        JobsTable[(Jobs Table)]
+        ApplicationsTable[(Applications Table)]
+        ResumeLogsTable[(Resume Analysis Logs)]
+    end
+
+    %% Job Seeker Flow
+    JobSeeker -->|Step 1: Login| LoginPage
+    LoginPage --> AuthServlet
+    AuthServlet --> UsersTable
+
+    JobSeeker -->|Step 2: Upload Resume| UserDashboard
+    UserDashboard --> UploadServlet
+    UploadServlet -->|Send PDF| AffindaAPI
+    AffindaAPI -->|Return Parsed Data| UploadServlet
+    UploadServlet --> ResumeLogsTable
+
+    JobSeeker -->|Step 3: Browse & Apply| UserDashboard
+    UserDashboard --> ApplyServlet
+    ApplyServlet --> ApplicationsTable
+    JobsTable -->|Fetch Jobs + Calculate Match Score| UserDashboard
+
+    JobSeeker -->|Step 4: Ask Career Question| ChatPage
+    ChatPage --> ChatServlet
+    ChatServlet -->|Send Query| PerplexityAPI
+    PerplexityAPI -->|Return AI Response| ChatServlet
+    ChatServlet --> ChatPage
+
+    %% Employer Flow
+    Employer -->|Step 1: Login| LoginPage
+    Employer -->|Step 2: Post Job| EmployerDashboard
+    EmployerDashboard --> PostServlet
+    PostServlet --> JobsTable
+
+    Employer -->|Step 3: View Applicants| EmployerDashboard
+    EmployerDashboard --> ViewServlet
+    ApplicationsTable -->|Fetch Applications| ViewServlet
+    ResumeLogsTable -->|Fetch Resume Data| ViewServlet
+    ViewServlet -->|Update Status| ApplicationsTable
+
+    %% Admin Flow
+    Admin -->|Manage System| AdminPanel
+    AdminPanel --> AdminServlet
+    AdminServlet --> UsersTable
+    AdminServlet --> JobsTable
+
+    %% Styling
+    style AffindaAPI fill:#FFE0B2,stroke:#E65100,stroke-width:3px
+    style PerplexityAPI fill:#B2DFDB,stroke:#00695C,stroke-width:3px
+    style DataLayer fill:#BBDEFB,stroke:#1565C0,stroke-width:2px
+    style ExternalAPIs fill:#FFF9C4,stroke:#F57F17,stroke-width:2px
+    style BusinessLayer fill:#C5CAE9,stroke:#303F9F,stroke-width:2px
+    style PresentationLayer fill:#E1F5FE,stroke:#0277BD,stroke-width:2px
+    style Actors fill:#F8BBD0,stroke:#C2185B,stroke-width:2px
+```
+
+### System Workflow
+
+```mermaid
+sequenceDiagram
+    participant JS as Job Seeker
+    participant SYS as System
+    participant AFF as Affinda API
+    participant DB as Database
+    participant EMP as Employer
+    participant AI as Perplexity AI
+
+    JS->>SYS: Register & Login
+    SYS->>DB: Create User Account
+
+    JS->>SYS: Upload Resume (PDF)
+    SYS->>AFF: Send Resume for Parsing
+    AFF-->>SYS: Return Parsed Data (Skills, Experience)
+    SYS->>DB: Store Resume Analysis
+
+    JS->>SYS: Browse Jobs
+    SYS->>DB: Fetch Available Jobs
+    DB-->>SYS: Job Listings
+    SYS->>SYS: Calculate Match Scores
+    SYS-->>JS: Display Jobs with Scores
+
+    JS->>SYS: Apply for Job
+    SYS->>DB: Create Application
+
+    JS->>SYS: Chat Query
+    SYS->>AI: Send Message
+    AI-->>SYS: AI Response
+    SYS-->>JS: Display Response
+
+    EMP->>SYS: View Applicants
+    SYS->>DB: Fetch Applications
+    DB-->>SYS: Applicant Data with Scores
+    SYS-->>EMP: Display Ranked Applicants
+
+    EMP->>SYS: Shortlist/Reject
+    SYS->>DB: Update Application Status
+```
+
 ---
 
 ## Prerequisites
@@ -279,17 +516,13 @@ USE hiresense_hibernate;
 
 ```sql
 CREATE TABLE users (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(255) NOT NULL,
-    email VARCHAR(255) UNIQUE NOT NULL,
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
-    role ENUM('user', 'employer', 'admin') NOT NULL,
+    role ENUM('user', 'employer', 'admin') NOT NULL DEFAULT 'user',
     status ENUM('active', 'blocked') DEFAULT 'active',
-    otp VARCHAR(6),
-    otp_expiry TIMESTAMP,
-    is_verified BOOLEAN DEFAULT FALSE,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 ```
 
@@ -297,20 +530,19 @@ CREATE TABLE users (
 
 ```sql
 CREATE TABLE jobs (
-    id INT AUTO_INCREMENT PRIMARY KEY,
-    employer_id INT NOT NULL,
-    title VARCHAR(255) NOT NULL,
-    company VARCHAR(255) NOT NULL,
-    location VARCHAR(255) NOT NULL,
-    experience VARCHAR(100) NOT NULL,
-    package_lpa VARCHAR(100) NOT NULL,
-    vacancies INT NOT NULL,
-    skills TEXT NOT NULL,
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    title VARCHAR(150) NOT NULL,
     description TEXT NOT NULL,
-    status ENUM('active', 'inactive') DEFAULT 'active',
+    skills TEXT NOT NULL,
+    company VARCHAR(100) NOT NULL,
+    location VARCHAR(100),
+    experience VARCHAR(50),
+    package_lpa VARCHAR(50),
+    vacancies INT,
+    employer_id INT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (employer_id) REFERENCES users(id) ON DELETE CASCADE
+    status VARCHAR(10) NOT NULL DEFAULT 'active',
+    FOREIGN KEY (employer_id) REFERENCES users(id)
 );
 ```
 
@@ -318,17 +550,15 @@ CREATE TABLE jobs (
 
 ```sql
 CREATE TABLE applications (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     user_id INT NOT NULL,
     job_id INT NOT NULL,
-    resume_path VARCHAR(500) NOT NULL,
+    resume_path VARCHAR(255),
+    score FLOAT,
     status ENUM('applied', 'shortlisted', 'rejected') DEFAULT 'applied',
-    score INT DEFAULT 0,
     applied_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
-    FOREIGN KEY (job_id) REFERENCES jobs(id) ON DELETE CASCADE,
-    UNIQUE KEY unique_application (user_id, job_id)
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (job_id) REFERENCES jobs(id)
 );
 ```
 
@@ -336,12 +566,11 @@ CREATE TABLE applications (
 
 ```sql
 CREATE TABLE resume_analysis_logs (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id INT PRIMARY KEY AUTO_INCREMENT,
     user_id INT NOT NULL,
-    resume_path VARCHAR(500) NOT NULL,
-    parsed_data TEXT,
+    result_json JSON NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+    FOREIGN KEY (user_id) REFERENCES users(id)
 );
 ```
 
